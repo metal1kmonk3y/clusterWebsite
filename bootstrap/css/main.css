@@ -1,1 +1,9 @@
-{\rtf1}
+.navbar, .nav{
+    background-color: #730019 ;
+    color: #999999;
+    padding-top: 1.5em;
+  
+}
+h1{
+    text-align: center;
+}
