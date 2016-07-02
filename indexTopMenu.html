@@ -13,75 +13,77 @@
 	
 	<body ng-app = "cluster">
 	
-		<div class="main" ng-controller="mainController">
-	
-	
-		
-		
-		<nav class="navbar navbar-inverse">
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		      <h1 class="navbar-brand">Flux Cluster at UW-L</h1>
-		    </div>
-		    <ul class="nav navbar-nav">
-		      
-				<li>
-					<a href="http://flux.cs.uwlax.edu/ganglia/">Ganglia-Cluster Status</Cluster></a>
-				</li>
-				<li>
-					<a href="#hwloc">hwloc Diagrams</a>
-				</li>
-				<li>
-					<a href="#slurm">Slurm Usage Information</a>
-				</li>
-				<li>
-					<a href="#mpi">MPI Examples</a>
-				</li>
-				<li>
-					<a href="#openmp">OpenMP Examples</a>
-				</li>
-				
-		    </ul>
-		  </div>
-		</nav>
+		<div class="main container" ng-controller="mainController">
+			
+			
+			<nav class="navbar navbar navbar-fixed-top">
+			  <div class="container">
+			    <div class="navbar-header">
+			      <h1 class="navbar-brand">Flux Cluster at UW-La Crosse</h1>
+			    </div>
+			    <ul class="nav navbar-nav">
+			      
+					<li>
+						<a href="http://flux.cs.uwlax.edu/ganglia/">Ganglia-Cluster Status</Cluster></a>
+					</li>
+					<li>
+						<a href="#hwloc">hwloc Diagrams</a>
+					</li>
+					<li>
+						<a href="#slurm">Slurm Usage Information</a>
+					</li>
+					<li>
+						<a href="#mpi">MPI Examples</a>
+					</li>
+					<li>
+						<a href="#openmp">OpenMP Examples</a>
+					</li>
+					
+			    </ul>
+			  </div>
+			</nav>
 		
 		
 		
-		<div class = "container">
-			<a id="hwloc">
-				<h2>hwloc Node Diagrams:</h2>
-			</a>
-			<ul>
-				<a id="hwloc"> </a>
+		<div id="hwloc"> 	
+			<ul class = "gallery" style="list-style-type:none">
+				<a>
+					<h2>hwloc Node Diagrams:</h2>
+				</a>
 				<li>
-					<a id="hwloc"></a>
-					<a href="doc/hwloc/flux.pdf">flux.pdf</a>
+				  <embed src="img/flux.pdf" width="400" height="300" type='application/pdf'>
+					<a href="img/flux.pdf">
+					   <p>Flux (Click here to Enlarge)</p>
+					</a>
 				</li>
 				<li>
-					<a href="doc/hwloc/flux1.pdf">flux1.pdf</a>
+				  <embed src="img/flux1.pdf" width="400" height="300" type='application/pdf'>
+					<a href="img/flux1.pdf">
+					  <p>Flux 1 (Click here to Enlarge)</p>
+					</a>
 				</li>
 				<li>
-					<a href="doc/hwloc/flux2.pdf">flux2.pdf</a>
+				  <embed src="img/flux2.pdf" width="400" height="300" type='application/pdf'>
+					<a href="img/flux2.pdf">
+					   <p>Flux 2 (Click here to Enlarge)</p>
+					</a>
 				</li>
 				<li>
-					<a href="doc/hwloc/flux3.pdf">flux3.pdf</a>
+				  <embed src="img/flux3.pdf" width="400" height="300" type='application/pdf'>
+					<a href="img/flux3.pdf">
+					  <p>Flux 3 (Click here to Enlarge)</p>
+					</a>
 				</li>
 				<li>
-					<a href="doc/hwloc/flux4.pdf">flux4.pdf</a>
-				</li>
-			</ul>
-				Below are some useful links to help you get started with hwloc:
-			<ul>
-				<li>
-					<a href="http://www.open-mpi.org/projects/hwloc/">hwloc Project page</a>
-				</li>
-				<li>
-					<a href="http://www.open-mpi.org/projects/hwloc/doc/">Documentation</a>
+				  <embed src="img/flux4.pdf" width="400" height="300" type='application/pdf'>
+					<a href="img/flux4.pdf">
+					  <p>Flux 4 (Click here to Enlarge)</p>
+					</a>
 				</li>
 			</ul>
 		</div>	
 		<hr style="height:4px;border:none;color:#000;background-color:#000;">
-		<div class = "container">
+		<div>
 			
 			<a id="slurm">
 			<h2>Slurm Usage Information:</h2>
@@ -109,7 +111,7 @@
 		
 		<hr style="height:4px;border:none;color:#000;background-color:#000;">
 		
-		<div class = "container">
+		<div>
 			<a id="mpi">
 				<h2>MPI Usage Information:</h2>
 			</a>
@@ -153,7 +155,7 @@
 		
 		
 		<hr style="height:4px;border:none;color:#000;background-color:#000;">
-		<div class = "container">	
+		<div>	
 			<a id="openmp">
 			<h2>OpenMP Usage Information:</h2>
 			</a>
@@ -184,7 +186,19 @@
 			</ul>
 		
 		</div>	
-			<hr style="height:4px;border:none;color:#000;background-color:#000;">
+			
+		
+		<nav class="navbar navbar navbar-fixed-bottom" id="footer">
+  			<ul class="container" style="list-style-type:none">
+    			<li>
+				  Uw LaCrosse 
+				  Computer Science Department
+				</li>
+				<li id = "rightFoot">
+				  Contact: someOne@uwlax.edu
+				</li>
+  			</ul>
+		</nav>
 	</div>
 	<!-- Modules -->
     <script src="js/app.js"></script>

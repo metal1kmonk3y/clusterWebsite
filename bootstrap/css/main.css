@@ -1,9 +1,23 @@
-.navbar, .nav{
-    background-color: #730019 ;
-    color: #999999;
-    padding-top: 1.5em;
-  
+body {
+     padding-top: 7em;
+     padding-bottom: 5em;
 }
 h1{
     text-align: center;
 }
+.navbar, .nav{
+    background-color: #730019 ;
+    color: #999999;
+    padding-top: 1.5em;
+}
+.gallery li{
+    display: inline-block;
+}
+#footer li{
+    display: inline
+}
+#rightFoot{
+    float:right;
+    
+}
+

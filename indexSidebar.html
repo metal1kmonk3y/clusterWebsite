@@ -14,11 +14,11 @@
 	<body ng-app = "cluster">
 	
 	<div class="main container" ng-controller="mainController">
-		 <div >
+		 <header >
 		      <h1>Flux Cluster at UW-L</h1>
-		  </div>
+		  </header>
 		 
-		 <div class="col-sm-4 container" >
+		 <div class="col-sm-2 " >
          	 <ul id="sidebar" class="nav nav-stacked affix">
             	<li>
 					<a href="http://flux.cs.uwlax.edu/ganglia/">Ganglia-Cluster Status</a>
@@ -39,40 +39,45 @@
        		 </ul>
       	</div>
       	
-		<div class = "col-sm-8">
-			<div class = "container">
-				<a id="hwloc">
+		<div class = "col-sm-10">
+				
+		<div id="hwloc"> 	
+			<ul class = "gallery" style="list-style-type:none">
+				<a>
 					<h2>hwloc Node Diagrams:</h2>
 				</a>
-				<ul>
-					<a id="hwloc"> </a>
-					<li>
-						<a id="hwloc"></a>
-						<a href="doc/hwloc/flux.pdf">flux.pdf</a>
-					</li>
-					<li>
-						<a href="doc/hwloc/flux1.pdf">flux1.pdf</a>
-					</li>
-					<li>
-						<a href="doc/hwloc/flux2.pdf">flux2.pdf</a>
-					</li>
-					<li>
-						<a href="doc/hwloc/flux3.pdf">flux3.pdf</a>
-					</li>
-					<li>
-						<a href="doc/hwloc/flux4.pdf">flux4.pdf</a>
-					</li>
-				</ul>
-					Below are some useful links to help you get started with hwloc:
-				<ul>
-					<li>
-						<a href="http://www.open-mpi.org/projects/hwloc/">hwloc Project page</a>
-					</li>
-					<li>
-						<a href="http://www.open-mpi.org/projects/hwloc/doc/">Documentation</a>
-					</li>
-				</ul>
-			</div>	
+				<li>
+				  <embed src="img/flux.pdf" width="400" height="300" type='application/pdf'>
+					<a href="img/flux.pdf">
+					   <p>Flux (Click here to Enlarge)</p>
+					</a>
+				</li>
+				<li>
+				  <embed src="img/flux1.pdf" width="400" height="300" type='application/pdf'>
+					<a href="img/flux1.pdf">
+					  <p>Flux 1 (Click here to Enlarge)</p>
+					</a>
+				</li>
+				<li>
+				  <embed src="img/flux2.pdf" width="400" height="300" type='application/pdf'>
+					<a href="img/flux2.pdf">
+					   <p>Flux 2 (Click here to Enlarge)</p>
+					</a>
+				</li>
+				<li>
+				  <embed src="img/flux3.pdf" width="400" height="300" type='application/pdf'>
+					<a href="img/flux3.pdf">
+					  <p>Flux 3 (Click here to Enlarge)</p>
+					</a>
+				</li>
+				<li>
+				  <embed src="img/flux4.pdf" width="400" height="300" type='application/pdf'>
+					<a href="img/flux4.pdf">
+					  <p>Flux 4 (Click here to Enlarge)</p>
+					</a>
+				</li>
+			</ul>
+		</div>		
 			<hr style="height:4px;border:none;color:#000;background-color:#000;">
 			<div class = "container">
 				
