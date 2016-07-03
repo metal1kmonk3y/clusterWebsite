@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PDF Thumbnail Tutorial</title>
+  <meta charset="utf-8">
+  <!-- CSS -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+		<link href="bootstrap/css/main.css" rel="stylesheet"/>
+ 
+</head>
+  <body>
+  	<section>
+	    <ul class = "gallery" style="list-style-type:none">
+				<a id="hwloc"> 	
+					<h2>hwloc Node Diagrams:</h2></a>
+				<li>
+				  <embed src="img/flux.pdf" width="400" height="300" type='application/pdf'>
+					<a href="img/flux.pdf">
+					   <p>Flux (Click here to Enlarge)</p>
+					</a>
+				</li>
+				<li>
+				  <embed src="img/flux1.pdf" width="400" height="300" type='application/pdf'>
+					<a href="img/flux1.pdf">
+					  <p>Flux 1 (Click here to Enlarge)</p>
+					</a>
+				</li>
+				<li>
+				  <embed src="img/flux2.pdf" width="400" height="300" type='application/pdf'>
+					<a href="img/flux2.pdf">
+					   <p>Flux 2 (Click here to Enlarge)</p>
+					</a>
+				</li>
+				<li>
+				  <embed src="img/flux3.pdf" width="400" height="300" type='application/pdf'>
+					<a href="img/flux3.pdf">
+					  <p>Flux 3 (Click here to Enlarge)</p>
+					</a>
+				</li>
+				<li>
+				  <embed src="img/flux4.pdf" width="400" height="300" type='application/pdf'>
+					<a href="img/flux4.pdf">
+					  <p>Flux 4 (Click here to Enlarge)</p>
+					</a>
+				</li>
+			</ul>
+		</section>
+		
+		
+	
+        
+        <div class = "container">
+			<pre>
+				#SBATCH --open-mode=append # Append to the output file if it exists
+	
+				date
+				
+				echo "-------------------------"
+				
+				echo "Get the name of the first node in the allocation"
+				echo "Do so with binding"
+				echo "-------------------------"
+				hwloc-bind core:0 hostname > myfile.txt.$SLURM_JOB_ID &
+				hwloc-bind core:1 hostname >> myfile.txt.$SLURM_JOB_ID &
+				
+				echo "Use srun to show the names of all the nodes in the allocation"
+				echo "-------------------------"
+				srun hostname 
+				
+				echo "Now sleep for a bit of time on all of those machines"
+				echo "-------------------------"
+				srun sleep 5
+				
+				echo "-------------------------"
+				date
+				
+				exit 0
+			</pre>
+			<a href = "sample/basic.sh">Basic (Click here to Download)</a><br/><br/>		
+			<pre>
+				#!/bin/bash
+	
+				#SBATCH -N 2             # Give me 2 whole nodes worth of cores
+				#SBATCH -t 0-00:05       # Runtime in D-HH:MM
+				#SBATCH -o mpi-examples.out  # File to which STDOUT and STDERR will be written
+				
+				date
+				
+				#echo
+				#echo "-------------------------"
+				#echo "All SLURM Environment Variables"
+				#echo "-------------------------"
+				#printenv | grep SLURM
+				
+				echo
+				echo "-------------------------"
+				echo "Make the programs"
+				echo "-------------------------"
+				make
+				
+				echo
+				echo "-------------------------"
+				echo "Run Hello World (on all cores)"
+				echo "-------------------------"
+				mpirun hello
+			</pre>
+			<a href = "sample/submit-run.1.txt">Hello Word (Click for entire file)</a><br/>
+			<a href = "sample/submit-run.sh">Hello World (Click here to Download)</a><br/>
+		</div>
+  </body>
+</html>
