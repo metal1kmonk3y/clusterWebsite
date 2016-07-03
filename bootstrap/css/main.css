@@ -1,23 +1,43 @@
+ /* 
+ Padding top and bottom due to fixed menu 
+ background-color is sky blue
+ */
+ 
 body {
      padding-top: 7em;
      padding-bottom: 5em;
+     background-color: #7ec0ee ;
 }
+ /* h1 centered */
 h1{
     text-align: center;
 }
-.navbar, .nav{
+ /* Color of nav bar and other nav items to UW-lax Colors */
+.navbar, .nav, .nav a{
     background-color: #730019 ;
     color: #999999;
     padding-top: 1.5em;
 }
+ /* makes the gallery of pdfs stack inline then in block*/
 .gallery li{
     display: inline-block;
 }
+ /* sets the footer items horizontanly*/
 #footer li{
     display: inline
 }
+ /* Pushes the contact email to the right */
 #rightFoot{
     float:right;
-    
 }
-
+ /*Color of all links changed to blue */
+a{
+    color: blue;
+}
+ /* Color of the code sections under pre */
+pre{
+    color: yellow;
+    background-color: black;
+    text-align: left;
+    white-space: pre-line;
+}
