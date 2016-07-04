@@ -3,10 +3,14 @@
  background-color is sky blue
  */
  
-body {
+body{
      padding-top: 5em;
      padding-bottom: 5em;
      background-color: #7ec0ee ;
+}
+ /*Color of all links changed to blue */
+a{
+    color: #2E0854;
 }
  /* Color of nav bar to UW-lax Colors */
 .nav, .navbar {
@@ -54,11 +58,9 @@ body {
 #top:hover{
    width:25px;
 }
-}
- /*Color of all links changed to blue */
-a{
-    color: blue;
-}
+
+
+
  /* Color of the code sections under pre */
 pre{
     color: yellow;
