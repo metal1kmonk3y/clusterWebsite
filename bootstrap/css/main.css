@@ -1,18 +1,17 @@
- /* 
+/* 
  Padding top and bottom due to fixed menu 
  background-color is sky blue
- */
- 
+*/
 body{
      padding-top: 5em;
      padding-bottom: 5em;
      background-color: #7ec0ee ;
 }
- /*Color of all links changed to blue */
+/*Color of all links changed to blue */
 a{
     color: #2E0854;
 }
- /* Color of nav bar to UW-lax Colors */
+/* Color of nav bar to UW-lax Colors */
 .nav, .navbar {
     background-color: #730019 ;
     color:  #999999;
@@ -41,27 +40,24 @@ a{
      padding-top: 1em;   
      text-align: center;
 }
- /* sets the footer items horizontanly*/
+/* sets the footer items horizontanly*/
 #footer li{
     display: inline-block;
     
 }
- /* Pushes the contact email to the right */
+/* Pushes the contact email to the right */
 #rightFoot{
     float:right;
 }
- /* Pushes the school info to the left */
+/* Pushes the school info to the left */
 #leftFoot{
     float: left;
 }
- /*when the top botton is hovered upon */
+/*when the top botton is hovered upon */
 #top:hover{
    width:25px;
 }
-
-
-
- /* Color of the code sections under pre */
+/* Color of the code sections under pre */
 pre{
     color: yellow;
     background-color: black;
