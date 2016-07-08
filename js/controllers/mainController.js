@@ -53,11 +53,11 @@ app.controller('MainController', ['$scope','serveBasic', 'serveSubmitRun' , func
         }
     ];
         
-         
+    //basic code file served   
     serveBasic.success(function(data) {
         $scope.fileBasic = data;
     });
-    
+    //submit run code file served 
     serveSubmitRun.success(function(data) {
         $scope.fileSubmitRun = data;
     });
