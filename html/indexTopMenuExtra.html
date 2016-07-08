@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!-- CSS -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+		<link href="bootstrap/css/main.css" rel="stylesheet"/>
+		<!-- AngularJS library -->
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+		  
+		<title>Flux Cluster at UW-L</title>
+  	</head>
+	<!--app cluster starts here-->
+	<body ng-app = "cluster" id="hwloc">
+		<!--main controller starts here-->
+		<div class="main container" ng-controller="MainController" >
+			
+			<!--top navigation menu-->
+			<nav class="navbar navbar-fixed-top navbar">
+			  <div class="container">
+			    <ul class="nav navbar-nav">
+			      	<!--menu items-->
+			      	<li>
+						<h1>Flux Cluster at UW-L</h1>
+					</li>
+					<li>
+						<a href="http://flux.cs.uwlax.edu/ganglia/">Ganglia-Cluster Status</Cluster></a>
+					</li>
+					<li>
+						<a href="#hwloc">hwloc Diagrams</a>
+					</li>
+					<li>
+						<a href="#slurm">Slurm Usage Information</a>
+					</li>
+					<li>
+						<a href="#mpi">MPI Examples</a>
+					</li>
+					<li>
+						<a href="#openmp">OpenMP Examples</a>
+					</li>
+			    </ul>
+			  </div>
+			</nav>
+			
+			<!--hwloc node diagrams-->
+			<section>
+				<h2>hwloc Node Diagrams:</h2>
+				<ul class = "gallery" style="list-style-type:none">
+					
+					<!--pdfs of hwloc node diagrams-->
+					<li>
+					  <embed src="img/flux.pdf" width="360" height="200" type='application/pdf'>
+						<a href="img/flux.pdf">
+						   <p>Flux (Click here to Enlarge)</p>
+						</a>
+					</li>
+					<li>
+					  <embed src="img/flux1.pdf" width="360" height="200" type='application/pdf'>
+						<a href="img/flux1.pdf">
+						  <p>Flux 1 (Click here to Enlarge)</p>
+						</a>
+					</li>
+					<li>
+					  <embed src="img/flux2.pdf" width="360" height="200" type='application/pdf'>
+						<a href="img/flux2.pdf">
+						   <p>Flux 2 (Click here to Enlarge)</p>
+						</a>
+					</li>
+					<li>
+					  <embed src="img/flux3.pdf" width="360" height="200" type='application/pdf'>
+						<a href="img/flux3.pdf">
+						  <p>Flux 3 (Click here to Enlarge)</p>
+						</a>
+					</li>
+					<li >
+					  <embed src="img/flux4.pdf" width="360" height="200" type='application/pdf'>
+						<a id="slurm" href="img/flux4.pdf">
+						  <p >Flux 4 (Click here to Enlarge)</p>
+						</a>
+					</li>
+				</ul>
+			</section>		
+		
+			<!--slurm usage info-->
+			<section>
+				<h2>Slurm Usage Information:</h2>
+				<ol type="I">
+					<!--Readme and sample basic code-->	
+					<li>
+						<a href="doc/slurm_readme.txt">README</a>
+					</li>
+					<li>
+						<a href = "sample/basic.sh">Basic (Click here to Download)</a><br/>
+						<pre>
+							#SBATCH --open-mode=append # Append to the output file if it exists
+				
+							date
+							
+							echo "-------------------------"
+							
+							echo "Get the name of the first node in the allocation"
+							echo "Do so with binding"
+							echo "-------------------------"
+							hwloc-bind core:0 hostname > myfile.txt.$SLURM_JOB_ID &
+							hwloc-bind core:1 hostname >> myfile.txt.$SLURM_JOB_ID &
+							
+							echo "Use srun to show the names of all the nodes in the allocation"
+							echo "-------------------------"
+							srun hostname 
+							
+							echo "Now sleep for a bit of time on all of those machines"
+							echo "-------------------------"
+							srun sleep 5
+							
+							echo "-------------------------"
+							date
+							
+							exit 0
+						</pre>
+						<span id="mpi"/>
+					</li>
+				</ol>
+				<!--Some links-->
+				Below are some useful links to help you get started with Slurm:
+				<ol type="I">
+					<li>
+						<a href="http://slurm.schedmd.com/slurm.html">Slurm project page</a>
+					</li>
+					<li >
+						<a href="http://slurm.schedmd.com/tutorials.html">Slurm Tutorials</a>
+					</li>
+				</ol>
+			</section>	
+		
+			<!--MPI usage info-->
+			<section>
+				<h2>MPI Usage Information:</h2>
+				<ol type="I">
+					<!--MPI file items and hello world sample code -->
+					<li>
+						<a id="mpi"></a>
+						<a href="doc/mpi_readme.txt">README</a>
+					</li>
+					<li>
+						<a href="doc/mpi_hello.c">hello.c</a>
+					</li>
+					<li>
+						<a href="doc/mpi_ring.c">ring.c</a>
+					</li>
+					<li>
+						<a href="doc/mpi_makefile">Makefile</a>
+					</li>
+					<li>
+						<a href = "sample/submit-run.sh">Hello World (Click here to Download)</a><br/>
+						<pre>
+							#!/bin/bash
+				
+							#SBATCH -N 2             # Give me 2 whole nodes worth of cores
+							#SBATCH -t 0-00:05       # Runtime in D-HH:MM
+							#SBATCH -o mpi-examples.out  # File to which STDOUT and STDERR will be written
+							
+							date
+							
+							#echo
+							#echo "-------------------------"
+							#echo "All SLURM Environment Variables"
+							#echo "-------------------------"
+							#printenv | grep SLURM
+							
+							echo
+							echo "-------------------------"
+							echo "Make the programs"
+							echo "-------------------------"
+							make
+							
+							echo
+							echo "-------------------------"
+							echo "Run Hello World (on all cores)"
+							echo "-------------------------"
+							mpirun hello
+						</pre>
+						<a href = "sample/submit-run.1.txt">Hello Word (Click to view entire file)</a><br/>
+					</li>
+				</ol>
+				<!--Some links-->
+				Below are some useful links to help you get started with MPI:
+				<ol type="I">
+					<li>
+						<a href="http://mpitutorial.com/tutorials/mpi-hello-world/">MPI Tutorial</a>
+					</li>
+					<li>
+						<a href="https://computing.llnl.gov/tutorials/mpi/">LLNL MPI Tutorial</a>
+					</li>
+					<li>
+						<a href="http://www.open-mpi.org/">Open MPI project page</a>
+					</li>
+					<li>
+						<a href="http://www.open-mpi.org/faq/">Open MPI FAQs</a>
+						(This is about as close to Documentation as the project currently has)
+					</li>
+					
+				</ol>
+			</section>
+	
+			<!--OpenMp usage info-->
+			<section  id="openmp">	
+				<h2>OpenMP Usage Information:</h2>
+				<!--OpenMp files-->
+				<ol type="I">
+					<li>
+						<a id="openmp"></a>
+						<a href="doc/openmp_readme.txt">README</a>
+					</li>
+					<li>
+						<a href="doc/omp_hello.c">omp_hello.c</a>
+					</li>
+					<li>
+						<a href="doc/mpi_omp_hello.c">mpi_omp_hello.c</a>
+					</li>
+					<li>
+						<a href="doc/openmp_makefile">Makefile</a>
+					</li>
+				</ol>
+				<!--Some links-->
+				Below are some useful links to help you get started with MPI:
+				<ol type="I">
+					<li>
+						<a href="https://computing.llnl.gov/tutorials/openMP/">LLNL OpenMP Tutorial</a>
+					</li>
+					<li>
+						<a href="http://openmp.org/wp/">OpenMP project page</a>
+					</li>
+				</ol>
+			</section>	
+			
+			<!--Footer navigation menu-->
+			<nav class="navbar navbar-fixed-bottom" id="footer">
+	  			<ul class="container" style="list-style-type:none">
+	  				<!--Footer Items-->
+	    			<li id="leftFoot">
+					  Uw LaCrosse 
+					  Computer Science Department
+					</li>
+					<li>
+					  <a href ="#hwloc"> 
+					  	<img src = "img/upArrow.png" id ="top" title="Top" alt="Top" height="30" width="30"/>
+					  </a>
+					</li>
+					<li id = "rightFoot">
+					  Contact: someOne@uwlax.edu
+					</li>
+	  			</ul>
+			</nav>
+		
+		<!--main controller end-->
+		</div>
+	
+	<!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/mainController.js"></script>
+   
+	</body>
+</html>
