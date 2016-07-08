@@ -7,7 +7,6 @@ body{
     padding-bottom: 5em;
     background-color: #7ec0ee ;
     font-family: lucida sans unicode;
-    
 }
 /*Color of all links changed to blue */
 a{
@@ -76,4 +75,7 @@ pre{
     padding: 10px;
     height: 400px; 
     overflow: auto;
+    font-family: helvetica;
+    font-style: bold;
+
 }
