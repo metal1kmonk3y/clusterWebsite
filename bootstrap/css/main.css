@@ -16,29 +16,27 @@ a{
     background-color: #730019 ;
     color:  #999999;
     border-color: white;
-    
 }
 /* Color of nav bar links*/
 .nav li a{
     padding-top: 1.5em;
     color: #999999 ;
-    
 }
 /* Color of nav bar links when hovered upon*/
 .nav li a:hover{
-    padding-top: 2.1em;
     color: #730019 ;
-    font-size: larger;
-    background-color: white;
+    background-color: #7ec0ee; 
 }
 /* makes the gallery of pdfs stack inline then in block*/
 .gallery li{
     display: inline-block;
+    padding: 3px;
 }
 /* sets the footer's padding*/
 #footer{
      padding-top: 1em;   
      text-align: center;
+     color:#999999;
 }
 /* sets the footer items horizontanly*/
 #footer li{
@@ -52,14 +50,28 @@ a{
 /* Pushes the school info to the left */
 #leftFoot{
     float: left;
+    
 }
-/*when the top botton is hovered upon */
-#top:hover{
-   width:25px;
+/* footer link colors */
+#footer li a{
+    color:#999999;
 }
 /* Color of the code sections under pre */
 pre{
     color: yellow;
     background-color: black;
     white-space: pre-line;
+}
+/* margin of title and bottom logo */
+#title, #logo{
+    margin-right: 10px;
+}
+/* code divs */
+.code{
+    white-space: pre;
+    color: yellow;
+    background-color: black;
+    padding: 10px;
+    height: 400px; 
+    overflow: auto;
 }
