@@ -3,6 +3,7 @@ var main = function() {
   $("a").attr('target', '_blank');
   //except for nav links
   $("a.nav-link").removeAttr('target');
+  $("#backToTop").removeAttr('target');
 };
 
 $(document).ready(main);

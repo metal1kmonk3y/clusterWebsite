@@ -3,9 +3,11 @@
  background-color is sky blue
 */
 body{
-     padding-top: 5em;
-     padding-bottom: 5em;
-     background-color: #7ec0ee ;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    background-color: #7ec0ee ;
+    font-family: lucida sans unicode;
+    
 }
 /*Color of all links changed to blue */
 a{
