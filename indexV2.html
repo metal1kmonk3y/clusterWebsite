@@ -26,30 +26,31 @@
 			    <ul class="nav navbar-nav">
 			    	<!--title of website-->
   					<li>
-  					<h1 id ="title">{{title}}</h1>
+  					<h1 id ="title">{{menu.title}}</h1>
 					</li>	
 			      	<!--menu items-->
-					<li ng-repeat="item in menu">
+					<li ng-repeat="item in menu.menuItems">
 						<a class="nav-link" href={{item.link}}>{{item.name}}</a>
 					</li>
+					
 			    </ul>
 			  </div>
 			</nav>
 			
 			<!--hwloc node diagrams-->
 			<section>
-				
-				<h2>hwloc Node Diagrams:</h2>
+				<h2>{{machine.title}}</h2>
 				<ul class = "gallery" style="list-style-type:none">
-					
 					<!--pdfs of hwloc node diagrams-->
-					<li ng-repeat="diagram in diagrams">
-						<a href="{{diagram.source}}">
-							<embed ng-src="{{diagram.source}}" width="360" height="200" type='application/pdf'>
-						  	<p>{{diagram.name}}</p>
+					<li ng-repeat="m in machine.pics">
+						<a href="{{m.source}}">
+						<embed ng-src="{{m.source}}" width="360" height="200" type='application/pdf'> 
+						  	<p>{{m.name}}</p>
 						</a>
 					</li>
+					
 				</ul>
+				
 			</section>		
 		
 			<!--slurm usage info-->
@@ -187,6 +188,9 @@
     <!-- Services -->
     <script src="js/services/serveBasic.js"></script>
     <script src="js/services/serveSubmitRun.js"></script>
+    <script src="js/services/serveMenu.js"></script>
+    <script src="js/services/serveDiagrams.js"></script>
+   
     
     <!-- Jquery -->
     <script src="js/simple.js"></script>
