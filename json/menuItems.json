@@ -1,0 +1,30 @@
+{
+    "title": "Flux Cluster",
+    "menuItems": 
+    [
+        {
+        "name": "Current Status",
+        "link":  "#status"
+        },
+        {
+        "name": "Architecture of Machine",
+        "link":  "#hwloc"
+        },
+        {
+        "name": "Getting an Account",
+        "link":  "#account"
+        },
+        {
+        "name": "Running a Job",
+        "link":  "#job"
+        },
+        {
+        "name": "Available Software",
+        "link":  "#slurm"
+        },
+        {
+        "name": "Resources",
+        "link":  "#resources"
+        }
+    ]
+}

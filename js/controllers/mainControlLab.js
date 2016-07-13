@@ -1,9 +1,9 @@
-app.controller('MainControl', ['$scope', 'serveDiagrams', function($scope, serveDiagrams) { 
+app.controller('MainControl', ['$scope', 'serveLab', function($scope, serveLab) { 
 
     
     //basic code file served   
-    serveDiagrams.success(function(data) {
-        $scope.machine = data;
+    serveLab.success(function(data) {
+        $scope.lab = data;
     });
   
       
