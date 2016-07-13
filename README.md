@@ -11,3 +11,4 @@ some more text
 * is
 * like
 * this
+* [a link](http://www.uwlax.edu)
