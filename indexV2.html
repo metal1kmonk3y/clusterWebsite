@@ -6,7 +6,7 @@
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 		<link href="bootstrap/css/main.css" rel="stylesheet"/>
 		<!-- AngularJS library -->
-		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
 		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		  
@@ -16,7 +16,7 @@
 		
   	</head>
 	<!--app cluster starts here-->
-	<body ng-app = "cluster" id="hwloc">
+	<body ng-app = "cluster" id="status">
 		<!--main controller starts here-->
 		<div class="main container" ng-controller="MainController" >
 			
@@ -37,21 +37,26 @@
 			  </div>
 			</nav>
 			
+			<section  id="hwloc">
+				<a href="http://flux.cs.uwlax.edu/ganglia/"><h2 >Cluster Status-Ganglia</h2></a>
+			</section>
+			
+			
 			<!--hwloc node diagrams-->
-			<section>
+			<section >
 				<h2>{{machine.title}}</h2>
 				<ul class = "gallery" style="list-style-type:none">
 					<!--pdfs of hwloc node diagrams-->
 					<li ng-repeat="m in machine.pics">
 						<a href="{{m.source}}">
-						<embed ng-src="{{m.source}}" width="360" height="200" type='application/pdf'> 
+						<img ng-src="{{m.source}}" width="360" height="200"> 
 						  	<p>{{m.name}}</p>
 						</a>
 					</li>
-					
 				</ul>
-				
 			</section>		
+		
+		
 		
 			<!--slurm usage info-->
 			<section>
