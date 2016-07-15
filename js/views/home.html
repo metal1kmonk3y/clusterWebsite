@@ -1,0 +1,12 @@
+<!--hwloc node diagrams-->
+<section >
+	<ul class = "gallery" style="list-style-type:none">
+		<!--pdfs of hwloc node diagrams-->
+		<li ng-repeat="m in machine.pics">
+			<a href="#/machine/{{$index}}">
+			<img ng-src="{{m.source}}" width="360" height="200"> 
+			  	<p>{{m.name}}</p>
+			</a>
+		</li>
+	</ul>
+</section>

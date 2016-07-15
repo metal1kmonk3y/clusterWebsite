@@ -1,9 +1,9 @@
-app.controller('MainControl', ['$scope', 'serveLab', function($scope, serveLab) { 
+app.controller('MainControlLab', ['$scope', 'serveDi', '$routeParams', function($scope, serveDi, $routeParams) { 
 
     
     //basic code file served   
-    serveLab.success(function(data) {
-        $scope.lab = data;
+    serveDi.success(function(data) {
+        $scope.detail = data[$routeParams.id];
     });
   
       
