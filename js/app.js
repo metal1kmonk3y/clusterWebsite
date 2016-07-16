@@ -1,4 +1,5 @@
-var app = angular.module('cluster',['ngRoute']);
+var app = angular.module('cluster',['ngRoute','ngSanitize',
+  'btford.markdown']);
 
 app.config(function ($routeProvider) { 
   $routeProvider 
@@ -7,7 +8,7 @@ app.config(function ($routeProvider) {
       templateUrl: 'js/views/home.html' 
     }) 
    .when('/machine/:id', { 
-       controller: 'MainControlLab', 
+       controller: 'DiagramController', 
       templateUrl: 'js/views/diagram.html' 
     }) 
     .otherwise({ 
