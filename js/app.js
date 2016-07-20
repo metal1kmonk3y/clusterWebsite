@@ -1,5 +1,4 @@
-var app = angular.module('cluster',['ngRoute','ngSanitize',
-  'btford.markdown']);
+var app = angular.module('cluster',['ngRoute']);
 
 app.config(function ($routeProvider) { 
   $routeProvider 
