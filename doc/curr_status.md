@@ -1,0 +1,1 @@
+This machine is a 5 node Linux cluster used for research projects by students and faculty at UWL.  The head node (flux) runs various services, including a SLURM resource manager which can be used to launch code on compute nodes flux2, flux3, and flux4.  flux1 is a large memory node that can only be accessed directly.
