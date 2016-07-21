@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+		<!-- CSS -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+		<link href="bootstrap/css/main.css" rel="stylesheet"/>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+ 
+  </style>
+
+</head>
+<body ng-app="showdown">
+
+<div class="container" data-ng-controller="testCtrl">
+  <div >
+    	<!-- gallery of hwloc diagrams-->
+
+			
+    <div>
+      <h2>This is your markdown code:</h2>
+      <textarea id="ed-txt-area" data-ng-model="mdText" rows="150" cols="50" ></textarea>
+      
+    </div>
+    <div>
+      <h2>This is what its going to look like:</h2>
+      <div data-sd-model-to-html="mdText"></div>
+    </div>
+  </div>
+</div>
+
+<script src="lib/showdown.js"></script>
+<script src="lib/ng-showdown.js"></script>
+
+<script>
+  var test = angular.module('showdown', ['Showdown']);
+
+  test.controller('testCtrl', ['$scope', '$http', function ($scope, $http) {
+   
+
+    $http.get('doc/test.md').then(
+            function (data) {
+              $scope.mdText = data.data;
+            },
+            function (error) {
+              console.log(error);
+              alert("couldn't load syntax.txt");
+            }
+    )
+  }]);
+</script>
+
+
+</body>
+</html>

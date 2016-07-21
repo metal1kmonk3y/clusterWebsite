@@ -11,3 +11,4 @@ Flux is a five (5) node cluster with one head node, one large memory node, and t
 ![flux2](../img/flux2.png)
 ![flux3](../img/flux3.png)
 ![flux4](../img/flux4.png)
+

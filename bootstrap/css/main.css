@@ -83,3 +83,9 @@ pre{
 #backToG{
     float: right;
 }
+
+textarea {
+   height: 500px; 
+   width: 100%;
+   overflow: auto;
+}
