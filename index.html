@@ -19,7 +19,7 @@
 		
   	</head>
 	<!--app cluster starts here-->
-	<body ng-app = "cluster" id="status">
+	<body ng-app = "cluster" >
 		<!--main controller starts here-->
 		<div class="main container " ng-controller="MainController" >
 			
@@ -27,22 +27,21 @@
 			<!--top navigation menu-->
 			<nav class="navbar navbar-fixed-top navbar">
 			  <div class="container">
-			    <ul class="nav navbar-nav">
+			    <ul class="nav navbar-nav"  id = "topMenu">
 			    	<!--title of website-->
   					<li>
   					<h1 id ="title">{{menu.title}}</h1>
 					</li>	
 			      	<!--menu items-->
 					<li ng-repeat="item in menu.menuItems">
-						<a class="nav-link" href={{item.link}}>{{item.name}}</a>
-					</li>
+						<a class="nav-link" href={{item.link}} >{{item.name}}</a>
 			    </ul>
 			  </div>
 			</nav>
 			</section>
 			
 			<!-- Cluster Status -->
-			<section>
+			<section id="status">
 				<h2>Cluster Status : </h2>
 				<a href="http://flux.cs.uwlax.edu/ganglia/"><h4>Ganglia</h4></a>
 			</section>
@@ -85,7 +84,6 @@
 				<ol type="I">
 					<!--MPI file items and hello world sample code -->
 					<li>
-						<a id="mpi"></a>
 						<a href="doc/mpi_readme.txt">README</a>
 					</li>
 					<li>
@@ -127,7 +125,6 @@
 				<!--OpenMp files-->
 				<ol type="I">
 					<li>
-						<a id="openmp"></a>
 						<a href="doc/openmp_readme.txt">README</a>
 					</li>
 					<li>
@@ -164,7 +161,7 @@
 					 <a href="http://www.cs.uwlax.edu/" title="To UW Lax CS Website">Computer Science Department</a>
 					</li>
 					<li>
-					  <a href ="#hwloc" id="backToTop"> 
+					  <a href ="#test/#status" id="backToTop"> 
 					  	<img src = "img/upArrow.png" id ="top" title="Back to Top" alt="Top" height="40" width="40"/><br/>
 					  </a>
 					</li>

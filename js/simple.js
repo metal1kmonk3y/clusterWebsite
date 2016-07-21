@@ -5,11 +5,24 @@ var main = function() {
   $("a.nav-link").removeAttr('target');
   $("#backToTop").removeAttr('target');
   
-   //when window is resized change body padding
+  
+  
+ $("#topMenu, #backToTop").click(function(){
+    $("body").append("Some appended text."); 
+    
+     
+
+    $('html, body').animate({scrollTop: 'href'}, 100);
+    $('html, body').animate({scrollTop: '-=150'}, 100);
+
+ })
+ 
+ 
+ 
+  //when window is resized change body padding
   $(window).resize(function() {
-    var width = $(window).width(); 
-    $("body").append(width);
-    if(width > 750 ){
+    
+    if($(window).width() > 750 ){
       $("body").css("padding-top", 100); 
       window.location.reload();
     }

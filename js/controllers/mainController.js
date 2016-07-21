@@ -1,6 +1,6 @@
 app.controller('MainController', ['$scope', 'serveBasic', 'serveSubmitRun', 
     'serveMenu', 'serveDiagrams', function($scope, serveBasic, serveSubmitRun, 
-    serveMenu, serveDiagrams) { 
+    serveMenu, serveDiagrams, $location, $anchorScroll) { 
     
     //menu array that contains all the menu items
     serveMenu.success(function(data) { 
@@ -20,5 +20,8 @@ app.controller('MainController', ['$scope', 'serveBasic', 'serveSubmitRun',
     serveSubmitRun.success(function(data) {
         $scope.fileSubmitRun = data;
     });
+    
+    
 }]);
+   
    
