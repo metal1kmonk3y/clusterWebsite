@@ -8,10 +8,6 @@ var main = function() {
   
   
  $("#topMenu, #backToTop").click(function(){
-    $("body").append("Some appended text."); 
-    
-     
-
     $('html, body').animate({scrollTop: 'href'}, 100);
     $('html, body').animate({scrollTop: '-=150'}, 100);
 
