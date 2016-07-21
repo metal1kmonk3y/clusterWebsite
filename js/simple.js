@@ -19,11 +19,11 @@ var main = function() {
   $(window).resize(function() {
     
     if($(window).width() > 750 ){
-      $("body").css("padding-top", 100); 
+      $("body").css("padding-top", 112); 
       window.location.reload();
     }
     else {
-      $("body").css("padding-top", 400); 
+      $("body").css("padding-top", 424); 
       window.location.reload();
     }
   });
