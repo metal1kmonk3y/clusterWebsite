@@ -3,7 +3,7 @@
  background-color is sky blue
 */
 body{
-    padding-top: 5em;
+    padding-top: 7em;
     padding-bottom: 5em;
     background-color: #7ec0ee ;
     font-family: lucida sans unicode;
@@ -17,6 +17,7 @@ a{
     background-color: #730019 ;
     color:  #999999;
     border-color: white;
+   
 }
 /* Color of nav bar links*/
 .nav li a{
@@ -77,4 +78,14 @@ pre{
     overflow: auto;
     font-family: helvetica;
     font-style: bold;
+}
+
+#backToG{
+    float: right;
+}
+
+textarea {
+   height: 500px; 
+   width: 100%;
+   overflow: auto;
 }

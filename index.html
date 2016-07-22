@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 	<head>
+		
 		<meta charset="utf-8" />
 		<!-- CSS -->
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
@@ -18,34 +19,35 @@
 		
   	</head>
 	<!--app cluster starts here-->
-	<body ng-app = "cluster" id="status">
+	<body ng-app = "cluster" >
 		<!--main controller starts here-->
-		<div class="main container" ng-controller="MainController" >
+		<div class="main container " ng-controller="MainController" >
 			
+			<section >
 			<!--top navigation menu-->
 			<nav class="navbar navbar-fixed-top navbar">
 			  <div class="container">
-			    <ul class="nav navbar-nav">
+			    <ul class="nav navbar-nav"  id = "topMenu">
 			    	<!--title of website-->
   					<li>
   					<h1 id ="title">{{menu.title}}</h1>
 					</li>	
 			      	<!--menu items-->
 					<li ng-repeat="item in menu.menuItems">
-						<a class="nav-link" href={{item.link}}>{{item.name}}</a>
-					</li>
-					
+						<a class="nav-link" href={{item.link}} >{{item.name}}</a>
 			    </ul>
 			  </div>
 			</nav>
+			</section>
 			
-			<section>
-				<h2 >Cluster Status : </h2>
+			<!-- Cluster Status -->
+			<section id="status">
+				<h2>Cluster Status : </h2>
 				<a href="http://flux.cs.uwlax.edu/ganglia/"><h4>Ganglia</h4></a>
 			</section>
 			
+			<!-- gallery of hwloc diagrams-->
 			<div ng-view id ="hwloc">
-				
 			</div>	
 			
 			
@@ -82,7 +84,6 @@
 				<ol type="I">
 					<!--MPI file items and hello world sample code -->
 					<li>
-						<a id="mpi"></a>
 						<a href="doc/mpi_readme.txt">README</a>
 					</li>
 					<li>
@@ -115,12 +116,8 @@
 						<a href="http://www.open-mpi.org/faq/">Open MPI FAQs</a>
 						(This is about as close to Documentation as the project currently has)
 					</li>
-					
 				</ol>
 			</section>
-			
-				
-			
 	
 			<!--OpenMp usage info-->
 			<section  id="openmp">	
@@ -128,7 +125,6 @@
 				<!--OpenMp files-->
 				<ol type="I">
 					<li>
-						<a id="openmp"></a>
 						<a href="doc/openmp_readme.txt">README</a>
 					</li>
 					<li>
@@ -153,10 +149,6 @@
 				</ol>
 			</section>	
 			
-			<div btf-markdown ng-include="'README.md'">
-			</div>
-		
-		
 			
 			<!--Footer navigation menu-->
 			<nav class="navbar navbar-fixed-bottom" id="footer">
@@ -170,9 +162,8 @@
 					 <a href="http://www.cs.uwlax.edu/" title="To UW Lax CS Website">Computer Science Department</a>
 					</li>
 					<li>
-					  <a href ="#hwloc" id="backToTop"> 
+					  <a href ="#test/#status" id="backToTop"> 
 					  	<img src = "img/upArrow.png" id ="top" title="Back to Top" alt="Top" height="40" width="40"/><br/>
-					  
 					  </a>
 					</li>
 					<li id = "rightFoot">
@@ -183,39 +174,24 @@
 	
 		<!--main controller end-->
 		</div>
-		
-		
-			
-				
-		
-		
-		
-		
-	
 	
 	<!-- Modules -->
     <script src="js/app.js"></script>
 
     <!-- Controllers -->
     <script src="js/controllers/mainController.js"></script>
-     <script src="js/controllers/diagramController.js"></script>
+    <script src="js/controllers/diagramController.js"></script>
     
     <!-- Services -->
     <script src="js/services/serveBasic.js"></script>
     <script src="js/services/serveSubmitRun.js"></script>
     <script src="js/services/serveMenu.js"></script>
     <script src="js/services/serveDiagrams.js"></script>
-     <script src="js/services/serveStatus.js"></script>
-      <script src="js/services/serveRead.js"></script>
-    
-    <!-- Libraries -->
-     <script src="lib/angular-sanitize.js"></script>
-     <script src="lib/markdown.js"></script>
-     <script src="lib/showdown.js"></script>
-   
     
     <!-- Jquery -->
     <script src="js/simple.js"></script>
+    
+    
    
 	</body>
 </html>
