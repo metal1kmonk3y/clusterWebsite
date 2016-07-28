@@ -7,11 +7,11 @@ app.config(function ($routeProvider) {
       templateUrl: 'js/views/home.html' 
     }) 
    .when('/machine/:id', { 
-       controller: 'DiagramController', 
+      controller: 'DiagramController', 
       templateUrl: 'js/views/diagram.html' 
     }) 
     .when('/*' , { 
-       controller: 'MainController', 
+      controller: 'MainController', 
       templateUrl: 'js/views/home.html' 
     }) 
     .otherwise({ 
