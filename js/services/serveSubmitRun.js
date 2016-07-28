@@ -1,5 +1,5 @@
 app.factory('serveSubmitRun', ['$http', function($http) { 
-  return $http.get('sample/submit-run.1.txt') 
+  return $http.get('sample/submit-run.txt') 
             .success(function(data) { 
               return data; 
             }) 

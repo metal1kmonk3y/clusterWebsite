@@ -1,5 +1,5 @@
 app.factory('serveBasic', ['$http', function($http) { 
-  return $http.get('sample/basic.1.txt') 
+  return $http.get('sample/basic.txt') 
             .success(function(data) { 
               return data; 
             }) 
