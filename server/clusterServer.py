@@ -37,12 +37,6 @@ class AccountInfo(object):
 		return conf_data
 
 
-
-
-cherrypy.config.update({'server.socket_host': '127.0.0.1',
-                        'server.socket_port': 9099,
-                       })
-
 if __name__ == '__main__':
     conf = {
 		'/': {
