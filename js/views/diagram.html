@@ -1,6 +1,18 @@
-<h2>{{detail.title}}</h2>
-<h3>{{diagram.name}}</h3>
-<a  href="#/" id = "backToG">close [X]</a>
+<h3>{{detail.subtitle}}</h3>
+<pre>
+    <h4>{{diagram.name}}</h4>
+    {{diagram.cores}} 
+    {{diagram.RAM}} 
+    <a  href="#/" id = "backToG">
+        <img src = "img/back.png" id ="top" title= "Back to Gallery" alt="Close [X]" height="30" width="75"/>
+    </a>
+    
+    <a ng-click="prev()">Previous</a> <a ng-click="next()">Next</a>
+    
+    <a href = {{diagram.img}} title="Enlarge"><img class ="img-responsive" ng-src="{{diagram.img}}"> </a><br/>
+</pre>
 
-<a href = {{diagram.source}}><img class ="img-responsive" ng-src="{{diagram.source}}"> </a><br/>
 
+
+
+					  

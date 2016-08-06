@@ -39,9 +39,6 @@ class AccountInfo(object):
 
 
 
-cherrypy.config.update({'server.socket_host': '127.0.0.1',
-                        'server.socket_port': 9099,
-                       })
 
 if __name__ == '__main__':
     conf = {
@@ -52,8 +49,8 @@ if __name__ == '__main__':
             'tools.response_headers.headers': [('Content-Type', 'text/plain')],
 			}
         }
-    cherrypy.tree.mount(CurrentStatus(), 'api/docs/currentStatus.json', config = conf)
-    cherrypy.tree.mount(Architecture(), 'api/docs/architecture.json', config = conf)
-    cherrypy.tree.mount(AccountInfo(), 'api/docs/accountInfo.json', config = conf)
+    cherrypy.tree.mount(CurrentStatus(), '/docs/currentStatus.json', config = conf)
+    cherrypy.tree.mount(Architecture(), '/docs/architecture.json', config = conf)
+    cherrypy.tree.mount(AccountInfo(), '/docs/accountInfo.json', config = conf)
     cherrypy.engine.start()
     cherrypy.engine.block()	

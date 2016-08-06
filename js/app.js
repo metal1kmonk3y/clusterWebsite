@@ -6,7 +6,7 @@ app.config(function ($routeProvider) {
       controller: 'MainController', 
       templateUrl: 'js/views/home.html' 
     }) 
-   .when('/machine/:id', { 
+   .when('/flux/:id', { 
       controller: 'DiagramController', 
       templateUrl: 'js/views/diagram.html' 
     }) 

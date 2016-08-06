@@ -27,7 +27,7 @@ a{
 /* Color of nav bar links when hovered upon*/
 .nav li a:hover{
     color: #730019 ;
-    background-color: #7ec0ee; 
+    background-color: #83A4FF; 
 }
 /* makes the gallery of pdfs stack inline then in block*/
 .gallery li{
@@ -59,9 +59,9 @@ a{
     color:#999999;
 }
 /* Color of the code sections under pre */
-pre{
-    color: yellow;
-    background-color: black;
+pre, pre a{
+    color: white;
+    background-color:#0d3d56;
     white-space: pre-line;
 }
 /* margin of title and bottom logo */
@@ -79,17 +79,23 @@ pre{
     font-family: helvetica;
     font-style: bold;
 }
-
-#backToG{
-    float: right;
+/* floats close[x] to the right */
+#backToG {
+    float: left;
+    
 }
 
-textarea {
-   height: 500px; 
-   width: 100%;
-   overflow: auto;
-}
-
+/* makes all unordered list without bullet points */
 ul {
     list-style-type:none;
+}
+/* style of keys from json files */
+.keys{
+    font-style: bold;
+    color: black;
+}
+.img-responsive{
+    cursor: -moz-zoom-in; 
+    cursor: -webkit-zoom-in; 
+    cursor: zoom-in;
 }

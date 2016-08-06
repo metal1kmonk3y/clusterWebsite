@@ -1,47 +1,46 @@
 {   
+    "title" : "Architecture:",
     "architecture" : {
-        "title" : "Architecture",
-        "description" : "Flux is a five (5) node cluster with one head node, one large memory node, and three compute nodes.  The three compute nodes are managed by a SLURM scheduler.  Each compute node contains x processor cores, y sockets, and z RAM as can be seen in the hwloc diagrams.",
-        "total_nodes" : 5,
-        "total_cores" : 48,
-        "total_RAM" : 624,
-        "nodes": 
-        [
-            {
-                "cores_per_node" : 12,
-                "RAM_per_node" : 96,
-                "names" : "flux",
-                "imgs" : "img/flux.png"
-            },
-            {
-                "cores_per_node" : 12,
-                "RAM_per_node" :384 ,
-                "names" : "flux1",
-                "imgs" : "img/flux1.png"
-            },
-            {
-                "cores_per_node" : 12,
-                "RAM_per_node" : 48,
-                "names" : "flux2",
-                "imgs" : ".img/flux2.png"
-                
-            },
-            {
-                "cores_per_node" : 12,
-                "RAM_per_node" : 48,
-                "names" : "flux3",
-                "imgs" : "img/flux3.png"
-                
-            },
-            {
-                "cores_per_node" : 12,
-                "RAM_per_node" : 48,
-                "names" : "flux4",
-                "imgs" : "img/flux4.png"
-                
-            }
+        "Description" : "Flux is a five (5) node cluster with one head node, one large memory node, and three compute nodes.  The three compute nodes are managed by a SLURM scheduler.  Each compute node contains x processor cores, y sockets, and z RAM as can be seen in the hwloc diagrams.",
+        "Total Nodes" : 5,
+        "Total Cores" : 48,
+        "Total RAM" : 624
+    },
+    
+    "subtitle": "hwloc Node Diagrams:",
+    "nodes": 
+    [
+        {   
+            "cores" : "Cores per node: 12",
+            "RAM" : "Ram per node: 96 GB",
+            "name" : "Flux : head node",
+            "img" : "img/flux.png"
+        },
+        {
+            "cores" : "Cores per node: 12",
+            "RAM" : "Ram per node: 384 GB",
+            "name" : "Flux 1 : large memory",
+            "img" : "img/flux1.png"
+        },
+        {
+            "cores" : "Cores per node: 12",
+            "RAM" : "Ram per node: 48 GB",
+            "name" : "Flux 2: compute node",
+            "img" : "img/flux2.png"
+        },
+        {
+            "cores" : "Cores per node: 12",
+            "RAM" : "Ram per node: 48 GB",
+            "name" : "Flux 3 : compute node",
+            "img" : "img/flux3.png"
             
-        ]
-    }
+        },
+        {
+            "cores" : "Cores per node: 12",
+            "RAM" : "Ram per node: 48 GB",
+            "name" : "Flux 4 : compute node ",
+            "img" : "img/flux4.png"
+        }
+    ]
 }
 
