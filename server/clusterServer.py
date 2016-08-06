@@ -11,7 +11,7 @@ class CurrentStatus(object):
 	@cherrypy.tools.json_out()
 	def GET(self):
 		# get data from file
-		conf_data = ConfigObj("../doc/current_status.conf")
+		conf_data = ConfigObj('../doc/current_status.conf')
 		return conf_data
 		
 class Architecture(object):
@@ -22,8 +22,8 @@ class Architecture(object):
 	@cherrypy.tools.json_out()
 	def GET(self):
 		# get data from file
-		with open("../json/arch.json") as data_file:    
-			return json.load(data_file)
+		with open('../json/arch.json') as f:    
+			return json.load(f)
 			
 class AccountInfo(object):
 	exposed = True
@@ -33,7 +33,7 @@ class AccountInfo(object):
 	@cherrypy.tools.json_out()
 	def GET(self):
 		# get data from file
-		conf_data = ConfigObj("../doc/account_info.conf")
+		conf_data = ConfigObj('../doc/account_info.conf')
 		return conf_data
 
 cherrypy.config.update({'server.socket_host': '127.0.0.1',
