@@ -1,6 +1,6 @@
 app.controller('MainController', ['$scope', 'serveBasic', 'serveSubmitRun', 
     'serveMenu', 'serveArch', function($scope, serveBasic, serveSubmitRun, 
-    serveMenu, serveArch, $location, $anchorScroll) { 
+    serveMenu, serveArch) { 
     
     //menu array that contains all the menu items
     serveMenu.success(function(data) { 

@@ -81,7 +81,7 @@ pre, pre a{
 }
 /* floats close[x] to the right */
 #backToG {
-    float: left;
+    float: right;
     
 }
 
@@ -93,9 +93,25 @@ ul {
 .keys{
     font-style: bold;
     color: black;
+    font-size: 18px;
+    
 }
+
 .img-responsive{
     cursor: -moz-zoom-in; 
     cursor: -webkit-zoom-in; 
     cursor: zoom-in;
+}
+
+.arrow {
+    display: inline-block;
+    float: center;
+}
+#backToTop {
+    background-color: black;
+   
+}
+#backToTop:hover {
+    background-color: #83A4FF;
+    color: #730019 ;
 }

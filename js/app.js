@@ -19,8 +19,3 @@ app.config(function ($routeProvider) {
     }); 
 });
 
-app.run(function($rootScope, $location, $anchorScroll) {
-  $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
-    if($location.hash()) $anchorScroll();  
-  });
-});
