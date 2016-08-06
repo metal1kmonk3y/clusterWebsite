@@ -23,9 +23,8 @@ class Architecture(object):
 	def GET(self):
 		# get data from file
 		with open("../json/arch.json") as data_file:    
-    		return json.load(data_file)
-		
-
+			return json.load(data_file)
+			
 class AccountInfo(object):
 	exposed = True
 	
