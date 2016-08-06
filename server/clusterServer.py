@@ -22,8 +22,7 @@ class Architecture(object):
 	@cherrypy.tools.json_out()
 	def GET(self):
 		# get data from file
-		conf_data = ConfigObj("../doc/arch.conf")
-		return conf_data
+		return json.loads("../doc/arch.json")
 
 class AccountInfo(object):
 	exposed = True
