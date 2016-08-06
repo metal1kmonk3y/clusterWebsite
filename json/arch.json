@@ -41,6 +41,12 @@
             "name" : "Flux 4 : compute node ",
             "img" : "img/flux4.png"
         }
-    ]
+    ],
+    
+    "buttons" : {
+        "previous" : "Previous Diagram",
+        "next" : "Next Diagram",
+        "back": "Back To Gallery"
+    }
 }
 

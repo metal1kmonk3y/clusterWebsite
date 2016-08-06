@@ -3,8 +3,8 @@
     <h4>{{diagram.name}}</h4>
     {{diagram.cores}} 
     {{diagram.RAM}} 
-    <a class="btn btn-primary"  role="button" href="#/" id = "backToG">Back To Gallery</a>
-    <a ng-click="prev()" class="arrow btn btn-primary btn-sm" role="button">Previous Diagram</a><a ng-click="next()" class="arrow btn btn-primary btn-sm" role="button"> Next Diagram</a>
+    <a class="btn btn-primary"  role="button" href="#/" id = "backToG">{{detail.buttons.back}}</a>
+    <a ng-click="prev()" class="arrow btn btn-primary btn-sm" role="button">{{detail.buttons.previous}}</a><a ng-click="next()" class="arrow btn btn-primary btn-sm" role="button"> {{detail.buttons.next}}</a>
     
     <a href = {{diagram.img}} title="Enlarge"><img class ="img-responsive" ng-src="{{diagram.img}}"> </a><br/>
 </pre>
