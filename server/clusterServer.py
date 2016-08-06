@@ -22,7 +22,7 @@ class Architecture(object):
 	@cherrypy.tools.json_out()
 	def GET(self):
 		# get data from file
-		return json.loads("../json/arch.json")
+		return json.dumps("../json/arch.json")
 
 class AccountInfo(object):
 	exposed = True
