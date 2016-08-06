@@ -17,7 +17,6 @@ a{
     background-color: #730019 ;
     color:  #999999;
     border-color: white;
-   
 }
 /* Color of nav bar links*/
 .nav li a{
@@ -36,14 +35,13 @@ a{
 }
 /* sets the footer's padding*/
 #footer{
-     padding-top: 1em;   
-     text-align: center;
-     color:#999999;
+    padding-top: 1em;   
+    text-align: center;
+    color:#999999;
 }
 /* sets the footer items horizontanly*/
 #footer li{
     display: inline-block;
-    
 }
 /* Pushes the contact email to the right */
 #rightFoot{
@@ -52,7 +50,6 @@ a{
 /* Pushes the school info to the left */
 #leftFoot{
     float: left;
-    
 }
 /* footer link colors */
 #footer li a{
@@ -82,7 +79,6 @@ pre, pre a{
 /* floats close[x] to the right */
 #backToG {
     float: right;
-    
 }
 
 /* makes all unordered list without bullet points */
@@ -94,23 +90,18 @@ ul {
     font-style: bold;
     color: black;
     font-size: 18px;
-    
 }
-
+/* responsive images have zoom in cursor */
 .img-responsive{
     cursor: -moz-zoom-in; 
     cursor: -webkit-zoom-in; 
     cursor: zoom-in;
 }
-
-.arrow {
-    display: inline-block;
-    float: center;
-}
+/* style of back to top button */
 #backToTop {
     background-color: black;
-   
 }
+/*style of back to top button on hover */
 #backToTop:hover {
     background-color: #83A4FF;
     color: #730019 ;

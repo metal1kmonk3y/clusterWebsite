@@ -48,10 +48,11 @@
 			<section id="status">
 				<h2>Cluster Status : </h2>
 				<ul>
-					<a href="http://flux.cs.uwlax.edu/ganglia/"><h4>Ganglia</h4></a>
+					<a href="{{menu.menuItems[0].url}}"><h4>Ganglia</h4></a>
 				</ul>
 			</section>
 			
+			<!--Architecture info -->
 			<section>
 				<h2>{{arch.title}}</h2>
 				<ul>
@@ -60,12 +61,6 @@
 				   		{{value}}
 				   	</li>
 				</ul>
-				
-			
-				
-				
-			
-			    
 			    <!-- gallery of hwloc diagrams-->
 				<div ng-view id ="hwloc">
 				</div>

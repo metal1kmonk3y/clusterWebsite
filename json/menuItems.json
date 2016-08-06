@@ -4,7 +4,8 @@
     [
         {
         "name": "Current Status",
-        "link":  "#/test#status"
+        "link":  "#/test#status",
+        "url" : "http://flux.cs.uwlax.edu/ganglia/"
         },
         {
         "name": "Architecture of Machine",
