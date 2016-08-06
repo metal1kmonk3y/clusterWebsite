@@ -24,7 +24,6 @@ app.controller('MainController', ['$scope', 'serveBasic', 'serveSubmitRun',
      //architecture file served 
     serveArch.success(function(data) {
         $scope.arch = data;
-        console.log(data);
     });
 }]);
    

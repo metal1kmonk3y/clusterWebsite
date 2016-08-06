@@ -89,3 +89,7 @@ textarea {
    width: 100%;
    overflow: auto;
 }
+
+ul {
+    list-style-type:none;
+}

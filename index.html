@@ -35,26 +35,37 @@
 			      	<!--menu items-->
 					<li ng-repeat="item in menu.menuItems">
 						<a class="nav-link" href={{item.link}} >{{item.name}}</a>
+					</li>
 			    </ul>
 			  </div>
 			</nav>
 			</section>
 			
+			
+			
 			<!-- Cluster Status -->
 			<section id="status">
 				<h2>Cluster Status : </h2>
-				<a href="http://flux.cs.uwlax.edu/ganglia/"><h4>Ganglia</h4></a>
+				<ul>
+					<a href="http://flux.cs.uwlax.edu/ganglia/"><h4>Ganglia</h4></a>
+				</ul>
 			</section>
 			
 			<section>
 				
-				
-				
-			</section
 			
-			<!-- gallery of hwloc diagrams-->
-			<div ng-view id ="hwloc">
-			</div>	
+				<h1>{{arch.architecture.description}}</h1>
+				
+				
+				
+			
+			    
+			    <!-- gallery of hwloc diagrams-->
+				<div ng-view id ="hwloc">
+				</div>
+			</section>
+			
+				
 			
 			
 			
@@ -158,7 +169,7 @@
 			
 			<!--Footer navigation menu-->
 			<nav class="navbar navbar-fixed-bottom" id="footer">
-	  			<ul class="container" style="list-style-type:none">
+	  			<ul class="container" >
 	  				<!--Footer Items-->
 	    			<li id="leftFoot">
 					 <a href="http://www.uwlax.edu"  title="To UW Lax Website"><img id ="logo" src="img/logo_uwl.jpg" height="44" width="114"/><a/>
