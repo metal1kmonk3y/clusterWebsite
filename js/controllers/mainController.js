@@ -1,12 +1,15 @@
 app.controller('MainController', ['$scope', 'serveBasic', 'serveSubmitRun', 
-    'serveMenu', 'serveArch', function($scope, serveBasic, serveSubmitRun, 
-    serveMenu, serveArch) { 
+    'serveMenu', 'serveArch','serveDiagrams', function($scope, serveBasic, serveSubmitRun, 
+    serveMenu, serveArch, serveDiagrams) { 
     
     //menu array that contains all the menu items
     serveMenu.success(function(data) { 
         $scope.menu = data; 
     });
     
+     serveDiagrams.success(function(data) {
+        $scope.file = data;
+    });
     
     
     //basic code file served   

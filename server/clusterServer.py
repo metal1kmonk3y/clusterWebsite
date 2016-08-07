@@ -1,7 +1,19 @@
+# -*- coding: UTF-8 -*-
 import json
 import io
 import cherrypy
 from configobj import ConfigObj
+
+class MenuItems(object):
+	exposed = True
+	
+	@cherrypy.tools.accept(media='text/plain')
+	@cherrypy.tools.json_in()
+	@cherrypy.tools.json_out()
+	def GET(self):
+		# get data from file   
+		with open("../json/menuItems.json") as json_data: 
+        	 return json_data
 
 class CurrentStatus(object):
 	exposed = True
@@ -10,8 +22,8 @@ class CurrentStatus(object):
 	@cherrypy.tools.json_in()
 	@cherrypy.tools.json_out()
 	def GET(self):
-		# get data from file
-		conf_data = ConfigObj('../doc/current_status.conf')
+		# get data from file        
+		conf_data = ConfigObj("../doc/current_status.conf")
 		return conf_data
 		
 class Architecture(object):
@@ -21,9 +33,8 @@ class Architecture(object):
 	@cherrypy.tools.json_in()
 	@cherrypy.tools.json_out()
 	def GET(self):
-		# get data from file
-		with open('../json/arch.json') as f:    
-			return json.load(f)
+		# get data from file                   
+         return json.load(open("../json/arch.json")) 
 			
 class AccountInfo(object):
 	exposed = True
@@ -32,11 +43,11 @@ class AccountInfo(object):
 	@cherrypy.tools.json_in()
 	@cherrypy.tools.json_out()
 	def GET(self):
-		# get data from file
-		conf_data = ConfigObj('../doc/account_info.conf')
+		# get data from file json.dumps(conf_data, sort_keys=True, indent= 240)
+		conf_data = ConfigObj("../doc/account_info.conf")
 		return conf_data
-
-cherrypy.config.update({'server.socket_host': '127.0.0.1',
+        
+cherrypy.config.update({
                         'server.socket_port': 9099,
                        })
 
@@ -49,6 +60,7 @@ if __name__ == '__main__':
             'tools.response_headers.headers': [('Content-Type', 'text/plain')],
 			}
         }
+    cherrypy.tree.mount(MenuItems(), '/docs/menuItems.json', config = conf)
     cherrypy.tree.mount(CurrentStatus(), '/docs/currentStatus.json', config = conf)
     cherrypy.tree.mount(Architecture(), '/docs/architecture.json', config = conf)
     cherrypy.tree.mount(AccountInfo(), '/docs/accountInfo.json', config = conf)
