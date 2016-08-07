@@ -12,8 +12,7 @@ class MenuItems(object):
 	@cherrypy.tools.json_out()
 	def GET(self):
 		# get data from file   
-		with open("../json/menuItems.json") as json_data: 
-        	 return json_data
+		return open("../json/menuItems.json") 
 
 class CurrentStatus(object):
 	exposed = True
