@@ -31,8 +31,10 @@ class Architecture(object):
 	@cherrypy.tools.json_in()
 	@cherrypy.tools.json_out()
 	def GET(self):
-		# get data from file                   
-         return json.load(open("../doc/arch.conf")) 
+		# get data from file 
+		 conf_data = ConfigObj("../doc/arch.conf")
+		 return conf_data
+         
 
 class Diagrams(object):
 	exposed = True
