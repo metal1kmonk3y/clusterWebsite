@@ -1,7 +1,8 @@
 /* global app */
 app.controller('MainController', ['$scope', 'serveBasic', 'serveSubmitRun', 
-    'serveMenu', 'serveArch','serveDiagrams', function($scope, serveBasic, 
-    serveSubmitRun, serveMenu, serveArch, serveDiagrams) { 
+    'serveMenu', 'serveArch','serveDiagrams', 'serveStatus'
+    , function($scope, serveBasic, serveSubmitRun, serveMenu, serveArch, 
+    serveDiagrams, serveStatus) { 
     
     //menu array that contains all the menu items
     serveMenu.success(function(data) { 
@@ -26,6 +27,11 @@ app.controller('MainController', ['$scope', 'serveBasic', 'serveSubmitRun',
      //architecture file served 
     serveArch.success(function(data) {
         $scope.arch = data;
+    });
+    
+     //architecture file served 
+    serveStatus.success(function(data) {
+        $scope.currStatus = data;
     });
 }]);
    

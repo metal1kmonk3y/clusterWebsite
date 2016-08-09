@@ -8,7 +8,6 @@ app.controller('DiagramController',['$scope', 'serveDiagrams', '$routeParams', f
     serveDiagrams.success(function(data) {
         $scope.detail = data;
         $scope.diagram = $scope.detail.nodes[idx];
-       
     });  
     
     //next diagram, if no more next then back to first

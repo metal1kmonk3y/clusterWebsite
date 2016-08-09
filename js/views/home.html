@@ -1,9 +1,8 @@
 <!--hwloc node diagrams-->
-<section>
-	<h2>{{arch.architecture.subtitle}}</h2>
-	<ul class = "gallery" style="list-style-type:none">
-		<!--pdfs of hwloc node diagrams-->
-		<li ng-repeat="machine in arch.architecture.nodes">
+<section  >
+	<h2>{{diagrams.subtitle}}</h2>
+	<ul class = "gallery">
+			<li ng-repeat="machine in diagrams.nodes">
 			<a href="#/flux/{{$index}}">
 			<img ng-src="{{machine.img}}" width="360" height="200"> 
 			  	<p>{{machine.name}}</p>
