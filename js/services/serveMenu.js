@@ -1,5 +1,6 @@
+/*global app*/
 app.factory('serveMenu', ['$http', function($http) { 
-  return $http.get('json/menuItems.json') 
+  return $http.get('http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite/server/api/docs/menuItems.json') 
             .success(function(data) { 
               return data; 
             })

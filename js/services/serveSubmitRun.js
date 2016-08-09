@@ -1,3 +1,4 @@
+/*global app*/
 app.factory('serveSubmitRun', ['$http', function($http) { 
   return $http.get('sample/submit-run.txt') 
             .success(function(data) { 

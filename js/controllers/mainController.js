@@ -1,3 +1,4 @@
+/*global app*/
 app.controller('MainController', ['$scope', 'serveBasic', 'serveSubmitRun', 
     'serveMenu', 'serveArch','serveDiagrams', function($scope, serveBasic, serveSubmitRun, 
     serveMenu, serveArch, serveDiagrams) { 
@@ -8,7 +9,7 @@ app.controller('MainController', ['$scope', 'serveBasic', 'serveSubmitRun',
     });
     
      serveDiagrams.success(function(data) {
-        $scope.file = data;
+        $scope.diagrams = data;
     });
     
     

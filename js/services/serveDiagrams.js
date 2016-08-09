@@ -1,5 +1,6 @@
+/*global app*/
 app.factory('serveDiagrams', ['$http', function($http) { 
-  return $http.get('http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite/server/api/docs/accountInfo.json') 
+  return $http.get('http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite/server/api/docs/architecture.json') 
             .success(function(data) { 
               return data; 
             })

@@ -23,20 +23,20 @@
             "img" : "img/flux1.png"
         },
         {
-            "cores" : "Cores per node: 12",
+            "cores" : "Cores per node: 8",
             "RAM" : "Ram per node: 48 GB",
             "name" : "Flux 2: compute node",
             "img" : "img/flux2.png"
         },
         {
-            "cores" : "Cores per node: 12",
+            "cores" : "Cores per node: 8",
             "RAM" : "Ram per node: 48 GB",
             "name" : "Flux 3 : compute node",
             "img" : "img/flux3.png"
             
         },
         {
-            "cores" : "Cores per node: 12",
+            "cores" : "Cores per node: 8",
             "RAM" : "Ram per node: 48 GB",
             "name" : "Flux 4 : compute node ",
             "img" : "img/flux4.png"

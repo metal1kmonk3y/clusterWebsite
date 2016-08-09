@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 import json
 import io
 import cherrypy
@@ -12,7 +11,7 @@ class MenuItems(object):
 	@cherrypy.tools.json_out()
 	def GET(self):
 		# get data from file   
-		return open("../json/menuItems.json") 
+		return json.load(open("../json/menuItems.json")) 
 
 class CurrentStatus(object):
 	exposed = True
