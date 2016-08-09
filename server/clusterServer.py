@@ -2,6 +2,7 @@ import json
 import io
 import cherrypy
 from configobj import ConfigObj
+from collections import OrderedDict
 
 class MenuItems(object):
 	exposed = True
@@ -11,7 +12,7 @@ class MenuItems(object):
 	@cherrypy.tools.json_out()
 	def GET(self):
 		# get data from file   
-		return json.load(open("../json/menuItems.json")) 
+		return json.load(open("../json/menuItems.json"),object_pairs_hook=OrderedDict) 
 
 class CurrentStatus(object):
 	exposed = True
@@ -21,7 +22,7 @@ class CurrentStatus(object):
 	@cherrypy.tools.json_out()
 	def GET(self):
 		# get data from file        
-		conf_data = ConfigObj("../doc/current_status.conf")
+		conf_data = ConfigObj("../doc/curr_status.conf")
 		return conf_data
 		
 class Architecture(object):
@@ -44,7 +45,7 @@ class Diagrams(object):
 	@cherrypy.tools.json_out()
 	def GET(self):
 		# get data from file                   
-         return json.load(open("../json/arch.json"))          
+         return json.load(open("../json/arch.json"),object_pairs_hook=OrderedDict)          
 			
 class AccountInfo(object):
 	exposed = True
