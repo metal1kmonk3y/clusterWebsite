@@ -1,5 +1,6 @@
+/* global app */
 app.factory('serveArch', ['$http', function($http) { 
-  return $http.get('http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite/server/api/docs/architecture.conf') 
+  return $http.get('http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite/server/api/docs/architecture.json') 
             .success(function(data) { 
               console.log(data);
               return data; 

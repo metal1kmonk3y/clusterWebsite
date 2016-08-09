@@ -32,7 +32,17 @@ class Architecture(object):
 	@cherrypy.tools.json_out()
 	def GET(self):
 		# get data from file                   
-         return json.load(open("../json/arch.json")) 
+         return json.load(open("../doc/arch.conf")) 
+
+class Diagrams(object):
+	exposed = True
+	
+	@cherrypy.tools.accept(media='text/plain')
+	@cherrypy.tools.json_in()
+	@cherrypy.tools.json_out()
+	def GET(self):
+		# get data from file                   
+         return json.load(open("../json/arch.json"))          
 			
 class AccountInfo(object):
 	exposed = True
@@ -41,7 +51,7 @@ class AccountInfo(object):
 	@cherrypy.tools.json_in()
 	@cherrypy.tools.json_out()
 	def GET(self):
-		# get data from file json.dumps(conf_data, sort_keys=True, indent= 240)
+		# get data from file 
 		conf_data = ConfigObj("../doc/account_info.conf")
 		return conf_data
         
@@ -62,5 +72,6 @@ if __name__ == '__main__':
     cherrypy.tree.mount(CurrentStatus(), '/docs/currentStatus.json', config = conf)
     cherrypy.tree.mount(Architecture(), '/docs/architecture.json', config = conf)
     cherrypy.tree.mount(AccountInfo(), '/docs/accountInfo.json', config = conf)
+    cherrypy.tree.mount(Diagrams(), '/docs/diagrams.json', config = conf)
     cherrypy.engine.start()
     cherrypy.engine.block()	

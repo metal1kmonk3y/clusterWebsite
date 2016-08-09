@@ -1,6 +1,6 @@
-/*global app*/
+/* global app */
 app.factory('serveDiagrams', ['$http', function($http) { 
-  return $http.get('http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite/server/api/docs/architecture.json') 
+  return $http.get('http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite/server/api/docs/diagrams.json') 
             .success(function(data) { 
               return data; 
             })
