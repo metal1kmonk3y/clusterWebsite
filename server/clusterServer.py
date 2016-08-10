@@ -71,6 +71,7 @@ if __name__ == '__main__':
             'tools.response_headers.headers': [('Content-Type', 'text/plain')],
 			}
         }
+        
     cherrypy.tree.mount(MenuItems(), '/menuItems.json', config = conf)
     cherrypy.tree.mount(CurrentStatus(), '/currentStatus.json', config = conf)
     cherrypy.tree.mount(Architecture(), '/architecture.json', config = conf)

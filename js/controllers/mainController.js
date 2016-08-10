@@ -2,7 +2,7 @@
 app.controller('MainController', ['$scope', 'serveBasic', 'serveSubmitRun', 
     'serveMenu', 'serveArch','serveDiagrams', 'serveStatus','serveAccountInfo'
     , function($scope, serveBasic, serveSubmitRun, serveMenu, serveArch, 
-    serveDiagrams, serveStatus,serveAccountInfo) { 
+    serveDiagrams, serveStatus, serveAccountInfo) { 
     
     //menu array that contains all the menu items
     serveMenu.success(function(data) { 
