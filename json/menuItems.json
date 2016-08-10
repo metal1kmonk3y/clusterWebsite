@@ -1,11 +1,11 @@
 {
     "title": "Flux Cluster",
+    "img": "img/fav_icon.png",
     "menuItems": 
     [
         {
         "name": "Current Status",
-        "link":  "#/test#status",
-        "url" : "http://flux.cs.uwlax.edu/ganglia/"
+        "link":  "#/test#status"
         },
         {
         "name": "Architecture of Machine",

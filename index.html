@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="cluster" ng-controller="MainController">
 	<head>
 		
 		<meta charset="utf-8" />
@@ -13,15 +13,15 @@
 		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		  
-		<title>Flux Cluster</title>
-		<link href="img/fav_icon.png" type="image/x-icon" rel="shortcut icon">
-		<link href="img/fav_icon.png" type="image/x-icon" rel="icon">
+		<title>{{menu.title}}</title>
+		<link href={{menu.img}} type="image/x-icon" rel="shortcut icon">
+		<link href={{menu.img}} type="image/x-icon" rel="icon">
 		
   	</head>
 	<!--app cluster starts here-->
-	<body ng-app = "cluster" >
+	<body>
 		<!--main controller starts here-->
-		<div class="main container " ng-controller="MainController" >
+		<div class="main container ">
 			
 			<section >
 			<!--top navigation menu-->
@@ -45,7 +45,7 @@
 			<section id="status">
 				<h2>{{currStatus.title}}</h2>
 				<ul>
-					<a href="{{currStatus.URL}}"><h4>{{currStatus.description}}</h4></a>
+					<a href="{{currStatus.URL}}">{{currStatus.description}}</a>
 				</ul>
 			</section>
 		
@@ -54,8 +54,9 @@
 			<section>
 				<h2>{{diagrams.title}}</h2>
 				<ul>
+					{{diagrams.description}}
 					<li ng-repeat="(key, value) in diagrams.architecture">
-						<span class = "keys">{{key}} :</span>
+						<span class="keys">{{key}} :</span>
 				   		{{value}}
 				   	</li>
 				</ul>
@@ -203,6 +204,7 @@
     <script src="js/services/serveDiagrams.js"></script>
 	<script src="js/services/serveArch.js"></script>
 	<script src="js/services/serveStatus.js"></script>
+	<script src="js/services/accountInfo.js"></script>
     
     <!-- Jquery -->
     <script src="js/simple.js"></script>

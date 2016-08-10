@@ -1,8 +1,8 @@
 /* global app */
 app.controller('MainController', ['$scope', 'serveBasic', 'serveSubmitRun', 
-    'serveMenu', 'serveArch','serveDiagrams', 'serveStatus'
+    'serveMenu', 'serveArch','serveDiagrams', 'serveStatus','serveAccountInfo'
     , function($scope, serveBasic, serveSubmitRun, serveMenu, serveArch, 
-    serveDiagrams, serveStatus) { 
+    serveDiagrams, serveStatus,serveAccountInfo) { 
     
     //menu array that contains all the menu items
     serveMenu.success(function(data) { 
@@ -32,6 +32,11 @@ app.controller('MainController', ['$scope', 'serveBasic', 'serveSubmitRun',
      //architecture file served 
     serveStatus.success(function(data) {
         $scope.currStatus = data;
+    });
+    
+    //Account information file served 
+    serveAccountInfo.success(function(data) {
+        $scope.actInfo = data;
     });
 }]);
    

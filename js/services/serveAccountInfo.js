@@ -1,6 +1,6 @@
 /* global app */
-app.factory('serveMenu', ['$http', function($http) { 
-  return $http.get('http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite/server/api/menuItems.json') 
+app.factory('serveAccountInfo', ['$http', function($http) { 
+  return $http.get('http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite/server/api/accountInfo.json') 
             .success(function(data) { 
               return data; 
             })
