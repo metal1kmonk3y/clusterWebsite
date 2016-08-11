@@ -1,0 +1,42 @@
+{
+    "title" : "Running a Job:",
+    "description" : "This section describes how to run a job. flux uses SLURM for batch scheduling and resource management. See resources for more information about SLURM.\nHigh performance parallel computing codes generally run in 'batch' mode. Batch jobs are controlled by scripts written by the user and submitted to a batch system that manages the compute resource and schedules the job to run based on a set of policies. In general, batch systems work on a first-in, first-out basis, but this is subject to a number of constraints.",
+
+    "sections" :
+    [
+        {
+            "subtitle": "Preparing a batchscript:",
+            "description" : "Batch scripts consist of two parts: 1) a set of directives that describe your resource requirements (time, number of processors, etc.) and 2) UNIX commands that perform your computations. These UNIX commands may create directories, transfer files, etc.; anything you can type at a UNIX shell prompt. Batch scripts are submitted to the 'batch system,' where they are queued awaiting free resources.\nThe actual execution of your parallel job, however, is handled by a special command, called a job launcher. In a generic Linux environment, such as flux, this utility is called 'mpirun'.\nBelow is a sample batchscript that launches a parallel job.",
+            "display_file" : "sample.bs"
+        },
+        {
+            "subtitle": "More on SLURM:",
+            "description" : "The following commands can be used on flux to interact with SLURM.",
+            "commands" : {
+                "sinfo" : "Show basic information about the nodes available in the system\n<tt>shell$ sinfo<\/tt>",
+                "squeue" : "Show information about the job queue (e.g., which jobs are running, versus queued)\n<tt>shell$ squeue<\/tt>",
+                "sbatch": "Submit a batch job. Does not block in the shell, but queues the job for later execution. See example script above for syntax and some common parameters.\n<tt>shell$ sbatch mysript.sh<\/tt>",
+                "salloc" : "Obtain a slurm allocation to use. Blocks until allocation is available. This is useful if you want to experiment with the allocation interactively. Most users will find this better/easier to use than srun for this purpose.\n
+                <tt># Allocate two nodes from the available pool of nodes<\/tt>\n
+                <tt>shell$ salloc -N 2<\/tt>\n
+                <tt># The above may block until the resources are available. Once the command returns<\/tt>\n
+                <tt># then a prompt will be provided for you to interact with the allocation<\/tt>\n
+                <tt>shell$ mpirun hostname | sort | uniq -c<\/tt>\n
+                <tt>8 flux2.cs.uwlax.edu<\/tt>\n
+                <tt>8 flux3.cs.uwlax.edu<\/tt>\n
+                <tt># when you are all done make sure to exit, which will release the allocation<\/tt>\n
+                <tt>shell$ exit<\/tt>\n",
+
+                "srun" : "Run a script interactively or allocate resources for interactive use\n
+                <tt># Allocate two nodes from the available pool of nodes<\/tt>\n
+                <tt>shell$ srun -N 2<\/tt>\n
+                <tt># Allocate two nodes from the list of nodes provided, when available<\/tt>\n
+                <tt>shell$ srun -N 2 --nodelist=flux2,flux3,flux4<\/tt>",
+
+                "scancel" : "Kill a job by it's Job ID (use squeue to get Job ID)\n
+                <tt>shell$ scancel 12345<\/tt>"
+            },
+            "display_file" : "common_slurm.txt"
+        }
+    ]
+}

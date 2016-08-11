@@ -1,0 +1,24 @@
+###########################################
+# Common Examples
+###########################################
+
+## Launch a script to run on a remote machine with all of the parameters supplied in the comments
+  shell$ sbatch basic.sh
+
+## Launch a script to run on a set of remote machines overriding the -N parameter inside
+  shell$ sbatch -N 3 basic.sh
+
+
+## Run a Command interactively on a node
+  # First allocate the nodes for interactive use (here requesting two nodes)
+  shell$ salloc -N 2
+
+  # Then use srun to run a program on all of the nodes
+  shell$ srun hostname
+
+  # Make sure to release the allocation when finished
+  shell$ exit
+
+
+## Alternative way to allocate and run an interactive shell (salloc version above is preferred)
+  shell$ srun -N 1 --pty $SHELL

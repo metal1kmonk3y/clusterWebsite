@@ -1,0 +1,19 @@
+myhost> ssh flux.cs.uwlax.edu -l grace
+grace@flux.cs.uwlax.edu's password:  <enter password for user grace>
+Last login: Wed Aug 10 15:29:55 2016 from XXX.XXX.XXX.XXX
+####################################################################
+#            Welcome to the Flux Cluster
+#
+# General info.: http://flux.cs.uwlax.edu/
+# Server status: http://flux.cs.uwlax.edu/ganglia/
+#
+# OnRamp Port Allocation:
+#      <user>     |  <server>  |  <pce>  |  notes
+#  ================================================================
+#      onramp     |    9090    |   9091  |  stable, tracks master
+#   onramp-debug  |    9098    |   9099  |  collaborative debugging
+#      ssfoley    |    9092    |   9093  |  personal dev
+#      koepked    |    9094    |   9095  |  personal dev
+#      <open>     |    9096    |   9097  |  personal dev
+####################################################################
+[grace@flux ~] 
