@@ -1,6 +1,6 @@
 /* global app */
-app.factory('serveMenu', ['$http', function($http) { 
-  return $http.get('json/menu_items.json') 
+app.factory('serveFooter', ['$http', function($http) { 
+  return $http.get('json/footer.json') 
             .success(function(data) { 
               return data; 
             })

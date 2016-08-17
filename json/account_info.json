@@ -14,7 +14,8 @@
         {
             "subtitle": "Logging in:",
             "description" : "In order to login to flux, you must use the SSH protocol.  This is provided by the 'ssh' command on Unix-like systems (including Mac OSX) or by using an SSH-compatible application (e.g. PuTTY on Microsoft Windows). Login in with your flux username and password. Note that this login information is separate from your UWL and CS Department username and password.",
-            "display_file" : "login_sample.txt"
+            "display_file" : "doc/login_sample.txt",
+            "display_file_title" : "login_sample.txt"
         }
     ]
 

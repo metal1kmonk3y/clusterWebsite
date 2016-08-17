@@ -1,11 +1,11 @@
 /* global app */
-app.controller('DiagramController',['$scope', 'serveDiagrams', '$routeParams', function($scope, serveDiagrams, $routeParams) {
+app.controller('DiagramController',['$scope', 'serveArchitecture', '$routeParams', function($scope, serveArchitecture, $routeParams) {
      
     //idx of the diagram
     var idx = $routeParams.id;
     
-     //diagrams file served 
-    serveDiagrams.success(function(data) {
+     //architecture file served 
+    serveArchitecture.success(function(data) {
         $scope.detail = data;
         $scope.diagram = $scope.detail.nodes[idx];
     });  

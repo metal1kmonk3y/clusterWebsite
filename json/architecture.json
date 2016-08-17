@@ -1,12 +1,11 @@
 {   
     "title" : "Architecture:",
     "description" : "Flux is a five (5) node cluster with one head node, one large memory node, and three compute nodes.  The three compute nodes are managed by a SLURM scheduler.  Each compute node contains x processor cores, y sockets, and z RAM as can be seen in the hwloc diagrams.",
-    "architecture" : {
-        "Total Nodes" : 5,
-        "Total Cores" : 48,
-        "Total RAM" : "624 GB"
+    "specifications" : {
+        "Total Nodes :" : 5,
+        "Total Cores :" : 48,
+        "Total RAM :" : "624 GB"
     },
-    
     "subtitle": "hwloc Node Diagrams:",
     "nodes": 
     [
@@ -42,7 +41,6 @@
             "img" : "img/flux4.png"
         }
     ],
-    
     "buttons" : {
         "previous" : "Previous Diagram",
         "next" : "Next Diagram",

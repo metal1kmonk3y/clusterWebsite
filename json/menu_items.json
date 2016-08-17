@@ -5,27 +5,33 @@
     [
         {
         "name": "Current Status",
-        "link":  "#/test#status"
+        "link": "##status",
+        "id" : "status"
         },
         {
         "name": "Architecture of Machine",
-        "link":  "#/test#hwloc"
+        "link": "##hwloc",
+        "id" : "hwloc"
         },
         {
         "name": "Getting an Account",
-        "link":  "#/test#account"
+        "link": "##account",
+        "id" : "account"
         },
         {
         "name": "Running a Job",
-        "link":  "#/test#job"
+        "link":  "##job",
+        "id" : "job"
         },
         {
         "name": "Available Software",
-        "link":  "#/test#slurm"
+        "link":  "##software",
+        "id" : "software"
         },
         {
         "name": "Resources",
-        "link":  "#/test#resources"
+        "link":  "##resources",
+        "id" : "resources"
         }
     ]
 }

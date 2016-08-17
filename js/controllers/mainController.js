@@ -1,42 +1,43 @@
 /* global app */
-app.controller('MainController', ['$scope', 'serveBasic', 'serveSubmitRun', 
-    'serveMenu', 'serveArch','serveDiagrams', 'serveStatus','serveAccountInfo'
-    , function($scope, serveBasic, serveSubmitRun, serveMenu, serveArch, 
-    serveDiagrams, serveStatus, serveAccountInfo) { 
+app.controller('MainController', ['$scope', 
+    'serveMenu', 'serveArchitecture', 'serveStatus','serveAccountInfo', 'serveRunJob',
+    'serveResources', 'serveFooter'
+    , function($scope, serveMenu, serveArchitecture, 
+     serveStatus, serveAccountInfo, serveRunJob, serveResources, serveFooter) { 
     
     //menu array that contains all the menu items
     serveMenu.success(function(data) { 
         $scope.menu = data; 
     });
     
-    //diagrams file served 
-    serveDiagrams.success(function(data) {
-        $scope.diagrams = data;
-    });
-    
-    //basic code file served   
-    serveBasic.success(function(data) {
-        $scope.fileBasic = data;
-    });
-    
-    //submit run code file served 
-    serveSubmitRun.success(function(data) {
-        $scope.fileSubmitRun = data;
-    });
-    
-     //architecture file served 
-    serveArch.success(function(data) {
-        $scope.arch = data;
-    });
-    
-     //architecture file served 
+    //current status file served 
     serveStatus.success(function(data) {
         $scope.currStatus = data;
+    });
+   
+    //architecture file served 
+    serveArchitecture.success(function(data) {
+        $scope.arch = data;
     });
     
     //Account information file served 
     serveAccountInfo.success(function(data) {
         $scope.actInfo = data;
+    });
+    
+    //Account information file served 
+    serveRunJob.success(function(data) {
+        $scope.runJob = data;
+    });
+    
+    //Resources information served 
+    serveResources.success(function(data) {
+        $scope.resources = data;
+    });
+    
+    //Footer information served 
+    serveFooter.success(function(data) {
+        $scope.footer = data;
     });
 }]);
    

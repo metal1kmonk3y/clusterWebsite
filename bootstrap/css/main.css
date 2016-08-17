@@ -86,9 +86,7 @@ ul {
     list-style-type:none;
 }
 /* style of keys from json files */
-.keys{
-    font-style: bold;
-    color: black;
+.info{
     font-size: 18px;
 }
 /* responsive images have zoom in cursor */
@@ -105,4 +103,13 @@ ul {
 #backToTop:hover {
     background-color: #83A4FF;
     color: #730019 ;
+}
+/* adjustment of anchors due to fixed top menu */
+section{ 
+    position:relative; 
+}
+section span{ 
+    position:absolute; 
+    top:-200px;
+    
 }

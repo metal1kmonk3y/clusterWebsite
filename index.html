@@ -1,5 +1,6 @@
 <!doctype html>
-<html ng-app="cluster" ng-controller="MainController">
+<html ng-controller="MainController"  ng-app = "cluster">
+	<!--main controller starts here-->
 	<head>
 		
 		<meta charset="utf-8" />
@@ -20,21 +21,21 @@
   	</head>
 	<!--app cluster starts here-->
 	<body>
-		<!--main controller starts here-->
-		<div class="main container ">
+		
+		<div class="main container" >
 			
 			<section >
 			<!--top navigation menu-->
 			<nav class="navbar navbar-fixed-top navbar">
 			  <div class="container">
-			    <ul class="nav navbar-nav"  id = "topMenu">
+			    <ul class="nav navbar-nav" >
 			    	<!--title of website-->
   					<li>
   					<h1 id ="title">{{menu.title}}</h1>
 					</li>	
 			      	<!--menu items-->
 					<li ng-repeat="item in menu.menuItems">
-						<a class="nav-link" href={{item.link}} >{{item.name}}</a>
+						<a class="nav-link" href={{item.link}}>{{item.name}}</a>
 					</li>
 			    </ul>
 			  </div>
@@ -42,22 +43,22 @@
 			</section>
 			
 			<!-- Cluster Status -->
-			<section id="status">
+			<section>
+				<span id={{menu.menuItems[0].id}} ></span>
 				<h2>{{currStatus.title}}</h2>
-				<ul>
+				<ul class = "info">
 					<a href="{{currStatus.URL}}">{{currStatus.description}}</a>
 				</ul>
 			</section>
 		
-		
-			<!--Architecture info -->
-			<section>
-				<h2>{{diagrams.title}}</h2>
-				<ul>
-					{{diagrams.description}}
-					<li ng-repeat="(key, value) in diagrams.architecture">
-						<span class="keys">{{key}} :</span>
-				   		{{value}}
+			<!--Architecture-->
+			<section >
+				<span id={{menu.menuItems[1].id}} ></span>
+				<h2>{{arch.title}}</h2>
+				<ul class = "info">
+					{{arch.description}}
+					<li ng-repeat="(key, value) in arch.specifications">
+						{{key}} {{value}}
 				   	</li>
 				</ul>
 			    <!-- gallery of hwloc diagrams-->
@@ -65,37 +66,72 @@
 				</div>
 			</section>
 			
-				
+			<!-- Getting an Account-->
+			<section>
+				<span id={{menu.menuItems[2].id}} ></span>
+				<h2>{{actInfo.title}}</h2>
+				<ul class = "info">
+					{{actInfo.description}}
+					<h3>{{actInfo.sections[0].subtitle}}</h3>
+					{{actInfo.sections[0].description}}
+					<li ng-repeat="value in  actInfo.sections[0].request_info">
+						{{value}}
+				   	</li>
+				   	<h3>{{actInfo.sections[1].subtitle}}</h3>	
+				   	{{actInfo.sections[1].description}} <br>
+				   	<a href={{actInfo.sections[1].display_file}}>{{actInfo.sections[1].display_file_title}}</a>
+				</ul>
+			</section>
 			
+			<!--Running a Job-->	
+			<section>
+				<span id={{menu.menuItems[3].id}}></span>
+				<h2>{{runJob.title}}</h2>
+				<ul class = "info">
+					{{runJob.description}}
+					<h3>{{runJob.sections[0].subtitle}}</h3>
+						<li ng-repeat="value in  runJob.sections[0].description">
+							{{value}}
+				   		</li>
+				   		<a href={{runJob.sections[0].display_file[1]}}>{{runJob.sections[0].display_file[0]}}</a>
+				</ul>
+			</section>
 			
-	
-						<div class="code">{{fileBasic}}</div>
-				
-	
-		
+			<!--Resources-->	
+			<section>
+				<span id={{menu.menuItems[5].id}}></span>
+				<h2>{{resources.title}}</h2>
+				<ul class = "info">
+					{{resources.description}} 
+					<li ng-repeat="(key, value) in resources.links">
+						{{key}}  
+						<a target ="_blank" href = {{value}}>{{value}}</a>
+				   	</li>
+				</ul>
+			</section>
 			
-			
-			<!--Footer navigation menu-->
+			<!--Footer-->
 			<nav class="navbar navbar-fixed-bottom" id="footer">
 	  			<ul class="container" >
 	  				<!--Footer Items-->
 	    			<li id="leftFoot">
-					 <a href="http://www.uwlax.edu"  title="To UW Lax Website"><img id ="logo" src="img/logo_uwl.jpg" height="44" width="114"/><a/>
+					 <a href={{footer.organization.link}}><img id ="logo" src="{{footer.organization.logo}} " height="44" width="114"/><a/>
 					 <li/>
 					 <li id="leftFoot">
-					 <a href="http://www.uwlax.edu" title="To UW Lax Website">UW La Crosse<a/><br/>
-					 <a href="http://www.cs.uwlax.edu/" title="To UW Lax CS Website">Computer Science Department</a>
+					 <a href={{footer.organization.link}}>{{footer.organization.name}}<a/><br/>
+					 <a href={{footer.department.link}}>{{footer.department.name}}</a>
 					</li>
 					<li>
-					  <a href ="#test/#status" id="backToTop" class="btn btn-outline-secondary" role="button"> Back To Top</a>
+					  <a href ={{menu.menuItems[0].link}} id="backToTop" class="btn btn-outline-secondary" role="button"> {{footer.topButton}}</a>
 					</li>
-					<li id = "rightFoot">
-					  Contact: someOne@uwlax.edu
+					 <li id = "rightFoot">
+						<div ng-repeat="value in  footer.support">
+								{{value}}
+						</div>
 					</li>
 	  			</ul>
 			</nav>
-	
-		<!--main controller end-->
+		
 		</div>
 	
 	<!-- Modules -->
@@ -106,18 +142,17 @@
     <script src="js/controllers/diagramController.js"></script>
     
     <!-- Services -->
-    <script src="js/services/serveBasic.js"></script>
-    <script src="js/services/serveSubmitRun.js"></script>
     <script src="js/services/serveMenu.js"></script>
-    <script src="js/services/serveDiagrams.js"></script>
-	<script src="js/services/serveArch.js"></script>
+	<script src="js/services/serveArchitecture.js"></script>
 	<script src="js/services/serveStatus.js"></script>
-	<script src="js/services/accountInfo.js"></script>
+	<script src="js/services/serveAccountInfo.js"></script>
+	<script src="js/services/serveRunJob.js"></script>
+	<script src="js/services/serveFooter.js"></script>
+	<script src="js/services/serveResources.js"></script>
     
     <!-- Jquery -->
     <script src="js/simple.js"></script>
-    
-    
    
 	</body>
+	<!--main controller end-->
 </html>

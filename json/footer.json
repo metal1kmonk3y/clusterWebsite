@@ -1,0 +1,16 @@
+{
+    "organization" : {
+            "name": "UW La Crosse",
+            "link": "http://www.uwlax.edu",
+            "logo": "img/logo_org.jpg"
+    },
+    "department": {
+            "name": "Computer Science Department",
+            "link": "http://www.cs.uwlax.edu"
+    },
+    "topButton": "Back To Top",
+    "support" : [
+        "Support : sfoley@uwlax.edu",
+        "sysadmin : sfoley@uwlax.edu"
+    ]
+}
