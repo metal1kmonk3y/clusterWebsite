@@ -79,7 +79,7 @@
 				   	</li>
 				   	<h3>{{actInfo.sections[1].subtitle}}</h3>	
 				   	{{actInfo.sections[1].description}} <br>
-				   	<a href={{actInfo.sections[1].display_file}}>{{actInfo.sections[1].display_file_title}}</a>
+				   	<a href={{actInfo.sections[1].display_file[1]}}>{{actInfo.sections[1].display_file[0]}}</a>
 				</ul>
 			</section>
 			
@@ -94,6 +94,25 @@
 							{{value}}
 				   		</li>
 				   		<a href={{runJob.sections[0].display_file[1]}}>{{runJob.sections[0].display_file[0]}}</a>
+				   		<h3>{{runJob.sections[1].subtitle}}</h3>
+				   		{{runJob.sections[1].description}}<br>
+				   	 	<h4>{{runJob.sections[1].commands.sinfo.info}}</h4>
+				   	 	<div class = "code">{{runJob.sections[1].commands.sinfo.code}}</div>
+				   	 	<h4>{{runJob.sections[1].commands.squeue.info}}</h4>
+				   	 	<div class = "code">{{runJob.sections[1].commands.squeue.code}}</div>
+				   	 	<h4>{{runJob.sections[1].commands.sbatch.info}}</h4>
+				   	 	<div class = "code">{{runJob.sections[1].commands.sbatch.code}}</div>
+				   	 	<h4>{{runJob.sections[1].commands.salloc.info}}</h4>
+				   	 	<div class = "code" ng-repeat ="c in runJob.sections[1].commands.salloc.code">
+				   	 		{{c}}
+				   	 	</div>
+				   	 	<h4>{{runJob.sections[1].commands.srun.info}}</h4>
+				   	 	<div class = "code" ng-repeat ="co in runJob.sections[1].commands.srun.code">
+				   	 		{{co}}
+				   	 	</div>
+						<h4>{{runJob.sections[1].commands.scancel.info}}</h4>
+				   	 	<div class = "code">{{runJob.sections[1].commands.scancel.code}}</div>
+				   		
 				</ul>
 			</section>
 			

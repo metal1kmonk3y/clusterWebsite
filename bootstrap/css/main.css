@@ -67,14 +67,15 @@ pre, pre a{
 }
 /* code divs */
 .code{
-    white-space: pre;
     color: yellow;
     background-color: black;
     padding: 10px;
-    height: 400px; 
-    overflow: auto;
     font-family: helvetica;
-    font-style: bold;
+    font-size: 16px;
+    /* uncomment for fixed box, adjust size according to need
+    height: 400px;      
+    overflow: auto;
+    */
 }
 /* floats close[x] to the right */
 #backToG {
