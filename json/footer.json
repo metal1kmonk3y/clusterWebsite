@@ -2,7 +2,7 @@
     "organization" : {
             "name": "UW La Crosse",
             "link": "http://www.uwlax.edu",
-            "logo": "../img/org_logo.jpg"
+            "logo": "img/org_logo.jpg"
     },
     "department": {
             "name": "Computer Science Department",
