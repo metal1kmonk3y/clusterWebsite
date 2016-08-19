@@ -1,6 +1,6 @@
 /* global app */
 app.factory('serveStatus', ['$http', function($http) { 
-  return $http.get('json/current_status.json') 
+  return $http.get('http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite/server/api/currentStatus.json') 
             .success(function(data) { 
               console.log(data);
               return data; 

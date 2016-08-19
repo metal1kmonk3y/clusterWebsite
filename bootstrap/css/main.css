@@ -10,7 +10,7 @@ body{
 }
 /*Color of all links */
 a{
-    color: purple;
+    color: #2200CC;
 }
 /* makes all unordered list without bullet points */
 ul {
@@ -51,6 +51,11 @@ pre, pre a{
 .nav li a:hover{
     color: #730019 ;
     background-color: #83A4FF; 
+}
+/* Color of nav bar links when active*/
+.nav li a:visited {
+    color: #999999;
+    background-color: black;
 }
 /* makes the gallery of pdfs stack inline then in block*/
 .gallery li{

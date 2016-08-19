@@ -1,6 +1,8 @@
 <!doctype html>
 <html ng-controller="MainController"  ng-app = "cluster">
 	<!--main controller starts here-->
+	<!--app cluster starts here-->
+	
 	<head>
 		
 		<meta charset="utf-8" />
@@ -19,27 +21,27 @@
 		<link href={{menu.img}} type="image/x-icon" rel="icon">
 		
   	</head>
-	<!--app cluster starts here-->
+	
 	<body>
 		
 		<div class="main container" >
 			
 			<section >
 			<!--top navigation menu-->
-			<nav class="navbar navbar-fixed-top navbar">
-			  <div class="container">
-			    <ul class="nav navbar-nav" >
-			    	<!--title of website-->
-  					<li>
-  					<h1 id ="title">{{menu.title}}</h1>
-					</li>	
-			      	<!--menu items-->
-					<li ng-repeat="item in menu.menuItems">
-						<a class="nav-link" href={{item.link}} onclick="location.hash=''; location.hash='{{item.link}}';">{{item.name}}</a>
-					</li>
-			    </ul>
-			  </div>
-			</nav>
+				<nav class="navbar navbar-fixed-top navbar">
+				  <div class="container">
+				    <ul class="nav navbar-nav" >
+				    	<!--title of website-->
+	  					<li>
+	  						<h1 id ="title">{{menu.title}}</h1>
+						</li>	
+				      	<!--menu items-->
+						<li ng-repeat="item in menu.menuItems">
+							<a class="nav-link" href={{item.link}} onclick="location.hash=''; location.hash='{{item.link}}';">{{item.name}}</a>
+						</li>
+				    </ul>
+				  </div>
+				</nav>
 			</section>
 			
 			<!-- Cluster Status -->
@@ -111,23 +113,27 @@
 							{{value}}
 				   		</li>
 			   		</ol> 
-			   		<li class="list-group">
-			   			<a href={{runJob.sections[0].display_file[1]}}>{{runJob.sections[0].display_file[0]}}</a>
+			   		<li>
+			   			<a href={{runJob.sections[0].display_file[1]}}>
+			   				{{runJob.sections[0].display_file[0]}}
+			   			</a>
 			   		</li>
 			   		<h3>{{runJob.sections[1].subtitle}}</h3>
 			   		{{runJob.sections[1].description}}<br>
 			   		<ol type ="1" >
-		   				<li ng-repeat = "item in runJob.sections[1].commands">
-			   				{{item.info}}
-				   			<ul>
-					   			<li class = "code" ng-repeat ="c in item.code">
-					   	 			{{c}}
-					   	 		</li>
-				   	 		</ul>
-			   	 		</li>
+			   				<li ng-repeat = "item in runJob.sections[1].commands">
+				   				{{item.info}}
+				   			
+					   			<ul>
+						   			<li class = "code" ng-repeat ="c in item.code">
+						   	 			{{c}}
+						   	 		</li>
+					   	 		</ul>
+				   	 		</li>
 			   		</ol>
-			   		<li>
-				   		<a href={{runJob.sections[1].display_file[1]}}>
+			   		
+			   		<li class="list-group">
+				   		<a class = "file-link" href={{runJob.sections[1].display_file[1]}}>
 				   			{{runJob.sections[1].display_file[0]}}
 				   		</a>
 				   	</li>
@@ -157,14 +163,14 @@
 					    </tbody>
 					</table>
 				</ul>
-         		</section>
+         	</section>
          		
 			<!--Resources-->	
 			<section>
 				<span id={{menu.menuItems[5].id}}></span>
 				<h2>{{resources.title}}</h2>
 				<ul class = "info">
-					{{resources.description}} 
+					{{resources.description}}
 					<table class = "table table-hover">
 							<tr ng-repeat="(key, value) in resources.links">
 								<td>{{key}}</td> 
@@ -226,5 +232,6 @@
     <script src="js/simple.js"></script>
    
 	</body>
+	
 	<!--main controller end-->
 </html>

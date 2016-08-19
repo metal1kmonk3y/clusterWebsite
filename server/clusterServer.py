@@ -57,7 +57,18 @@ class RunJob(object):
 	@cherrypy.tools.json_out()
 	def GET(self):
 		# get json data from file   
-		return json.load(open("../json/run_job.json"),object_pairs_hook=OrderedDict)          
+		return json.load(open("../json/run_job.json"),object_pairs_hook=OrderedDict) 
+
+# opens a json file containing available software
+class Software(object):
+	exposed = True
+	
+	@cherrypy.tools.accept(media='text/plain')
+	@cherrypy.tools.json_in()
+	@cherrypy.tools.json_out()
+	def GET(self):
+		# get json data from file   
+		return json.load(open("../json/software.json"),object_pairs_hook=OrderedDict) 
 
 # opens a json file containing links to other resources
 class Resources(object):
@@ -117,6 +128,7 @@ if __name__ == '__main__':
     cherrypy.tree.mount(Architecture(), '/architecture.json', config = conf)
     cherrypy.tree.mount(AccountInfo(), '/accountInfo.json', config = conf)
     cherrypy.tree.mount(RunJob(), '/runJob.json', config = conf)
+    cherrypy.tree.mount(Software(), '/software.json', config = conf)
     cherrypy.tree.mount(Resources(), '/resources.json', config = conf)
     cherrypy.tree.mount(Footer(), '/footer.json', config = conf)
     cherrypy.engine.start()
