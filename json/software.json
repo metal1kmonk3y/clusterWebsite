@@ -1,41 +1,42 @@
 {
     "title" : "Available Software",
     "description" : "The following is a list of currently available software. Versions marked with a star (*) are the default. If you need access to another version, contact the system administrator for the path information. If there is something you need, please contact the system administrator about adding it.",
-    "software" : [
+    "softwareTableCols": ["Name","Detail","Versions","Website"],
+    "softwareTable" : [
         {
             "name": "Python",
             "description" : "A common scripting and application development language.",
-            "versions" : ["2.6", "2.7", "3.4"],
+            "versions" : "2.6, 2.7, 3.4",
             "link" : "https://www.python.org/"
         },
         {
             "name": "C/C++",
             "description" : "",
-            "versions" : [],
+            "versions" : "",
             "link" : ""
         },
         {
             "name": "MPI",
             "description" : "A message passing library.",
-            "versions" : ["Open MPI 1.8.5"],
+            "versions" : "Open MPI 1.8.5",
             "link" : "https://www.open-mpi.org/"
         },
         {
             "name": "OpenMP",
             "description" : "A threading library for C/C++ and Fortan.",
-            "versions" : [],
+            "versions" : "",
             "link" : ""
         },
         {
             "name": "Modules",
             "description" : "There are not many modules on flux, and most packages are managed manually.  We hope to change this in the future.",
-            "versions" : ["3.2.10"],
+            "versions" : "3.2.10",
             "link" : "http://modules.sourceforge.net/"
         },
         {
             "name": "git",
             "description" : "A distributed version control system.",
-            "versions" : ["2.4.2"],
+            "versions" : "2.4.2",
             "link" : "https://git-scm.com/"
         }
     ]

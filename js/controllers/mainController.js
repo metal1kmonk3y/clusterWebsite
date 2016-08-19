@@ -1,9 +1,9 @@
 /* global app */
 app.controller('MainController', ['$scope', 
     'serveMenu', 'serveArchitecture', 'serveStatus','serveAccountInfo', 'serveRunJob',
-    'serveResources', 'serveFooter'
-    , function($scope, serveMenu, serveArchitecture, 
-     serveStatus, serveAccountInfo, serveRunJob, serveResources, serveFooter) { 
+    'serveSoftware', 'serveResources', 'serveFooter'
+    , function($scope, serveMenu, serveArchitecture, serveStatus, serveAccountInfo, 
+    serveRunJob, serveSoftware, serveResources, serveFooter) { 
     
     //menu array that contains all the menu items
     serveMenu.success(function(data) { 
@@ -20,22 +20,27 @@ app.controller('MainController', ['$scope',
         $scope.arch = data;
     });
     
-    //Account information file served 
+    //account information file served 
     serveAccountInfo.success(function(data) {
         $scope.actInfo = data;
     });
     
-    //Account information file served 
+    //running a job file served 
     serveRunJob.success(function(data) {
         $scope.runJob = data;
     });
     
-    //Resources information served 
+    //running a job file served 
+    serveSoftware.success(function(data) {
+        $scope.soft = data;
+    });
+    
+    //resources information served 
     serveResources.success(function(data) {
         $scope.resources = data;
     });
     
-    //Footer information served 
+    //footer information served 
     serveFooter.success(function(data) {
         $scope.footer = data;
     });

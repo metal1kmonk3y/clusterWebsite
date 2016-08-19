@@ -1,6 +1,6 @@
 /* global app */
-app.factory('serveRunJob', ['$http', function($http) { 
-  return $http.get('json/run_job.json') 
+app.factory('serveSoftware', ['$http', function($http) { 
+  return $http.get('json/software.json') 
             .success(function(data) { 
               return data; 
             })

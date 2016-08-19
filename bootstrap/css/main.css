@@ -8,9 +8,33 @@ body{
     background-color: #7ec0ee ;
     font-family: lucida sans unicode;
 }
-/*Color of all links changed to blue */
+/*Color of all links */
 a{
-    color: #2E0854;
+    color: purple;
+}
+/* makes all unordered list without bullet points */
+ul {
+    list-style-type:none;
+}
+/* adjustment of anchors due to fixed top menu */
+section{ 
+    position:relative; 
+}
+section span{ 
+    position:absolute; 
+    top:-200px;
+}
+/*makes entire cell clickable*/
+td a {
+    display: inline-block;
+    height:100%;
+    width:100%
+}
+/* Color of the code sections under pre, used as background for the gallery when a gallery item is clicked on*/
+pre, pre a{
+    color: white;
+    background-color:#0d3d56;
+    white-space: pre-line;
 }
 /* Color of nav bar to UW-lax Colors */
 .nav, .navbar {
@@ -32,6 +56,51 @@ a{
 .gallery li{
     display: inline-block;
     padding: 3px;
+}
+/* info class for displaying content> */
+.info{
+    font-size: 18px;
+}
+/* responsive images have zoom in cursor */
+.img-responsive{
+    cursor: -moz-zoom-in; 
+    cursor: -webkit-zoom-in; 
+    cursor: zoom-in;
+}
+/* code class mods, works best with <div> to dispay code */
+.code{
+    color: yellow;
+    background-color: black;
+    padding: 5px;
+    font-family: helvetica;
+    font-size: 16px;
+    
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    /* uncomment for fixed box, adjust size according to need
+    height: 400px;      
+    overflow: auto;
+    */
+}
+/*all triped table class style */
+.table-striped{
+    display: flex;  
+    flex-wrap: wrap;
+   
+}
+/*all  table data class style */
+.table-data{
+    border-style: ridge;
+}
+/*all  table row class style */
+.table-row{
+    border-style: ridge ;
+}
+/*all list group class style */
+.list-group{
+    display: flex;  
+    flex-wrap: wrap;
+    padding: 5px;
 }
 /* sets the footer's padding*/
 #footer{
@@ -55,46 +124,13 @@ a{
 #footer li a{
     color:#999999;
 }
-/* Color of the code sections under pre */
-pre, pre a{
-    color: white;
-    background-color:#0d3d56;
-    white-space: pre-line;
-}
 /* margin of title and bottom logo */
 #title, #logo{
     margin-right: 10px;
 }
-/* code divs */
-.code{
-    color: yellow;
-    background-color: black;
-    padding: 10px;
-    font-family: helvetica;
-    font-size: 16px;
-    /* uncomment for fixed box, adjust size according to need
-    height: 400px;      
-    overflow: auto;
-    */
-}
 /* floats close[x] to the right */
 #backToG {
     float: right;
-}
-
-/* makes all unordered list without bullet points */
-ul {
-    list-style-type:none;
-}
-/* style of keys from json files */
-.info{
-    font-size: 18px;
-}
-/* responsive images have zoom in cursor */
-.img-responsive{
-    cursor: -moz-zoom-in; 
-    cursor: -webkit-zoom-in; 
-    cursor: zoom-in;
 }
 /* style of back to top button */
 #backToTop {
@@ -104,13 +140,4 @@ ul {
 #backToTop:hover {
     background-color: #83A4FF;
     color: #730019 ;
-}
-/* adjustment of anchors due to fixed top menu */
-section{ 
-    position:relative; 
-}
-section span{ 
-    position:absolute; 
-    top:-200px;
-    
 }

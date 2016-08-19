@@ -35,7 +35,7 @@
 					</li>	
 			      	<!--menu items-->
 					<li ng-repeat="item in menu.menuItems">
-						<a class="nav-link" href={{item.link}}>{{item.name}}</a>
+						<a class="nav-link" href={{item.link}} onclick="location.hash=''; location.hash='{{item.link}}';">{{item.name}}</a>
 					</li>
 			    </ul>
 			  </div>
@@ -47,7 +47,11 @@
 				<span id={{menu.menuItems[0].id}} ></span>
 				<h2>{{currStatus.title}}</h2>
 				<ul class = "info">
-					<a href="{{currStatus.URL}}">{{currStatus.description}}</a>
+					{{currStatus.descriptionStart}}
+					<a href="{{currStatus.URL}}">
+						{{currStatus.nameOfMonitoringSystem}}
+					</a>
+					{{currStatus.descriptionEnd}}
 				</ul>
 			</section>
 		
@@ -57,9 +61,14 @@
 				<h2>{{arch.title}}</h2>
 				<ul class = "info">
 					{{arch.description}}
-					<li ng-repeat="(key, value) in arch.specifications">
-						{{key}} {{value}}
-				   	</li>
+					<table class="table table-striped">
+						 <tbody>
+						      <tr class ="table-row" ng-repeat="(key, value) in arch.specifications">
+						        <td class ="table-data">{{key}} </td>
+						        <td class ="table-data">{{value}}</td>
+						      </tr>
+				   		 </tbody>
+				   	</table>
 				</ul>
 			    <!-- gallery of hwloc diagrams-->
 				<div ng-view id ="hwloc">
@@ -74,12 +83,18 @@
 					{{actInfo.description}}
 					<h3>{{actInfo.sections[0].subtitle}}</h3>
 					{{actInfo.sections[0].description}}
-					<li ng-repeat="value in  actInfo.sections[0].request_info">
-						{{value}}
-				   	</li>
+					<ol type ="i" class = "info">
+						<li ng-repeat="value in  actInfo.sections[0].request_info">
+							{{value}}
+					   	</li>
+				   	</ol>
 				   	<h3>{{actInfo.sections[1].subtitle}}</h3>	
 				   	{{actInfo.sections[1].description}} <br>
-				   	<a href={{actInfo.sections[1].display_file[1]}}>{{actInfo.sections[1].display_file[0]}}</a>
+				   	<li>
+				   		<a href={{actInfo.sections[1].display_file[1]}}>
+				   			{{actInfo.sections[1].display_file[0]}}
+				   		</a>
+				   	</li>
 				</ul>
 			</section>
 			
@@ -90,42 +105,73 @@
 				<ul class = "info">
 					{{runJob.description}}
 					<h3>{{runJob.sections[0].subtitle}}</h3>
-						<li ng-repeat="value in  runJob.sections[0].description">
+					 {{runJob.sections[0].descriptionStart}}
+					<ol type ="a" >
+						<li ng-repeat="value in  runJob.sections[0].descriptionEnd">
 							{{value}}
 				   		</li>
-				   		<a href={{runJob.sections[0].display_file[1]}}>{{runJob.sections[0].display_file[0]}}</a>
-				   		<h3>{{runJob.sections[1].subtitle}}</h3>
-				   		{{runJob.sections[1].description}}<br>
-				   	 	<h4>{{runJob.sections[1].commands.sinfo.info}}</h4>
-				   	 	<div class = "code">{{runJob.sections[1].commands.sinfo.code}}</div>
-				   	 	<h4>{{runJob.sections[1].commands.squeue.info}}</h4>
-				   	 	<div class = "code">{{runJob.sections[1].commands.squeue.code}}</div>
-				   	 	<h4>{{runJob.sections[1].commands.sbatch.info}}</h4>
-				   	 	<div class = "code">{{runJob.sections[1].commands.sbatch.code}}</div>
-				   	 	<h4>{{runJob.sections[1].commands.salloc.info}}</h4>
-				   	 	<div class = "code" ng-repeat ="c in runJob.sections[1].commands.salloc.code">
-				   	 		{{c}}
-				   	 	</div>
-				   	 	<h4>{{runJob.sections[1].commands.srun.info}}</h4>
-				   	 	<div class = "code" ng-repeat ="co in runJob.sections[1].commands.srun.code">
-				   	 		{{co}}
-				   	 	</div>
-						<h4>{{runJob.sections[1].commands.scancel.info}}</h4>
-				   	 	<div class = "code">{{runJob.sections[1].commands.scancel.code}}</div>
-				   		
+			   		</ol> 
+			   		<li class="list-group">
+			   			<a href={{runJob.sections[0].display_file[1]}}>{{runJob.sections[0].display_file[0]}}</a>
+			   		</li>
+			   		<h3>{{runJob.sections[1].subtitle}}</h3>
+			   		{{runJob.sections[1].description}}<br>
+			   		<ol type ="1" >
+		   				<li ng-repeat = "item in runJob.sections[1].commands">
+			   				{{item.info}}
+				   			<ul>
+					   			<li class = "code" ng-repeat ="c in item.code">
+					   	 			{{c}}
+					   	 		</li>
+				   	 		</ul>
+			   	 		</li>
+			   		</ol>
+			   		<li>
+				   		<a href={{runJob.sections[1].display_file[1]}}>
+				   			{{runJob.sections[1].display_file[0]}}
+				   		</a>
+				   	</li>
+				   	
 				</ul>
 			</section>
 			
+					<!--Available Software-->
+			<section>
+				<span id={{menu.menuItems[4].id}}></span>
+				<h2>{{soft.title}}</h2>	
+				<ul class = "info">
+					{{soft.description}}
+					<table class="table table-bordered">
+					    <thead>
+					      <tr class = "table-row">
+					      	<th ng-repeat="col in soft.softwareTableCols">{{col}}</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr class ="table-row" ng-repeat="value in soft.softwareTable">
+					        <td >{{value.name}}</td>
+					        <td >{{value.description}}</td>
+					        <td >{{value.versions}}</td>
+					        <td><a href ="{{value.link}}" target="_blank">{{value.link}}</a></td>
+					      </tr>
+					    </tbody>
+					</table>
+				</ul>
+         		</section>
+         		
 			<!--Resources-->	
 			<section>
 				<span id={{menu.menuItems[5].id}}></span>
 				<h2>{{resources.title}}</h2>
 				<ul class = "info">
 					{{resources.description}} 
-					<li ng-repeat="(key, value) in resources.links">
-						{{key}}  
-						<a target ="_blank" href = {{value}}>{{value}}</a>
-				   	</li>
+					<table class = "table table-hover">
+							<tr ng-repeat="(key, value) in resources.links">
+								<td>{{key}}</td> 
+								<td><a target ="_blank" href = {{value}}>{{value}}</a></td> 
+							</tr>
+					   	</li>
+				   	</table>
 				</ul>
 			</section>
 			
@@ -140,9 +186,15 @@
 					 <a href={{footer.organization.link}}>{{footer.organization.name}}<a/><br/>
 					 <a href={{footer.department.link}}>{{footer.department.name}}</a>
 					</li>
+					
+					<!-- Back to top button starts here-->
 					<li>
-					  <a href ={{menu.menuItems[0].link}} id="backToTop" class="btn btn-outline-secondary" role="button"> {{footer.topButton}}</a>
+					  <a href ={{menu.menuItems[0].link}} id="backToTop" class="btn btn-outline-secondary" role="button"  onclick="location.hash=''; location.hash='{{menu.menuItems[0].link}}';">
+					  	 {{footer.topButton}}
+					  </a>
 					</li>
+					<!-- Back to top button ends here-->
+					
 					 <li id = "rightFoot">
 						<div ng-repeat="value in  footer.support">
 								{{value}}
@@ -168,6 +220,7 @@
 	<script src="js/services/serveRunJob.js"></script>
 	<script src="js/services/serveFooter.js"></script>
 	<script src="js/services/serveResources.js"></script>
+	<script src="js/services/serveSoftware.js"></script>
     
     <!-- Jquery -->
     <script src="js/simple.js"></script>
