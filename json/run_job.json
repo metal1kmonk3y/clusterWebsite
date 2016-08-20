@@ -1,5 +1,5 @@
 {
-    "title" : "Running a Job:",
+    "title" : "Running a Job",
     "description" : "This section describes how to run a job. flux uses SLURM for batch scheduling and resource management. See resources for more information about SLURM.\nHigh performance parallel computing codes generally run in 'batch' mode. Batch jobs are controlled by scripts written by the user and submitted to a batch system that manages the compute resource and schedules the job to run based on a set of policies. In general, batch systems work on a first-in, first-out basis, but this is subject to a number of constraints.",
 
     "sections" :
