@@ -5,7 +5,7 @@
     "sections" :
     [
         {
-            "subtitle": "Preparing a batchscript:",
+            "subtitle": "Preparing a batchscript",
             "descriptionStart": "Batch scripts consist of two parts:", 
             "descriptionEnd" : [ 
                             "a set of directives that describe your resource requirements (time, number of processors, etc.)", 
@@ -17,7 +17,7 @@
             ]
         },
         {
-            "subtitle": "More on SLURM:",
+            "subtitle": "More on SLURM",
             "description" : "The following commands can be used on flux to interact with SLURM.",
             "commands" :{
                 "sinfo" : { 
