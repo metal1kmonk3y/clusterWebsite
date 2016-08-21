@@ -1,5 +1,8 @@
-/* 
- Padding top and bottom due to fixed menu 
+/* color of all links */
+a{
+    color: #2200CC;
+}
+/* padding top and bottom due to fixed menu 
  background-color is sky blue
 */
 body{
@@ -8,13 +11,11 @@ body{
     background-color: #7ec0ee ;
     font-family: lucida sans unicode;
 }
-/*Color of all links */
-a{
-    color: #2200CC;
-}
-/* makes all unordered list without bullet points */
-ul {
-    list-style-type:none;
+/* color of the code sections under pre, used as background for the gallery when a gallery item is clicked on*/
+pre, pre a{
+    color: white;
+    background-color:#0d3d56;
+    white-space: pre-line;
 }
 /* adjustment of anchors due to fixed top menu */
 section{ 
@@ -24,17 +25,50 @@ section span{
     position:absolute; 
     top:-200px;
 }
-/*makes entire cell clickable*/
+/* makes entire cell clickable*/
 td a {
     display: inline-block;
     height:100%;
     width:100%
 }
-/* Color of the code sections under pre, used as background for the gallery when a gallery item is clicked on*/
-pre, pre a{
-    color: white;
-    background-color:#0d3d56;
-    white-space: pre-line;
+/* makes all unordered list without bullet points */
+ul {
+    list-style-type:none;
+}
+/* code class mods, works best with <div> to dispay code */
+.code{
+    color: yellow;
+    background-color: black;
+    padding: 5px;
+    font-family: helvetica;
+    font-size: 16px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    /* uncomment for fixed box, adjust size according to need
+    height: 400px;      
+    overflow: auto;
+    */
+}
+/* makes the gallery of pdfs stack inline then in block*/
+.gallery li{
+    display: inline-block;
+    padding: 3px;
+}
+/* info class for displaying content> */
+.info{
+    font-size: 18px;
+}
+/* responsive images have zoom in cursor */
+.img-responsive{
+    cursor: -moz-zoom-in; 
+    cursor: -webkit-zoom-in; 
+    cursor: zoom-in;
+}
+/* all list group class style */
+.list-group{
+    display: flex;  
+    flex-wrap: wrap;
+    padding: 5px;
 }
 /* Color of nav bar to UW-lax Colors */
 .nav, .navbar {
@@ -57,55 +91,32 @@ pre, pre a{
     color: #999999;
     background-color: black;
 }
-/* makes the gallery of pdfs stack inline then in block*/
-.gallery li{
-    display: inline-block;
-    padding: 3px;
-}
-/* info class for displaying content> */
-.info{
-    font-size: 18px;
-}
-/* responsive images have zoom in cursor */
-.img-responsive{
-    cursor: -moz-zoom-in; 
-    cursor: -webkit-zoom-in; 
-    cursor: zoom-in;
-}
-/* code class mods, works best with <div> to dispay code */
-.code{
-    color: yellow;
-    background-color: black;
-    padding: 5px;
-    font-family: helvetica;
-    font-size: 16px;
-    
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    /* uncomment for fixed box, adjust size according to need
-    height: 400px;      
-    overflow: auto;
-    */
-}
-/*all triped table class style */
-.table-striped{
-    display: flex;  
-    flex-wrap: wrap;
-   
-}
-/*all  table data class style */
+/* all  table data class style */
 .table-data{
     border-style: ridge;
 }
-/*all  table row class style */
+/* all  table row class style */
 .table-row{
     border-style: ridge ;
 }
-/*all list group class style */
-.list-group{
+/* all triped table class style */
+.table-striped{
     display: flex;  
     flex-wrap: wrap;
-    padding: 5px;
+}
+
+/* floats back to gallery button to the right */
+#backToG {
+    float: right;
+}
+/* style of back to top button */
+#backToTop {
+    background-color: black;
+}
+/* style of back to top button on hover */
+#backToTop:hover {
+    background-color: #83A4FF;
+    color: #730019 ;
 }
 /* sets the footer's padding*/
 #footer{
@@ -117,32 +128,19 @@ pre, pre a{
 #footer li{
     display: inline-block;
 }
-/* Pushes the contact email to the right */
-#rightFoot{
-    float:right;
+/* footer link colors */
+#footer li a{
+    color:#999999;
 }
 /* Pushes the school info to the left */
 #leftFoot{
     float: left;
 }
-/* footer link colors */
-#footer li a{
-    color:#999999;
-}
 /* margin of title and bottom logo */
-#title, #logo{
+#logo, #title{
     margin-right: 10px;
 }
-/* floats close[x] to the right */
-#backToG {
-    float: right;
-}
-/* style of back to top button */
-#backToTop {
-    background-color: black;
-}
-/*style of back to top button on hover */
-#backToTop:hover {
-    background-color: #83A4FF;
-    color: #730019 ;
+/* Pushes the contact email to the right */
+#rightFoot{
+    float:right;
 }
