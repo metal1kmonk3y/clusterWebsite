@@ -12,17 +12,17 @@ app.controller('MainController', ['$scope',
     
     //current status file served 
     serveStatus.success(function(data) {
-        $scope.currStatus = data;
+        $scope.currentStatus = data;
     });
    
     //architecture file served 
     serveArchitecture.success(function(data) {
-        $scope.arch = data;
+        $scope.architecture = data;
     });
     
     //account information file served 
     serveAccountInfo.success(function(data) {
-        $scope.actInfo = data;
+        $scope.accountInfo = data;
     });
     
     //running a job file served 
@@ -32,7 +32,7 @@ app.controller('MainController', ['$scope',
     
     //running a job file served 
     serveSoftware.success(function(data) {
-        $scope.soft = data;
+        $scope.software = data;
     });
     
     //resources information served 

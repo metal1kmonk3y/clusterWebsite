@@ -8,7 +8,7 @@
             "name": "Computer Science Department",
             "link": "http://www.cs.uwlax.edu"
     },
-    "topButton": "Back To Top",
+    "top_button": "Back To Top",
     "support" : [
         "Support : sfoley@uwlax.edu",
         "sysadmin : sfoley@uwlax.edu"

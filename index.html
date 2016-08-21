@@ -47,25 +47,25 @@
 			<!-- Cluster Status -->
 			<section>
 				<span id={{menu.menuItems[0].id}} ></span>
-				<h2>{{currStatus.title}}</h2>
+				<h2>{{currentStatus.title}}</h2>
 				<ul class = "info">
-					{{currStatus.descriptionStart}}
-					<a href="{{currStatus.URL}}">
-						{{currStatus.nameOfMonitoringSystem}}
+					{{currentStatus.description_start}}
+					<a href="{{currentStatus.URL}}">
+						{{currentStatus.name_of_monitoring_system_website}}
 					</a>
-					{{currStatus.descriptionEnd}}
+					{{currentStatus.description_end}}
 				</ul>
 			</section>
 		
 			<!--Architecture-->
 			<section >
 				<span id={{menu.menuItems[1].id}} ></span>
-				<h2>{{arch.title}}</h2>
+				<h2>{{architecture.title}}</h2>
 				<ul class = "info">
-					{{arch.description}}
+					{{architecture.description}}
 					<table class="table table-striped">
 						 <tbody>
-						      <tr class ="table-row" ng-repeat="(key, value) in arch.specifications">
+						      <tr class ="table-row" ng-repeat="(key, value) in architecture.specifications">
 						        <td class ="table-data">{{key}} </td>
 						        <td class ="table-data">{{value}}</td>
 						      </tr>
@@ -80,21 +80,21 @@
 			<!-- Getting an Account-->
 			<section>
 				<span id={{menu.menuItems[2].id}} ></span>
-				<h2>{{actInfo.title}}</h2>
+				<h2>{{accountInfo.title}}</h2>
 				<ul class = "info">
-					{{actInfo.description}}
-					<h3>{{actInfo.sections[0].subtitle}}</h3>
-					{{actInfo.sections[0].description}}
-					<ol type ="i" class = "info">
-						<li ng-repeat="value in  actInfo.sections[0].request_info">
+					{{accountInfo.description}}
+					<h3>{{accountInfo.sections[0].subtitle}}</h3>
+					{{accountInfo.sections[0].description}}
+					<ol type ={{accountInfo.sections[0].request_info_list_type}} class = "info">
+						<li ng-repeat="value in  accountInfo.sections[0].request_info">
 							{{value}}
 					   	</li>
 				   	</ol>
-				   	<h3>{{actInfo.sections[1].subtitle}}</h3>	
-				   	{{actInfo.sections[1].description}} <br>
+				   	<h3>{{accountInfo.sections[1].subtitle}}</h3>	
+				   	{{accountInfo.sections[1].description}} <br>
 				   	<li>
-				   		<a href={{actInfo.sections[1].display_file[1]}}>
-				   			{{actInfo.sections[1].display_file[0]}}
+				   		<a href={{accountInfo.sections[1].display_file[1]}}>
+				   			{{accountInfo.sections[1].display_file[0]}}
 				   		</a>
 				   	</li>
 				</ul>
@@ -107,9 +107,9 @@
 				<ul class = "info">
 					{{runJob.description}}
 					<h3>{{runJob.sections[0].subtitle}}</h3>
-					 {{runJob.sections[0].descriptionStart}}
-					<ol type ="a" >
-						<li ng-repeat="value in  runJob.sections[0].descriptionEnd">
+					 {{runJob.sections[0].description_start}}
+					<ol type ="{{runJob.sections[0].description_end_list_type}}" >
+						<li ng-repeat="value in  runJob.sections[0].description_end">
 							{{value}}
 				   		</li>
 			   		</ol> 
@@ -120,18 +120,16 @@
 			   		</li>
 			   		<h3>{{runJob.sections[1].subtitle}}</h3>
 			   		{{runJob.sections[1].description}}<br>
-			   		<ol type ="1" >
-			   				<li ng-repeat = "item in runJob.sections[1].commands">
-				   				{{item.info}}
-				   			
-					   			<ul>
-						   			<li class = "code" ng-repeat ="c in item.code">
-						   	 			{{c}}
-						   	 		</li>
-					   	 		</ul>
-				   	 		</li>
+			   		<ol type ="{{runJob.sections[1].commands_list_type}}" >
+		   				<li ng-repeat = "item in runJob.sections[1].commands">
+			   				{{item.info}}
+				   			<ul>
+					   			<li class = "code" ng-repeat ="c in item.code">
+					   	 			{{c}}
+					   	 		</li>
+				   	 		</ul>
+			   	 		</li>
 			   		</ol>
-			   		
 			   		<li class="list-group">
 				   		<a class = "file-link" href={{runJob.sections[1].display_file[1]}}>
 				   			{{runJob.sections[1].display_file[0]}}
@@ -144,17 +142,17 @@
 					<!--Available Software-->
 			<section>
 				<span id={{menu.menuItems[4].id}}></span>
-				<h2>{{soft.title}}</h2>	
+				<h2>{{software.title}}</h2>	
 				<ul class = "info">
-					{{soft.description}}
+					{{software.description}}
 					<table class="table table-bordered">
 					    <thead>
 					      <tr class = "table-row">
-					      	<th ng-repeat="col in soft.softwareTableCols">{{col}}</th>
+					      	<th ng-repeat="col in software.software_table_cols">{{col}}</th>
 					      </tr>
 					    </thead>
 					    <tbody>
-					      <tr class ="table-row" ng-repeat="value in soft.softwareTable">
+					      <tr class ="table-row" ng-repeat="value in software.software_table">
 					        <td >{{value.name}}</td>
 					        <td >{{value.description}}</td>
 					        <td >{{value.versions}}</td>
@@ -192,15 +190,13 @@
 					 <a href={{footer.organization.link}}>{{footer.organization.name}}<a/><br/>
 					 <a href={{footer.department.link}}>{{footer.department.name}}</a>
 					</li>
-					
 					<!-- Back to top button starts here-->
 					<li>
 					  <a href ={{menu.menuItems[0].link}} id="backToTop" class="btn btn-outline-secondary" role="button"  onclick="location.hash=''; location.hash='{{menu.menuItems[0].link}}';">
-					  	 {{footer.topButton}}
+					  	 {{footer.top_button}}
 					  </a>
 					</li>
 					<!-- Back to top button ends here-->
-					
 					 <li id = "rightFoot">
 						<div ng-repeat="value in  footer.support">
 								{{value}}

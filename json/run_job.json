@@ -6,8 +6,9 @@
     [
         {
             "subtitle": "Preparing a batchscript",
-            "descriptionStart": "Batch scripts consist of two parts:", 
-            "descriptionEnd" : [ 
+            "description_start": "Batch scripts consist of two parts:", 
+            "description_end_list_type": "a",
+            "description_end" : [ 
                             "a set of directives that describe your resource requirements (time, number of processors, etc.)", 
                             "UNIX commands that perform your computations. These UNIX commands may create directories, transfer files, etc.; anything you can type at a UNIX shell prompt. Batch scripts are submitted to the 'batch system,' where they are queued awaiting free resources.The actual execution of your parallel job, however, is handled by a special command, called a job launcher. In a generic Linux environment, such as flux, this utility is called 'mpirun'.Below is a sample batchscript that launches a parallel job."
             ],
@@ -19,6 +20,7 @@
         {
             "subtitle": "More on SLURM",
             "description" : "The following commands can be used on flux to interact with SLURM.",
+            "commands_list_type": "I",
             "commands" :{
                 "sinfo" : { 
                             "info" : "Show basic information about the nodes available in the system :",

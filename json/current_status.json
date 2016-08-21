@@ -1,7 +1,7 @@
 {
     "title" : "Current Status",
-    "descriptionStart" : "This cluster uses ",
-    "nameOfMonitoringSystem": "Ganglia",
-    "descriptionEnd": " for system monitoring.",
+    "description_start" : "This cluster uses ",
+    "name_of_monitoring_system_website": "Ganglia",
+    "description_end": " for system monitoring.",
     "URL" : "http://flux.cs.uwlax.edu/ganglia/"
 }
