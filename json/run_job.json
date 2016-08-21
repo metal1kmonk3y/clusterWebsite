@@ -74,7 +74,7 @@
             
             "display_file" : [ 
                             "common_slurm.txt", 
-                            "common_slurm.txt"
+                            "doc/common_slurm.txt"
             ]
         }
     ]

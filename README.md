@@ -8,7 +8,7 @@ Here is a demo:
 http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite
 
 If you would like to use the shell of the website it can be easily adapted to be used for your cluster.
-Download the files above and follow the instructions below.
+Clone the files above and follow the instructions below.
 
 ## Changing appearances
 Css is used to control the background and colors of the website. But if you know jquery it can be sometimes simpler to change css using it.Css file is at bootstrap/css/main.css.It is sorted first by tag,class,id then alphabetically.The jquery file is in js/simple.js.
