@@ -5,7 +5,7 @@ share important information about an educational cluster.
 
 ## Introduction
 This was originally desined for the flux cluster at UWL but can be used for any educational cluster. Here is a demo:
- Demo:[http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite]
+ Demo:http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite
     
     
 ## Changing appearances
