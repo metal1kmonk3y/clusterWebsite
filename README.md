@@ -12,10 +12,10 @@ If you would like to use the shell of the website it can be easily adapted to be
 ## Implementation
 All the content editing will be done in the json files in the json folder.Each section has its own json file and will be edited from here.
 
-![Alt text](img/demoAn1.png)
-![Alt text](img/demoAn2.png)
-![Alt text](img/demoAn3.png)
-![Alt text](img/demoAn4.png)
+![Demo 1](img/demoAn1.png)
+![Demo 2](img/demoAn2.png)
+![Demo 3](img/demoAn3.png)
+![Demo 4](img/demoAn4.png)
 
 ## Helpful Hints
 ### Changing appearances
