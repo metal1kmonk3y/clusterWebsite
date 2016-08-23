@@ -10,6 +10,7 @@ If you would like to use the shell of the website it can be easily adapted to be
  Clone the files above in the directory of your choice.Install [python] (https://www.python.org/downloads/) then download the [cherrypy] (http://docs.cherrypy.org/en/latest/install.html) package. Now you are ready to get started.
 
 ## Implementation
+All the content editing will be done in the json files in the json folder.Each section has its own json file and will be edited from here.
 
 ![Alt text](img/demoAn1.png)
 ![Alt text](img/demoAn2.png)
@@ -21,4 +22,4 @@ If you would like to use the shell of the website it can be easily adapted to be
 Css is used to control the background and colors of the website. But if you know jquery it can be sometimes simpler to change css using it.Css file is at bootstrap/css/main.css.It is sorted first by tag,class,id then alphabetically.The jquery file is in js/simple.js.
 
 ### General practices
-All the content editing will be done in the json files in the json folder.Each section has its own json file and will be edited from here.The general thing to remember while editing is if you have empty values for some of the keys, delete the value and leave it as an empty string.If you do not want an entire section it can be deleted but i recommend leaving the keys in if you think the section can be needed later.
+The general thing to remember while editing the json files is: if you have empty values for some of the keys, delete the value and leave it as an empty string.If you do not want an entire section it can be deleted but i recommend leaving the keys in if you think the section can be needed later.
