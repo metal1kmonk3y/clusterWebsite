@@ -1,5 +1,4 @@
 /*global angular*/
-
 var app = angular.module('cluster',['ngRoute']);
 
 app.config(function ($routeProvider) { 
