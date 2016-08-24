@@ -1,4 +1,4 @@
-# cluster Website
+# Cluster Website
 This project is to develop a website that can be used to share important information about an educational cluster.
 
 ## Introduction
@@ -52,5 +52,3 @@ Css is used to control the background and colors of the website. But if you know
 
 ### General practices
 The general thing to remember while editing the json files is: if you have empty values for some of the keys, delete the value and leave it as an empty string.If you do not want an entire section it can be deleted but i recommend leaving the keys in if you think the section can be needed later.
-
-
