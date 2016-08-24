@@ -3,14 +3,19 @@ This project is to develop a website that can be used to
 share important information about an educational cluster.
 
 ## Introduction
-This was originally desined for the flux cluster at UWL but can be used for any educational cluster.Here is a demo:http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite
+This was originally desined for the flux cluster at UWL but can be used for any educational cluster. Here is a demo:http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite
 
 ## Installation
-If you would like to use the shell of the website it can be easily adapted to be used for your cluster.The project uses HTML, CSS Bootstrap, jQuery, Angularjs and Python. The html web page is styled with bootstrap and jQuery. The data is served as json files through a cherrypy server and fed through an  Angularjs app to the web site. The cluster app uses ngRoute as a dependency and utilizes the routing library to change views (ng-view) without refreshing.
- Clone the files above in the directory of your choice.Install [python] (https://www.python.org/downloads/) then download the [cherrypy] (http://docs.cherrypy.org/en/latest/install.html) package. Now you are ready to get started.
+If you would like to use the shell of the website it can be easily adapted to be used for your cluster. The project uses HTML, CSS Bootstrap, jQuery, Angularjs and Python. The html web page is styled with bootstrap and jQuery. The data is served as json files through a cherrypy server and fed through an  Angularjs app to the web site. The cluster app uses ngRoute as a dependency and utilizes the routing library to change views (ng-view) without refreshing.
+Clone the files above in the directory of your choice.Install [python] (https://www.python.org/downloads/) then download the [cherrypy] (http://docs.cherrypy.org/en/latest/install.html) package. Now you are ready to get started.
 
 ## Implementation
 All the content editing will be done in the json files in the json folder.Each section has its own json file and will be edited from here.
+
+### Menu
+The menu can be edited from json/menu_items.json. Here the first thing you will see is the title of the website.
+The next item is the fav icon image, you can name your image file fav_icon.png and put it in img folder or simply insert the image path.The menu can be edited by removing or adding a new object in the menuItems array. The object must have the following: 
+    {"name": "Current Status", "link": "##status", "id" : "status"}
 
 ![Demo 1](img/demoAn1.png)
 ![Demo 2](img/demoAn2.png)
