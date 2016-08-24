@@ -15,6 +15,7 @@ All the content editing will be done in the json files in the json folder.Each s
 ### Menu
 The menu can be edited from json/menu_items.json. Here the first thing you will see is the title of the website.
 The next item is the fav icon image, you can name your image file fav_icon.png and put it in img folder or simply insert the image path.The menu can be edited by removing or adding a new object in the menuItems array. The object must have the following: 
+    
     {"name": "Current Status", "link": "##status", "id" : "status"}
 
 ![Demo 1](img/demoAn1.png)
