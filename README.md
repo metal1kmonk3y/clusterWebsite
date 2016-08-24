@@ -1,121 +1,11 @@
-Hi,
-Can you also go to the demo, which is the current version after style changes.
-
-Cluster Website Documentation Outline
--intro to project
-    Demo:   http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite
-Changing appearances
-    -css should is used but jquery also available
-General practices
--Leave empty values as an empty string
--empty sections can be entirely deleted or cut off from service
-
-
-----------------
-Introduce the project (overview of what the software does)
-This is a good place for the link to your current webpage for flux
-Installation instructions
-Be sure to mention dependencies and technologies used in the project (e.g., Python, CherryPy, Angular?)
-Components of the Website
-This should familiarize the user with what the elements are and what you are calling them.  An annotated image of the actual website would be awesome here.  You will then want to point out what files they correspond to.  This is likely to be a lengthy section with several subsections.  You may want a section on the title/menu/etc and then a section with the real content about the cluster.  At least organize it such that those two types of components are grouped together.
-        - menu
--anchoring
--fav icon
--footer
--customizing for your org
--usage of keys
-- current status
--the split up
--architecture
-    -table
--usage of keys    
-    -gallery
--get account
-    -required info list
-- run job
-    - batchscript parts
-    -commands and displaying code
--available software
-    - table, multiple versions should be just a string like “2.6, 2.7, 3.4”
--resources
-    -links    
-    -usage of keys
-
-Adding sections
-
-Helpful Hints
-Non-functional items and suggestions go here.  This is where you will mention how to change appearances and general practices.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # cluster Website
-This project is to develop a website that can be used to
-share important information about an educational cluster.
+This project is to develop a website that can be used to share important information about an educational cluster.
 
 ## Introduction
-This was originally desined for the flux cluster at UWL but can be used for any educational cluster.Here is a demo:http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite
+This was originally designed for the flux cluster at UWL but can be used for any educational cluster. Here is a demo: http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite
 
 ## Installation
-If you would like to use the shell of the website it can be easily adapted to be used for your cluster.The project uses HTML, CSS Bootstrap, jQuery, Angularjs and Python. The html web page is styled with bootstrap and jQuery. The data is served as json files through a cherrypy server (a lightweight Python webservice) and fed through an  Angularjs app to the web site. The cluster app uses ngRoute as a dependency and utilizes the routing library to change views (ng-view) without refreshing.
- Clone the files above in the directory of your choice.Install [python] (https://www.python.org/downloads/) then download the [cherrypy] (http://docs.cherrypy.org/en/latest/install.html) package. Now you are ready to get started.
-The first thing to do is 
-
-
-
-
-
-
-## Helpful Hints
-
-### Changing appearances
-Css is used to control the background and colors of the website. But if you know jquery it can be sometimes simpler to change css using it.Css file is at bootstrap/css/main.css.It is sorted first by tag,class,id then alphabetically.The jquery file is in js/simple.js.
-
-### General practices
-All the content editing will be done in the json files in the json folder.Each section has its own json file and will be edited from here.The general thing to remember while editing is if you have empty values for some of the keys, delete the value and leave it as an empty string.If you do not want an entire section it can be deleted but i recommend leaving the keys in if you think the section can be needed later.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# cluster Website
-This project is to develop a website that can be used to
-share important information about an educational cluster.
-
-## Introduction
-This was originally designed for the flux cluster at UWL but can be used for any educational cluster. Here is a demo:http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite
-
-## Installation
-If you would like to use the skeleton of the website it can be easily adapted to be used for your cluster. The project uses HTML 5, CSS Bootstrap 3.3.7, jQuery 1.12.14, Angularjs 1.5.8 and Python 2.7.The html web page is styled with bootstrap and jQuery. The data is served as json files through a cherrypy server and fed through an  Angularjs app to the web site. The cluster app uses ngRoute as a dependency and utilizes the routing library to change views (ng-view) without refreshing. The website is linked to the Angularjs routing library 1.2.28.
+If you would like to use the skeleton of the website it can be easily adapted to be used for your cluster. The project uses HTML 5, CSS Bootstrap 3.3.7, jQuery 1.12.14, Angularjs 1.5.8 and Python 2.7.The html web page is styled with bootstrap and jQuery. The data is served as json files through a cherrypy server and fed through an  Angularjs app to the web site. The cluster app uses ngRoute as a dependency and utilizes the routing library to change views (ng-view) without refreshing. The website is linked to the Angularjs routing library 1.2.28 and the dependency already included in the app(at js/app.js).
 
 ### Software Setup
 The project provides you with a cherrypy server(in the server folder) with minimal security. Therefore when running the server you will require a full featured web server installed on your machine to maintain security.
@@ -154,6 +44,7 @@ The current status of the cluster is displayed here.To only anchor the name of t
 ![Demo 4](img/demoAn4.png)
 
 ## Helpful Hints
+
 ### Changing appearances
 Css is used to control the background and colors of the website. But if you know jquery it can be sometimes simpler to change css using it.Css file is at bootstrap/css/main.css.It is sorted first by tag,class,id then alphabetically.The jquery file is in js/simple.js.
 
