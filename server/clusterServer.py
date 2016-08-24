@@ -98,6 +98,8 @@ def secureheaders():
     headers['X-Frame-Options'] = 'DENY'
     headers['X-XSS-Protection'] = '1; mode=block'
     headers['Content-Security-Policy'] = "default-src='self'"
+    if (cherrypy.server.ssl_certificate != None and cherrypy.server.ssl_private_key != None):
+    	headers['Strict-Transport-Security'] = 'max-age=31536000'
 
 # wrapping the application with the headers while setting priority
 cherrypy.tools.secureheaders = \
