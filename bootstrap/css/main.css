@@ -6,25 +6,25 @@ a {
 padding top and bottom due to fixed menu 
 background-color is sky blue
 */
-body{
-    padding-top : 7em;
-    padding-bottom : 5em;
-    background-color : #7ec0ee ;
-    font-family : lucida sans unicode;
+body {
+    padding-top: 7em;
+    padding-bottom: 5em;
+    background-color: #7ec0ee ;
+    font-family: lucida sans unicode;
 }
 /* adjustment of anchors due to fixed top menu */
 section{ 
-    position : relative; 
+    position: relative; 
 }
 section span{ 
-    position : absolute; 
-    top : -200px;
+    position: absolute; 
+    top: -200px;
 }
 /* makes entire cell clickable*/
 td a {
-    display : inline-block;
-    height : 100%;
-    width : 100%
+    display: inline-block;
+    height: 100%;
+    width: 100%
 }
 /* makes all unordered list without bullet points */
 ul {
@@ -32,7 +32,7 @@ ul {
 }
 /* code class mods, works best with <div> to dispay code */
 .code {
-    color: yellow;
+    color: yellow ;
     background-color: black;
     padding: 5px;
     font-family: helvetica;
@@ -45,16 +45,16 @@ ul {
     */
 }
 /* makes the gallery of images stack inline then in block */
-.gallery li{
+.gallery li {
     display: inline-block;
     padding: 3px;
 }
 /* info class for displaying content */
-.info{
+.info {
     font-size: 18px;
 }
 /* responsive images have zoom in cursor */
-.img-responsive{
+.img-responsive {
     cursor: -moz-zoom-in; 
     cursor: -webkit-zoom-in; 
     cursor: zoom-in;
@@ -66,7 +66,7 @@ ul {
     border-color: white;
 }
 /* Color of nav bar links*/
-.nav li a{
+.nav li a {
     padding-top: 2em;
 }
 
@@ -98,13 +98,13 @@ ul {
 }
 /* centers next and previous button */
 #btn-box {
-text-align:center;
+text-align: center;
 }
 /* sets the footer's style */
 #footer {
     padding-top: 1em;   
     text-align: center;
-    color:#999999;
+    color: #999999;
 }
 /* sets the footer list items horizontanly */
 #footer li {
@@ -112,33 +112,33 @@ text-align:center;
 }
 /* footer link colors */
 #footer li a {
-    color:#999999;
+    color: #999999;
 }
 /* style of the gallery item, used as background for the gallery when a gallery item is clicked on*/
 #galleryItem {
-    color : white;
-    background-color : #0d3d56;
+    color: white;
+    background-color: #0d3d56;
     padding: 10px 10px 10px 10px; 
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
 /* Pushes the school info to the left */
 #leftFoot { 
-    float : left;
+    float: left;
 }
 /* margin of website title and bottom organization logo */
 #logo {
-    margin-right : 10px;
+    margin-right: 10px;
 }
 /* pushes the support info to the right */
 #rightFoot {
-    float : right;
+    float: right;
 }
 /* style of the list of specification after a gallery item is clicked on*/
-#specifications{
+#specifications {
     list-style-type: circle;
 }
 /* margin of website title */
 #title {
-    margin-right : 10px;
+    margin-right: 10px;
 }
