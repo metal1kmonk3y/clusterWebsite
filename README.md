@@ -32,42 +32,60 @@ All the content editing will be done in the json files in the json folder. Each 
 The menu can be edited from json/menu_items.json. Here the first thing you will see is the title of the website. The next item is the favorite icon image, you can name your image file fav_icon.png and put it in img folder or simply insert the image path. The menu can be edited by changing the name attribute of a menuItems object.
    
 ### Footer
-The footer is very easy to set up. Simply fill in the organization and department with appropriate values, if value is not used leave as  an empty string.For the organization logo you can name your image file org_logo.jpg and put it in img folder or simply insert the image path. These along with org_logo.jpg will be on the left side of the footer.On the right you have the support array which holds strings.All the strings here will be displayed on the right side of the footer. You can have as many strings in the array as you want but the footer will expand up with each addition.    
+The footer is very easy to set up. Open up json/ footer.json and simply fill in the organization and department with appropriate values, if value is not used leave as  an empty string.For the organization logo you can name your image file org_logo.jpg and put it in img folder or simply insert the image path. These along with org_logo.jpg will be on the left side of the footer.On the right you have the support array which holds strings.All the strings here will be displayed on the right side of the footer. You can have as many strings in the array as you want but the footer will expand up with each addition.    
 
 ![Demo 1](img/demoAn1.png)
 
 ### Current Status
-The current status of the cluster is displayed here. Fill out the title with the desired text. The description has been broken into three parts. The start should contain the part of the string or paragraph before the name of the monitoring system and the end will contain everything after the name. This way url can be  linked only to the name. If you take a look at json/current_status.json you will see how this is done for a one sentence description but the same logic can be applied for a paragraph or more.
+The current status of the cluster is displayed here. Fill out the title with the desired text in json/ current_status.json. The description has been broken into three parts. The start should contain the part of the string or paragraph before the name of the monitoring system and the end will contain everything after the name. This way url can be  linked only to the name. If you take a look at json/current_status.json you will see how this is done for a one sentence description but the same logic can be applied for a paragraph or more.
 
 ### Architecture
-Start with the title and description as always.
+Start with the title and description as always at json/ architecture.json.
 
 #### Specifications Table
-After that you will stumble upon specifications. This is a little different since both the key and values are used to make a table. You can see the key is capitalized and has spaces in between. Therefore, if you are editing the “specifications” object  in  json/architecture.json add/delete keys and values as pairs. Furthermore, you can have as many specifications as you wish but they must have unique keys.
+After that you will stumble upon specifications. This is a little different since both the key and values are used to make a table. You can see the key is capitalized and has spaces in between. Therefore, if you are editing the *specifications* object  in  json/architecture.json add/delete keys and values as pairs. Furthermore, you can have as many specifications as you wish but they must have unique keys.
 
 #### Gallery
-For the gallery we use the “subtitle” object as the title of the Gallery. Then the nodes array contains info about each node. They have a name, an array of specs (this can be as long as you can or empty), and img attribute which takes the image path.
+For the gallery we use the *subtitle* object as the title of the Gallery. Then the nodes array contains info about each node. They have a name, an array of specs (this can be as long as you can or empty), and img attribute which takes the image path.
+#### Buttons
+The text inside the buttons can be change in the *buttons* object.
 
 ### Getting an Account
-Fill out the title and description. Then we have two sections, here you may delete the values if you do not have them.
+Fill out the title and description in json/account_info.json. Then we have two sections, here you may delete the values if you do not have them.
 
-#### Section 1
-Section one has a subtitle and a description. Then there is "request_info_list_type"  object which takes in { "1", “i”, “I”, “a”, “A”} which determines the type of list "request_info" array is, this array may contain many strings or none, that is up to you.        
+#### Account request information
+This sub-section has a subtitle and a description. Then there is *request_info_list_type* object which takes in { “1”, “i”, “I”, “a”, “A”} which determines the type of list *request_info* array is, this array may contain many strings or none, that is up to you.        
 
-#### Section 2
-Section two also has a subtitle and a description. The “display_file” array take two strings, first one is the name of the file and the second is the path.
+#### Logging in
+This sub-section also has a subtitle and a description. The display_file array takes two strings, first one is the name of the file and the second is the path.
 
 ![Demo 2](img/demoAn2.png)
+
+### Running a Job
+Here the section starts with title and description in json/run_job.json. 
+
+#### Preparing a batchscript
+This sub-section has a subtitle and a description that is split into two parts. The description_start object  is your regular description so fill it out or not. Then there is description_end_list_type  object which takes in { “1”, “i”, “I”, “a”, “A”} which determines the type of list *description_end* array is, this array may contain many strings or none, that is up to you.The *display_file* array takes two strings, first one is the name and the second one is the path of the file.        
+
+#### More on SLURM
+This sub-section also has a subtitle and a description. Then the *commands_list_type* determines how the list is ordered by taking in { “1”, “i”, “I”, “a”, “A”}. You can have as many objects in *commands* as you want and the name of the object does not matter. However, they must all have an info attribute and  a code array (this may have any number of strings). The *display_file* array takes two strings, first is the name of the file and the second is the path of the file.
+
 ![Demo 3](img/demoAn3.png)
+
+### Available Software
+This section can be edited form **json/software.json**. Start with the title and description. Then fill out what you would like your four column names to be in the *software_table_cols* array.
+Then in *software_table* fill out *name*, *description*, *versions*(if there are multiple versions, use a string with commas like  “2.6, 2.7, 3.4”), and *link*. You may have as many objects as you want in the *software_table*.
 ![Demo 4](img/demoAn4.png)
 
+### Resources 
+Resources section can be change from  **json/resources.json**. Begin with the title and description.This section use keys and values from the *links* to list resourceful websites. Therefore, if you are editing the *links*  in ** json/resources.json** add/delete keys and values as pairs.
 
 
 ## Helpful Hints
 I highly recommend you read and follow the following hints.
 
 ### Changing appearances
-Css is used to control the background and colors of the website. But if you know jquery it can be sometimes simpler to change css using it. Css file is at bootstrap/css/main.css. It is sorted first by tag, class, id then alphabetically. The jquery file is in js/simple.js.
+Css is used to control the background and colors of the website. But if you know jquery it can be sometimes simpler to change css using it. Css file is at **bootstrap/css/main.css**. It is sorted first by tag, class, id then alphabetically. The jquery file is in **js/simple.js**.
 
 #### CSS cheat sheet
 Here is a list of tags, classes, and ids that might help you navigate the css file better.
@@ -97,10 +115,12 @@ ul - used to change all unordered list style types to none, so if you want to as
 #specifications - style of the list of specification after a gallery item is clicked on
 #title - used to add margin to the website title 
 
+
+
 ### General practices
 The general thing to remember while editing the json files is : if you have empty values for some of the keys, delete the value and leave it as an empty string. However in two cases you must add/delete both keys and values, they are as follows:
 
-The resources section use keys and values from the “links” object to list recommended websites. Therefore, if you are editing the “links” object  in  json/resources.json add/delete keys and values as pairs.
-The specifications table in Architecture section also displays keys and values. Therefore, if you are editing the “specifications” object  in  json/architecture.json add/delete keys and values as pairs.
+The resources section use keys and values from the *links* object to list recommended websites. Therefore, if you are editing the *links* object  in ** json/resources.json** add/delete keys and values as pairs.
+The specifications table in Architecture section also displays keys and values. Therefore, if you are editing the *specifications* object  in  **json/architecture.json** add/delete keys and values as pairs.
 
 
