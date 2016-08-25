@@ -17,7 +17,7 @@ Clone the files in the directory of your choice. Install [python](https://www.py
     python clusterServer.py 
 
 Now the menu json  file should show up at domainName/clusterWebsite/server/menuItems.json
-You will need to go to js/services/serveMenu.js to change the string in  ```$http.get(‘’)``` to 
+You will need to go to js/services/serveMenu.js to change the string in ```$http.get(‘’)``` to 
 
     return $http.get('domainName/clusterWebsite/server/api/menuItems.json')
 
