@@ -48,9 +48,6 @@ After that you will stumble upon specifications. This is a little different sinc
 #### Gallery
 For the gallery we use the “subtitle” object as the title of the Gallery. Then the nodes array contains info about each node. They have a name, an array of specs (this can be as long as you can or empty), and img attribute which takes the image path.
 
-
-![Demo 2](img/demoAn2.png)
-
 ### Getting an Account
 Fill out the title and description. Then we have two sections, here you may delete the values if you do not have them.
 
@@ -60,6 +57,7 @@ Section one has a subtitle and a description. Then there is "request_info_list_t
 #### Section 2
 Section two also has a subtitle and a description. The “display_file” array take two strings, first one is the name of the file and the second is the path.
 
+![Demo 2](img/demoAn2.png)
 ![Demo 3](img/demoAn3.png)
 ![Demo 4](img/demoAn4.png)
 
@@ -104,3 +102,5 @@ The general thing to remember while editing the json files is : if you have empt
 
 The resources section use keys and values from the “links” object to list recommended websites. Therefore, if you are editing the “links” object  in  json/resources.json add/delete keys and values as pairs.
 The specifications table in Architecture section also displays keys and values. Therefore, if you are editing the “specifications” object  in  json/architecture.json add/delete keys and values as pairs.
+
+
