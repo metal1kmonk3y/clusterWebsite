@@ -37,7 +37,7 @@
 							</li>	
 					      	<!-- Menu items -->
 							<li ng-repeat="item in menu.menuItems">
-								<a class="nav-link" href={{item.link}} onclick="location.hash='{{item.link}}';">
+								<a class="nav-link" href={{item.link}} ng-click="location.hash='{{item.link}}';">
 									{{item.name}}
 								</a>
 							</li>
@@ -199,7 +199,7 @@
 					</li>
 					<!-- Back to top button starts here -->
 					<li>
-						<a href={{menu.menuItems[0].link}} id="backToTop" class="btn btn-outline-secondary" role="button"  onclick="location.hash='{{menu.menuItems[0].link}}';">
+						<a href={{menu.menuItems[0].link}} id="backToTop" class="btn btn-outline-secondary" role="button"  ng-click="location.hash='{{menu.menuItems[0].link}}';">
 					  	 	{{footer.top_button}}
 					  	</a>
 					</li>
