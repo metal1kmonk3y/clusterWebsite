@@ -37,7 +37,7 @@
 							</li>	
 					      	<!-- Menu items -->
 							<li ng-repeat="item in menu.menuItems">
-								<a class="nav-link" href={{item.link}} onclick="location.hash=''; location.hash='{{item.link}}';">
+								<a class="nav-link" href={{item.link}} onclick="location.hash='{{item.link}}';">
 									{{item.name}}
 								</a>
 							</li>
@@ -197,13 +197,13 @@
 						 	{{footer.department.name}}
 						 </a>
 					</li>
-					<!-- Back to top button starts here-->
+					<!-- Back to top button starts here -->
 					<li>
-						<a href={{menu.menuItems[0].link}} id="backToTop" class="btn btn-outline-secondary" role="button"  onclick="location.hash=''; location.hash='{{menu.menuItems[0].link}}';">
+						<a href={{menu.menuItems[0].link}} id="backToTop" class="btn btn-outline-secondary" role="button"  onclick="location.hash='{{menu.menuItems[0].link}}';">
 					  	 	{{footer.top_button}}
 					  	</a>
 					</li>
-					<!-- Back to top button ends here-->
+					<!-- Back to top button ends here -->
 					<li id="rightFoot">
 						<div ng-repeat="value in  footer.support">
 							{{value}}
@@ -214,23 +214,23 @@
 		
 		</div>
 	
-	     	<!-- Modules -->
-	    	<script src="js/app.js"></script>
-	
-	    	<!-- Controllers -->
-	    	<script src="js/controllers/mainController.js"></script>
-	    	<script src="js/controllers/diagramController.js"></script>
-	    
-	    	<!-- Services -->
-	    	<script src="js/services/serveMenu.js"></script>
-	    	<script src="js/services/serveArchitecture.js"></script>
-	    	<script src="js/services/serveStatus.js"></script>
-	    	<script src="js/services/serveAccountInfo.js"></script>
-	    	<script src="js/services/serveRunJob.js"></script>
-	    	<script src="js/services/serveFooter.js"></script>
-	    	<script src="js/services/serveResources.js"></script>
-	    	<script src="js/services/serveSoftware.js"></script>
-	    
+     	<!-- Modules -->
+    	<script src="js/app.js"></script>
+
+    	<!-- Controllers -->
+    	<script src="js/controllers/mainController.js"></script>
+    	<script src="js/controllers/diagramController.js"></script>
+    
+    	<!-- Services -->
+    	<script src="js/services/serveMenu.js"></script>
+    	<script src="js/services/serveArchitecture.js"></script>
+    	<script src="js/services/serveStatus.js"></script>
+    	<script src="js/services/serveAccountInfo.js"></script>
+    	<script src="js/services/serveRunJob.js"></script>
+    	<script src="js/services/serveFooter.js"></script>
+    	<script src="js/services/serveResources.js"></script>
+    	<script src="js/services/serveSoftware.js"></script>
+
 		<!-- Jquery -->
 		<script src="js/simple.js"></script>
 
