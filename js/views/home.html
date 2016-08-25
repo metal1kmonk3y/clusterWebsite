@@ -1,12 +1,10 @@
 <!--hwloc node diagrams-->
-<ul>
-<h3>{{architecture.subtitle}}</h3>
-	<ul class="gallery">
-			<li ng-repeat="machine in architecture.nodes">
-			<a href="#/flux/{{$index}}">
-			<img ng-src="{{machine.img}}" width="340" height="170"> 
-			  	<p>{{machine.name}}</p>
-			</a>
-		</li>
-	</ul>
+<ul class="gallery">>
+	<h3>{{architecture.subtitle}}</h3>
+	<li ng-repeat="machine in architecture.nodes">
+		<a href="#/flux/{{$index}}">
+		<img ng-src="{{machine.img}}" width="340" height="170"/> 
+		  	<p>{{machine.name}}</p>
+		</a>
+	</li>
 </ul>
