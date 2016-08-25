@@ -1,9 +1,10 @@
 /* global app */
 app.controller('MainController', ['$scope', 
     'serveMenu', 'serveArchitecture', 'serveStatus','serveAccountInfo', 'serveRunJob',
-    'serveSoftware', 'serveResources', 'serveFooter'
+    'serveSoftware', 'serveResources', 'serveFooter', '$location', '$anchorScroll'
     , function($scope, serveMenu, serveArchitecture, serveStatus, serveAccountInfo, 
-    serveRunJob, serveSoftware, serveResources, serveFooter) { 
+    serveRunJob, serveSoftware, serveResources, serveFooter, 
+    $location, $anchorScroll) { 
     
     //menu array that contains all the menu items
     serveMenu.success(function(data) { 
@@ -44,6 +45,12 @@ app.controller('MainController', ['$scope',
     serveFooter.success(function(data) {
         $scope.footer = data;
     });
+    
+    $scope.goHere = function(str){
+        $location.hash('str');
+        $anchorScroll();
+    } 
+    
 }]);
    
    
