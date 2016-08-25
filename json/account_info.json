@@ -5,7 +5,7 @@
     "sections" :
     [
         {
-            "subtitle": "Account request information",
+            "subtitle" : "Account request information",
             "description" : "Account requests are either granted or denied within a week. If approved, you will be sent an email with your username and dummy password. YOU MUST CHANGE THIS AS SOON AS POSSIBLE. Please provide the following pieces of information when requesting an account:",
             "request_info_list_type" : "1",
             "request_info" : [

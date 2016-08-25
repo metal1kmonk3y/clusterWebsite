@@ -96,6 +96,10 @@ ul {
     background-color: #83A4FF;
     color: #730019 ;
 }
+/* centers next and previous button */
+#btn-box {
+text-align:center;
+}
 /* sets the footer's style */
 #footer {
     padding-top: 1em;   

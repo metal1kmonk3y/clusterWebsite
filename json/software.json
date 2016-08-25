@@ -1,7 +1,7 @@
 {
     "title" : "Available Software",
     "description" : "The following is a list of currently available software. Versions marked with a star (*) are the default. If you need access to another version, contact the system administrator for the path information. If there is something you need, please contact the system administrator about adding it.",
-    "software_table_cols": ["Name","Detail","Versions","Website"],
+    "software_table_cols": ["Name","Detail","Version(s)","Website"],
     "software_table" : [
         {
             "name": "Python",

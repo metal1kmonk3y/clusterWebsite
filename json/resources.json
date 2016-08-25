@@ -2,27 +2,19 @@
     "title" : "Resources",
     "description" : "Here is a list of recommended resources for using this and other parallel computers.",
     "links" : {
-        
             "SLURM Project :" : "http://slurm.schedmd.com/slurm.html",
-        
         
             "SLURM Tutorials :" : "http://slurm.schedmd.com/tutorials.html",
         
-        
             "MPI Tutorial :" : "http://mpitutorial.com/tutorials/mpi-hello-world/",
-        
         
             "LLNL MPI Tutorial :" : "https://computing.llnl.gov/tutorials/mpi/",
         
-        
             "Open MPI project page :" : "https://www.open-mpi.org/",
-        
         
             "Open MPI FAQs :" : "https://www.open-mpi.org/faq/",
         
-        
             "LLNL OpenMP Tutorial :" : "https://computing.llnl.gov/tutorials/openMP/",
-        
         
             "OpenMP project page :" : "http://openmp.org/wp/"
     }

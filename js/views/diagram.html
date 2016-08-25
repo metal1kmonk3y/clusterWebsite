@@ -1,23 +1,25 @@
 <!--details of hwloc node diagrams-->
 <h3>{{detail.subtitle}}</h3>
-<div id = "galleryItem">
+<div id="galleryItem">
     <h4>{{diagram.name}}</h4>
-    <ul id = "specifications">
-        <li ng-repeat = "spec in diagram.specs">
+    <ul id="specifications">
+        <li ng-repeat="spec in diagram.specs">
             {{spec}}
         </li>
     </ul>
-    <a class="btn btn-primary"  role="button" href="#/" id = "backToGallery">
+    <a class="btn btn-primary" role="button" href="#/" id="backToGallery">
         {{detail.buttons.back}}
     </a>
-    <a ng-click="prev()" class="btn btn-primary btn-sm" role="button">
-        {{detail.buttons.previous}}
-    </a>
-    <a ng-click="next()" class="btn btn-primary btn-sm" role="button"> 
-        {{detail.buttons.next}}
-    </a>
+    <div id="btn-box">
+        <a ng-click="prev()" class="btn btn-primary btn-sm" role="button">
+            {{detail.buttons.previous}}
+        </a>
+        <a ng-click="next()" class="btn btn-primary btn-sm" role="button"> 
+            {{detail.buttons.next}}
+        </a>
+    <div/>
     <a href = {{diagram.img}} title="Enlarge">
-        <img class ="img-responsive" ng-src="{{diagram.img}}">
+        <img class="img-responsive" ng-src="{{diagram.img}}">
     </a>
 </div>
 

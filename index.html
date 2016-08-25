@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-controller="MainController"  ng-app="cluster">
+<html ng-controller="MainController" ng-app="cluster">
 	<!-- Main controller starts here -->
 	<!-- App cluster starts here -->
 	
@@ -11,7 +11,7 @@
 		<link href="bootstrap/css/main.css" rel="stylesheet"/>
 		<!-- AngularJS library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-		<!--AngularJS routing library -->
+		<!-- AngularJS routing library -->
     	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
 		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -26,29 +26,29 @@
 		
 		<div class="main container" >
 			
-			<!--top navigation menu-->
-			<section >
+			<!-- Top navigation menu-->
+			<section>
 				<nav class="navbar navbar-fixed-top navbar-inverse">
-				  <div class="container">
-				    <ul class="nav navbar-nav" >
-				    	<!--title of website-->
-	  					<li>
-	  						<h1 id ="title">{{menu.title}}</h1>
-						</li>	
-				      	<!--menu items-->
-						<li ng-repeat="item in menu.menuItems">
-							<a class="nav-link" href={{item.link}} onclick="location.hash=''; location.hash='{{item.link}}';">
-								{{item.name}}
-							</a>
-						</li>
-				    </ul>
-				  </div>
+				  	<div class="container">
+					    <ul class="nav navbar-nav">
+					    	<!-- Title of website -->
+		  					<li>
+		  						<h1 id ="title">{{menu.title}}</h1>
+							</li>	
+					      	<!-- Menu items -->
+							<li ng-repeat="item in menu.menuItems">
+								<a class="nav-link" href={{item.link}} onclick="location.hash=''; location.hash='{{item.link}}';">
+									{{item.name}}
+								</a>
+							</li>
+				   		</ul>
+					</div>
 				</nav>
 			</section>
 			
 			<!-- Cluster Status -->
 			<section>
-				<span id={{menu.menuItems[0].id}} ></span>
+				<span id={{menu.menuItems[0].id}}></span>
 				<h2>{{currentStatus.title}}</h2>
 				<ul class = "info">
 					{{currentStatus.description_start}}
@@ -59,29 +59,29 @@
 				</ul>
 			</section>
 		
-			<!--Architecture-->
-			<section >
-				<span id={{menu.menuItems[1].id}} ></span>
+			<!-- Architecture -->
+			<section>
+				<span id={{menu.menuItems[1].id}}></span>
 				<h2>{{architecture.title}}</h2>
 				<ul class = "info">
 					{{architecture.description}}
 					<table class="table table-striped">
 						 <tbody>
-						      <tr class ="table-row" ng-repeat="(key, value) in architecture.specifications">
-						        <td class ="table-data">{{key}} </td>
-						        <td class ="table-data">{{value}}</td>
-						      </tr>
+						 	<tr class ="table-row" ng-repeat="(key, value) in architecture.specifications">
+						    	<td class ="table-data">{{key}} </td>
+						      	<td class ="table-data">{{value}}</td>
+						     </tr>
 				   		 </tbody>
 				   	</table>
 				</ul>
-			    <!-- gallery of hwloc diagrams-->
-				<div ng-view id ="hwloc">
-				</div>
+			    <!-- Gallery of hwloc diagrams -->
+				<ul ng-view id ="hwloc">
+				</ul>
 			</section>
 			
-			<!-- Getting an Account-->
+			<!-- Getting an Account -->
 			<section>
-				<span id={{menu.menuItems[2].id}} ></span>
+				<span id={{menu.menuItems[2].id}}></span>
 				<h2>{{accountInfo.title}}</h2>
 				<ul class = "info">
 					{{accountInfo.description}}
@@ -102,7 +102,7 @@
 				</ul>
 			</section>
 			
-			<!--Running a Job-->	
+			<!-- Running a Job -->	
 			<section>
 				<span id={{menu.menuItems[3].id}}></span>
 				<h2>{{runJob.title}}</h2>
@@ -140,7 +140,7 @@
 				</ul>
 			</section>
 			
-			<!--Available Software-->
+			<!-- Available Software -->
 			<section>
 				<span id={{menu.menuItems[4].id}}></span>
 				<h2>{{software.title}}</h2>	
@@ -164,7 +164,7 @@
 				</ul>
          	</section>
          		
-			<!--Resources-->	
+			<!-- Resources -->	
 			<section>
 				<span id={{menu.menuItems[5].id}}></span>
 				<h2>{{resources.title}}</h2>
@@ -179,7 +179,7 @@
 				</ul>
 			</section>
 			
-			<!--Footer-->
+			<!-- Footer -->
 			<nav class="navbar navbar-fixed-bottom" id="footer">
 	  			<ul class="container" >
 	  				<!--Footer Items-->

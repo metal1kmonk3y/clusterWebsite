@@ -20,27 +20,27 @@
         {
             "subtitle": "More on SLURM",
             "description" : "The following commands can be used on flux to interact with SLURM.",
-            "commands_list_type": "I",
-            "commands" :{
+            "commands_list_type" : "I",
+            "commands" : {
                 "sinfo" : { 
                             "info" : "Show basic information about the nodes available in the system :",
                             "code" : [
                                     "shell$ sinfo"
                             ]
                 },
-                 "squeue" :{ 
+                 "squeue" : { 
                             "info" : "Show information about the job queue (e.g., which jobs are running, versus queued):",
                             "code" : [
                                     "shell$ squeue"
                             ]
                 },
-                 "sbatch" :{ 
+                 "sbatch" : { 
                             "info" : "Submit a batch job. Does not block in the shell, but queues the job for later execution. See example script above for syntax and some common parameters.",
                             "code" : [
                                     "shell$ sbatch mysript.sh"
                             ]
                 },
-                 "salloc" :{ 
+                 "salloc" : { 
                             "info" : "Obtain a slurm allocation to use. Blocks until allocation is available. This is useful if you want to experiment with the allocation interactively. Most users will find this better/easier to use than srun for this purpose.",
                             "code" : [
                                     "# Allocate two nodes from the available pool of nodes",
@@ -63,15 +63,13 @@
                                     "shell$ srun -N 2 --nodelist=flux2,flux3,flux4"
                             ]
                 },
-                 "scancel" :{ 
+                 "scancel" : { 
                             "info" : "Kill a job by it's Job ID (use squeue to get Job ID).",
                             "code" : [
                                     "shell$ scancel 12345"
                             ]
                 }
-                   
-            },    
-            
+            }, 
             "display_file" : [ 
                             "common_slurm.txt", 
                             "doc/common_slurm.txt"
