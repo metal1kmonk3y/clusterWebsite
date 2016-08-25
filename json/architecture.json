@@ -11,34 +11,44 @@
     "nodes": 
     [
         {   
-            "cores" : "Cores per node: 12",
-            "RAM" : "Ram per node: 96 GB",
             "name" : "Flux (head node)",
+            "specs" : [ 
+                    "Cores per node: 12",
+                    "Ram per node: 96 GB"
+           ],
             "img" : "img/flux.png"
         },
         {
-            "cores" : "Cores per node: 12",
-            "RAM" : "Ram per node: 384 GB",
             "name" : "Flux 1 (large memory)",
+            "specs" : [ 
+                    "Cores per node: 12",
+                    "Ram per node: 384 GB"
+           ],
             "img" : "img/flux1.png"
         },
         {
-            "cores" : "Cores per node: 8",
-            "RAM" : "Ram per node: 48 GB",
             "name" : "Flux 2 (compute node)",
+            "specs" : [ 
+                    "Cores per node: 8",
+                    "Ram per node: 48 GB"
+            ],
             "img" : "img/flux2.png"
         },
         {
-            "cores" : "Cores per node: 8",
-            "RAM" : "Ram per node: 48 GB",
             "name" : "Flux 3 (compute node)",
+            "specs" : [ 
+                    "Cores per node: 8",
+                    "Ram per node: 48 GB"
+            ],
             "img" : "img/flux3.png"
             
         },
         {
-            "cores" : "Cores per node: 8",
-            "RAM" : "Ram per node: 48 GB",
             "name" : "Flux 4 (compute node) ",
+            "specs" : [ 
+                    "Cores per node: 8",
+                    "Ram per node: 48 GB"
+            ],
             "img" : "img/flux4.png"
         }
     ],

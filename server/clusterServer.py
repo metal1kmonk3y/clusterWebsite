@@ -1,7 +1,6 @@
 import json
 import io
 import cherrypy
-from configobj import ConfigObj
 from collections import OrderedDict
 
 # opens a json file containing the menu items

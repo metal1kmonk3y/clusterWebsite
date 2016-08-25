@@ -1,7 +1,7 @@
 <!doctype html>
-<html ng-controller="MainController"  ng-app = "cluster">
-	<!--main controller starts here-->
-	<!--app cluster starts here-->
+<html ng-controller="MainController"  ng-app="cluster">
+	<!-- Main controller starts here -->
+	<!-- App cluster starts here -->
 	
 	<head>
 		
@@ -26,9 +26,9 @@
 		
 		<div class="main container" >
 			
-			<section >
 			<!--top navigation menu-->
-				<nav class="navbar navbar-fixed-top navbar">
+			<section >
+				<nav class="navbar navbar-fixed-top navbar-inverse">
 				  <div class="container">
 				    <ul class="nav navbar-nav" >
 				    	<!--title of website-->
@@ -37,7 +37,9 @@
 						</li>	
 				      	<!--menu items-->
 						<li ng-repeat="item in menu.menuItems">
-							<a class="nav-link" href={{item.link}} onclick="location.hash=''; location.hash='{{item.link}}';">{{item.name}}</a>
+							<a class="nav-link" href={{item.link}} onclick="location.hash=''; location.hash='{{item.link}}';">
+								{{item.name}}
+							</a>
 						</li>
 				    </ul>
 				  </div>
@@ -107,7 +109,7 @@
 				<ul class = "info">
 					{{runJob.description}}
 					<h3>{{runJob.sections[0].subtitle}}</h3>
-					 {{runJob.sections[0].description_start}}
+					{{runJob.sections[0].description_start}}
 					<ol type ="{{runJob.sections[0].description_end_list_type}}" >
 						<li ng-repeat="value in  runJob.sections[0].description_end">
 							{{value}}
@@ -120,26 +122,25 @@
 			   		</li>
 			   		<h3>{{runJob.sections[1].subtitle}}</h3>
 			   		{{runJob.sections[1].description}}<br>
-			   		<ol type ="{{runJob.sections[1].commands_list_type}}" >
-		   				<li ng-repeat = "item in runJob.sections[1].commands">
+			   		<ol type="{{runJob.sections[1].commands_list_type}}" >
+		   				<li ng-repeat="item in runJob.sections[1].commands">
 			   				{{item.info}}
 				   			<ul>
-					   			<li class = "code" ng-repeat ="c in item.code">
+					   			<li class="code" ng-repeat="c in item.code">
 					   	 			{{c}}
 					   	 		</li>
 				   	 		</ul>
 			   	 		</li>
 			   		</ol>
-			   		<li class="list-group">
-				   		<a class = "file-link" href={{runJob.sections[1].display_file[1]}}>
+			   		<li>
+				   		<a href={{runJob.sections[1].display_file[1]}}>
 				   			{{runJob.sections[1].display_file[0]}}
 				   		</a>
 				   	</li>
-				   	
 				</ul>
 			</section>
 			
-					<!--Available Software-->
+			<!--Available Software-->
 			<section>
 				<span id={{menu.menuItems[4].id}}></span>
 				<h2>{{software.title}}</h2>	
@@ -147,17 +148,17 @@
 					{{software.description}}
 					<table class="table table-bordered">
 					    <thead>
-					      <tr class = "table-row">
-					      	<th ng-repeat="col in software.software_table_cols">{{col}}</th>
-					      </tr>
+					    	<tr class="table-row">
+					    		<th ng-repeat="col in software.software_table_cols">{{col}}</th>
+					      	</tr>
 					    </thead>
 					    <tbody>
-					      <tr class ="table-row" ng-repeat="value in software.software_table">
-					        <td >{{value.name}}</td>
-					        <td >{{value.description}}</td>
-					        <td >{{value.versions}}</td>
-					        <td><a href ="{{value.link}}" target="_blank">{{value.link}}</a></td>
-					      </tr>
+					      	<tr class="table-row" ng-repeat="value in software.software_table">
+						        <td >{{value.name}}</td>
+						        <td >{{value.description}}</td>
+						        <td >{{value.versions}}</td>
+						        <td><a href="{{value.link}}" target="_blank">{{value.link}}</a></td>
+					      	</tr>
 					    </tbody>
 					</table>
 				</ul>
@@ -167,14 +168,13 @@
 			<section>
 				<span id={{menu.menuItems[5].id}}></span>
 				<h2>{{resources.title}}</h2>
-				<ul class = "info">
+				<ul class="info">
 					{{resources.description}}
-					<table class = "table table-hover">
+					<table class="table table-hover">
 							<tr ng-repeat="(key, value) in resources.links">
 								<td>{{key}}</td> 
-								<td><a target ="_blank" href = {{value}}>{{value}}</a></td> 
-							</tr>
-					   	</li>
+								<td><a target="_blank" href ={{value}}>{{value}}</a></td> 
+							<tr/>
 				   	</table>
 				</ul>
 			</section>
@@ -184,22 +184,29 @@
 	  			<ul class="container" >
 	  				<!--Footer Items-->
 	    			<li id="leftFoot">
-					 <a href={{footer.organization.link}}><img id ="logo" src="{{footer.organization.logo}} " height="44" width="114"/><a/>
+						 <a href={{footer.organization.link}}>
+						 	<img id ="logo" src="{{footer.organization.logo}}" height="44" width="114"/>
+						 <a/>
 					 <li/>
 					 <li id="leftFoot">
-					 <a href={{footer.organization.link}}>{{footer.organization.name}}<a/><br/>
-					 <a href={{footer.department.link}}>{{footer.department.name}}</a>
+						 <a href={{footer.organization.link}}>
+						 	{{footer.organization.name}}
+						 <a/>
+						 <br/>
+						 <a href={{footer.department.link}}>
+						 	{{footer.department.name}}
+						 </a>
 					</li>
 					<!-- Back to top button starts here-->
 					<li>
-					  <a href ={{menu.menuItems[0].link}} id="backToTop" class="btn btn-outline-secondary" role="button"  onclick="location.hash=''; location.hash='{{menu.menuItems[0].link}}';">
-					  	 {{footer.top_button}}
-					  </a>
+						<a href={{menu.menuItems[0].link}} id="backToTop" class="btn btn-outline-secondary" role="button"  onclick="location.hash=''; location.hash='{{menu.menuItems[0].link}}';">
+					  	 	{{footer.top_button}}
+					  	</a>
 					</li>
 					<!-- Back to top button ends here-->
-					 <li id = "rightFoot">
+					<li id="rightFoot">
 						<div ng-repeat="value in  footer.support">
-								{{value}}
+							{{value}}
 						</div>
 					</li>
 	  			</ul>
@@ -207,27 +214,26 @@
 		
 		</div>
 	
-	<!-- Modules -->
-    <script src="js/app.js"></script>
-
-    <!-- Controllers -->
-    <script src="js/controllers/mainController.js"></script>
-    <script src="js/controllers/diagramController.js"></script>
-    
-    <!-- Services -->
-    <script src="js/services/serveMenu.js"></script>
-	<script src="js/services/serveArchitecture.js"></script>
-	<script src="js/services/serveStatus.js"></script>
-	<script src="js/services/serveAccountInfo.js"></script>
-	<script src="js/services/serveRunJob.js"></script>
-	<script src="js/services/serveFooter.js"></script>
-	<script src="js/services/serveResources.js"></script>
-	<script src="js/services/serveSoftware.js"></script>
-    
-    <!-- Jquery -->
-    <script src="js/simple.js"></script>
+		<!-- Modules -->
+	    <script src="js/app.js"></script>
+	
+	    <!-- Controllers -->
+	    <script src="js/controllers/mainController.js"></script>
+	    <script src="js/controllers/diagramController.js"></script>
+	    
+	    <!-- Services -->
+	    <script src="js/services/serveMenu.js"></script>
+		<script src="js/services/serveArchitecture.js"></script>
+		<script src="js/services/serveStatus.js"></script>
+		<script src="js/services/serveAccountInfo.js"></script>
+		<script src="js/services/serveRunJob.js"></script>
+		<script src="js/services/serveFooter.js"></script>
+		<script src="js/services/serveResources.js"></script>
+		<script src="js/services/serveSoftware.js"></script>
+	    
+	    <!-- Jquery -->
+	    <script src="js/simple.js"></script>
    
 	</body>
 	
-	<!--main controller end-->
 </html>

@@ -1,42 +1,37 @@
-/* color of all links */
-a{
+/* style of all links */
+a {
     color: #2200CC;
 }
-/* padding top and bottom due to fixed menu 
- background-color is sky blue
+/* 
+padding top and bottom due to fixed menu 
+background-color is sky blue
 */
 body{
-    padding-top: 7em;
-    padding-bottom: 5em;
-    background-color: #7ec0ee ;
-    font-family: lucida sans unicode;
-}
-/* color of the code sections under pre, used as background for the gallery when a gallery item is clicked on*/
-pre, pre a{
-    color: white;
-    background-color:#0d3d56;
-    white-space: pre-line;
+    padding-top : 7em;
+    padding-bottom : 5em;
+    background-color : #7ec0ee ;
+    font-family : lucida sans unicode;
 }
 /* adjustment of anchors due to fixed top menu */
 section{ 
-    position:relative; 
+    position : relative; 
 }
 section span{ 
-    position:absolute; 
-    top:-200px;
+    position : absolute; 
+    top : -200px;
 }
 /* makes entire cell clickable*/
 td a {
-    display: inline-block;
-    height:100%;
-    width:100%
+    display : inline-block;
+    height : 100%;
+    width : 100%
 }
 /* makes all unordered list without bullet points */
 ul {
-    list-style-type:none;
+    list-style-type: none;
 }
 /* code class mods, works best with <div> to dispay code */
-.code{
+.code {
     color: yellow;
     background-color: black;
     padding: 5px;
@@ -49,12 +44,12 @@ ul {
     overflow: auto;
     */
 }
-/* makes the gallery of pdfs stack inline then in block*/
+/* makes the gallery of images stack inline then in block */
 .gallery li{
     display: inline-block;
     padding: 3px;
 }
-/* info class for displaying content> */
+/* info class for displaying content */
 .info{
     font-size: 18px;
 }
@@ -64,12 +59,6 @@ ul {
     cursor: -webkit-zoom-in; 
     cursor: zoom-in;
 }
-/* all list group class style */
-.list-group{
-    display: flex;  
-    flex-wrap: wrap;
-    padding: 5px;
-}
 /* Color of nav bar to UW-lax Colors */
 .nav, .navbar {
     background-color: #730019 ;
@@ -78,35 +67,24 @@ ul {
 }
 /* Color of nav bar links*/
 .nav li a{
-    padding-top: 1.5em;
-    color: #999999 ;
+    padding-top: 2em;
 }
-/* Color of nav bar links when hovered upon*/
-.nav li a:hover{
-    color: #730019 ;
-    background-color: #83A4FF; 
-}
-/* Color of nav bar links when active*/
-.nav li a:visited {
-    color: #999999;
-    background-color: black;
-}
+
 /* all  table data class style */
-.table-data{
+.table-data {
     border-style: ridge;
 }
 /* all  table row class style */
-.table-row{
+.table-row {
     border-style: ridge ;
 }
 /* all triped table class style */
-.table-striped{
+.table-striped {
     display: flex;  
     flex-wrap: wrap;
 }
-
 /* floats back to gallery button to the right */
-#backToG {
+#backToGallery {
     float: right;
 }
 /* style of back to top button */
@@ -118,29 +96,45 @@ ul {
     background-color: #83A4FF;
     color: #730019 ;
 }
-/* sets the footer's padding*/
-#footer{
+/* sets the footer's style */
+#footer {
     padding-top: 1em;   
     text-align: center;
     color:#999999;
 }
-/* sets the footer items horizontanly*/
-#footer li{
+/* sets the footer list items horizontanly */
+#footer li {
     display: inline-block;
 }
 /* footer link colors */
-#footer li a{
+#footer li a {
     color:#999999;
 }
+/* style of the gallery item, used as background for the gallery when a gallery item is clicked on*/
+#galleryItem {
+    color : white;
+    background-color : #0d3d56;
+    padding: 10px 10px 10px 10px; 
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
 /* Pushes the school info to the left */
-#leftFoot{
-    float: left;
+#leftFoot { 
+    float : left;
 }
-/* margin of title and bottom logo */
-#logo, #title{
-    margin-right: 10px;
+/* margin of website title and bottom organization logo */
+#logo {
+    margin-right : 10px;
 }
-/* Pushes the contact email to the right */
-#rightFoot{
-    float:right;
+/* pushes the support info to the right */
+#rightFoot {
+    float : right;
+}
+/* style of the list of specification after a gallery item is clicked on*/
+#specifications{
+    list-style-type: circle;
+}
+/* margin of website title */
+#title {
+    margin-right : 10px;
 }
