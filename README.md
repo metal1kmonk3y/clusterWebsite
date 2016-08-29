@@ -5,10 +5,12 @@ This project is to develop a website that can be used to share important informa
 It was originally designed for the Flux cluster at UW La Crosse but can be used for any educational cluster. Here is a demo: http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite 
  
 ## Installation
-The skeleton of the website can be easily adapted for use by any cluster. The project uses HTML5, CSS Bootstrap 3.3.7, jQuery 1.12.14, Angularjs 1.5.8 and Python 2.7. The html web page is styled with bootstrap and jQuery. The data is served as json files through a cherrypy server then fed through an Angularjs app to **index.html**. The cluster app uses ‘ngRoute’ as a dependency and utilizes the routing library to change views (‘ng-view’) without refreshing. The website is linked to the Angularjs routing library 1.2.28 and the dependency is already included in the app (**js/app.js**).
+The skeleton of the website can be easily adapted for use on any cluster. The project uses HTML5, CSS Bootstrap 3.3.7, jQuery 1.12.14, Angularjs 1.5.8, Python 2.7 and [CherryPy](http://www.cherrypy.org/) (a lightweight web framework). The html web page is styled with bootstrap and jQuery. The data is served as json files through a cherrypy server then fed through an Angularjs app to **index.html**. The cluster app uses the ‘ngRoute’ routing library to change views (‘ng-view’) without refreshing. The Angularjs routing library 1.2.28 is already included in the app (**js/app.js**).
  
 ### Software Setup
-The project provides a lightweight cherrypy server (**server/clusterServer.py**) with minimal security. Therefore, while running the server it is advisable to utilize a full featured web server (like Apache). This can be installed on your machine to maintain security. CSS bootstrap is statically linked and is in **bootstrap/**. While switching versions, it is essential to retain the main css file (**bootstrap/css/main.css**). The Angularjs as well as jQuery versions can be changed by altering the script links (**index.html**).
+The project provides a lightweight cherrypy server (**server/clusterServer.py**) with minimal security. Therefore, while running the server it is advisable to utilize a full featured web server (like Apache) and firewall. We assume you have something like this in place already, or you will add the required functionality to the CherryPy server as needed.
+
+All front-end dependencies link to static versions included in the project or externally hosted versions. CSS bootstrap is statically linked and is in **bootstrap/**. When switching versions, it is important to retain the main css file (**bootstrap/css/main.css**) which contains some CSS specifically for this website. The Angularjs, as well as jQuery, versions can be changed by altering the script tags in (**index.html**).
  
 ### Getting it working
 Clone the files in the appropriate directory. Install [python](https://www.python.org/downloads/) then download the [cherrypy](http://docs.cherrypy.org/en/latest/install.html) package. To initialize the server, go to the **server** directory before executing **clusterServer.py**.
@@ -20,20 +22,20 @@ The sever will make the json file available at
 
     domainName/clusterWebsite/server/api/menuItems.json
  
-Then go to **js/services/serveMenu.js** to change update the service by changing the string in ```$http.get(‘’)``` to
+Then go to **js/services/serveMenu.js** to update the service by changing the string in ```$http.get(‘’)``` to point to where your files actually live:
 
     return $http.get('domainName/clusterWebsite/server/api/menuItems.json')
  
-This will make the json file available to the app. To check the service, open index.html with a web browser. The default menu should be visible now. To establish service to all json files, open up each “serveSectionName.js” and update each ```$http.get(‘’)``` to match the location **server/clusterServer.py** mounts it to. At this point, the default cluster website is displayed and the content is ready to be edited.
+This will make the JSON file available to the app. To check the service, open index.html with a web browser. The default menu should be visible now. To establish service to all JSON files, open up each “serveSectionName.js” and update each ```$http.get(‘’)``` to match the location **server/clusterServer.py** mounts it to. At this point, the default cluster website is displayed and the content is ready to be edited.
  
 ## Implementation
-All the content editing will be done in the json files in the **json** folder. Each section has its own json file and will be edited from there.
+All the content editing will be done in the JSON files in the **json** folder. Each section has its own JSON file and will be edited from there.
  
 ### Menu
 The menu can be edited from **json/menu_items.json**. Start by editing the *title* of the website and favorite icon (*img*). To change the title, simply edit the string in the value. The favorite icon can be personalized by naming the desired image file “fav_icon.png” then saving it in **img** folder or simply insert the image path. The menu can be edited by changing the name attribute of *menuItems*.
   
 ### Footer
-The footer is very easy to set up. Open up **json/footer.json**, then fill in the *organization* and *department* with appropriate values. If value is not used, leave it as an empty string. For the organization logo (*organization.logo*) replace the image file in **img/org_logo.jpg** and update the path if needed. The *top_button* text can also be entered here, if it is empty it will still work. Therefore, to delete this button go to the footer section in **index.html** (towards the bottom of the body). There is comment signaling the button’s start and end, comment it out. The *support * array holds strings and does not have a cap. The footer will expand up with each addition to the array.
+The footer is very easy to set up. Open up **json/footer.json**, then fill in the *organization* and *department* with appropriate values. If value is not used, leave it as an empty string. For the organization logo (*organization.logo*) replace the image file in **img/org_logo.jpg** and update the path if needed. The *top_button* text can also be entered here, if it is empty it will still work. Therefore, to delete this button go to the footer section in **index.html** (towards the bottom of the body). There is comment signaling the button’s start and end, comment it out. The *support* array holds strings and does not have a limit to the number of strings or their length. The footer will expand up with each addition to the array.
  
 ![Demo 1](img/demoAn1.png)
  
@@ -44,7 +46,7 @@ The current status of the cluster is displayed here. Fill out the *title* with t
 Start with the *title* and *description* as always at **json/architecture.json**.
  
 #### Specifications Table
-This table is slightly different since both the key and values are employed. Therefore, editing the *specifications* in **json/architecture.json** is done by adding/deleting keys and values in pairs. Furthermore, there may be as many *specifications* as needed but they must have unique keys.
+This table is slightly different since both the key and values are used. Therefore, editing the *specifications* in **json/architecture.json** is done by adding/deleting keys and values in pairs. Furthermore, there may be as many *specifications* as needed but they must have unique keys.
  
 #### Gallery
 For the gallery the *subtitle* is used as the title. The *nodes* array contains info about each node. They each have a *name*, an array of *specs* (this can be as long as needed), and *img* attribute (which takes the image path). The text inside the gallery buttons can be modified in *buttons*.
@@ -53,10 +55,10 @@ For the gallery the *subtitle* is used as the title. The *nodes* array contains 
 Fill out the *title* as well as the *description* in **json/account_info.json**. There are two sub-sections under *sections*.
  
 #### Account request information
-This sub-section has a *subtitle* in addition to a *description*. Then there is *request_info_list_type* which takes in one of {“1”, “i”, “I”, “a”, “A”}. This determines the type of list *request_info* array will be rendered as. This array may contain as many objects as needed.        
+This sub-section has a *subtitle*, a *description*, and *request_info_list_type* which takes in one of {“1”, “i”, “I”, “a”, “A”}. This determines the type of list *request_info* array will be rendered as. This array may contain as many objects as needed.        
  
 #### Logging in
-This sub-section also has a *subtitle* in addition to a *description*. The *display_file* array takes two strings, first one is the name of the file and the second is the path.
+This sub-section has a *subtitle*, a *description*, and a *display_file*.  *display_file* is an array which takes two strings: the name of the file, and the path, respectively.
  
 ![Demo 2](img/demoAn2.png)
  
