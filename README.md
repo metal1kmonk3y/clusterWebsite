@@ -12,13 +12,13 @@ The project provides a lightweight cherrypy server (**server/clusterServer.py**)
  
 ### Getting it working
 Clone the files in the appropriate directory. Install [python](https://www.python.org/downloads/) then download the [cherrypy](http://docs.cherrypy.org/en/latest/install.html) package. To initialize the server, go to the **server** directory before executing **clusterServer.py**.
- 
+
     cd server
-python clusterServer.py
+    python clusterServer.py
  
 The sever will make the json file available at
- 
-domainName/clusterWebsite/server/menuItems.json
+
+    domainName/clusterWebsite/server/menuItems.json
  
 Then go to **js/services/serveMenu.js** to change update the service by changing the
 string in ```$http.get(‘’)``` to
