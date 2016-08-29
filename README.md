@@ -117,5 +117,5 @@ Here is a list of tags, classes, and ids that might help make css file modificat
 
 ### General practices
 The main thing to remember while editing the json files is: if there are empty values for some of the keys, delete the value and leave it as an empty string. However, in two cases it is essential to add/delete both keys and values as pairs, they are as follows:
-* The resources section use keys and values from the *links* object to list recommended websites. Therefore, edit the *links* in **json/resources.json** as pairs.
+* The resources section use keys and values from the *links* to list recommended websites. Therefore, edit the *links* in **json/resources.json** as pairs.
 * The specifications table in Architecture section also displays keys as well as values. Therefore, while modifying the *specifications* in **json/architecture.json** add/delete keys and values as pairs.
