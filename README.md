@@ -66,26 +66,27 @@ This sub-section has a *subtitle*, a *description*, and a *display_file*.  *disp
 As usual, the editing starts with *title* plus *description* in **json/run_job.json**. After which there are two sub-sections under *sections*.
  
 #### Preparing a batchscript
-This sub-section has a *subtitle* and a *description* (that is split into two parts). The *description_start* is your regular description so fill it out. Then there is *description_end_list_type* which takes in {“1”, “i”, “I”, “a”, “A”} to determines the type of list *description_end* array is, it has no limit. The *display_file* array takes two strings, first one is the name while the second one is the path of the file.        
+This sub-section has a *subtitle* and a *description* (that is split into two parts). The *description_start* is your regular description for explaining how to set up a batchscript on this machine. *description_end_list_type* takes a value {“1”, “i”, “I”, “a”, “A”} to specify the type of list of *description_end* array. The *description_end* array is for the list of elements that need to be included in the batchscript and can be of variable length.  The *display_file* array takes two strings: the name to display and the path to the file.  The *display_file* should be an example batchscript.        
  
 #### More on SLURM
-This sub-section comes with a *subtitle* as well as a *description*. Then the *commands_list_type* determines how the list is ordered by taking in {“1”, “i”, “I”, “a”, “A”}. You can have as many objects in *commands* as required, the name of the object does not matter. However, they must all have an *info* attribute plus a *code* array (this may have any number of strings). The *display_file* array takes two strings, first is the name of the file whereas the second is the file path.
+This sub-section has a *subtitle*, a *description*, a *commands_list_type* (see above for your specification options), and *commands*.
+*commands* is an array of objects which describe the various commands for the scheduler on your cluster.  Each must contains an *info* attribute to describe the command, and a *code* array of strings which serves as an example. The *display_file* array takes two strings: the name to display and the path to the file.  The *display_file* should be a useful example for this section. 
  
 ![Demo 3](img/demoAn3.png)
  
 ### Available Software
-This section can be edited form **json/software.json**. Start with the *title* and *description*. Then fill out the four column names in the *software_table_cols* array. After which, start editing *name*, *description*, *versions* (if there are multiple versions, use a string with commas like “2.6, 2.7, 3.4”), and *link* in *software_table*. There may be any number of objects in the *software_table*.
+This section can be found in **json/software.json**. This section contains a *title*, *description*, *software_table_cols*, and a *software_table*. *software_table_cols* is an array of the column headings for the table.  In the template, we have four columns: *name*, *description*, *versions*, and *link*, however you can use whatever columns you like. *software_table* is an array of objects which have the structure specified in *software_table_cols*. There may be any number of objects in the *software_table*.
  
 ![Demo 4](img/demoAn4.png)
  
 ### Resources
-Resources section can be changed from **json/resources.json**. Begin with the *title* and *description*. This section use keys and values from the *links* to list resourceful websites. Therefore, while editing the *links* in ** json/resources.json** add/delete keys and values as pairs. 
+This section can be found in **json/resources.json**. Begin with the *title* and *description*. This section use keys and values from the *links* to list resourceful websites. Therefore, while editing the *links* in ** json/resources.json** add/delete keys and values as pairs. 
  
 ## Helpful Hints
 Here are some useful notes.
  
 ### Changing appearances
-Css is used to control the background and colors of the website. However, jquery is also available. Css file is at **bootstrap/css/main.css**. It is sorted first by tag, class, id then alphabetically. The jquery file is in **js/simple.js**.
+CSS is used to control the background and colors of the website. However, jQuery may also be used to change the appearance of the webpage. The main CSS file is located at **bootstrap/css/main.css**. It is sorted first by tag, class, id then alphabetically. The jQuery is in **js/simple.js**.
  
 #### CSS cheat sheet
 Here is a list of tags, classes, and ids that might help make css file modifications efficient.
