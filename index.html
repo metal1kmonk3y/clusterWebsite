@@ -146,10 +146,10 @@
 				<h2>{{software.title}}</h2>	
 				<ul class = "info">
 					{{software.description}}
-					<table class="table table-bordered">
+					<table class="table">
 					    <thead>
 					    	<tr class="table-row">
-					    		<th ng-repeat="col in software.software_table_cols">{{col}}</th>
+					    		<th class="table-data" ng-repeat="col in software.software_table_cols">{{col}}</th>
 					      	</tr>
 					    </thead>
 					    <tbody>
