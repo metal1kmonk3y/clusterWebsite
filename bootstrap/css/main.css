@@ -72,11 +72,11 @@ ul {
 
 /* all  table data class style */
 .table-data {
-    border-style: ridge;
+    border-style: solid;
 }
 /* all  table row class style */
 .table-row {
-    border-style: ridge ;
+    border-style: solid;
 }
 /* all triped table class style */
 .table-striped {
