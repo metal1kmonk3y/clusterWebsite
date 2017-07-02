@@ -1,16 +1,8 @@
-"""
-Tutorial - Hello World
-
-The most basic (working) CherryPy application possible.
-"""
-
 import os.path
 
 # Import CherryPy global namespace
 import cherrypy
 
-
-[docs]
 class HelloWorld:
 
     """ Sample request handler class. """
@@ -18,15 +10,12 @@ class HelloWorld:
     # Expose the index method through the web. CherryPy will never
     # publish methods that don't have the exposed attribute set to True.
     @cherrypy.expose
-[docs]
     def index(self):
         # CherryPy will call this method for the root URI ("/") and send
         # its return value to the client. Because this is tutorial
         # lesson number 01, we'll just send something really simple.
         # How about...
         return 'Hello world!'
-
-
 
 tutconf = os.path.join(os.path.dirname(__file__), 'tutorial.conf')
 
