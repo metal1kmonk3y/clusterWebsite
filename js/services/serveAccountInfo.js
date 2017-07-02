@@ -1,6 +1,6 @@
 /* global app */
 app.factory('serveAccountInfo', ['$http', function($http) { 
-  return $http.get('http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite/server/api/accountInfo.json') 
+  return $http.get('http://13.59.248.205/accountInfo.json') 
             .success(function(data) { 
               return data; 
             })
