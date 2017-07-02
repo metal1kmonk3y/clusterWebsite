@@ -1,4 +1,3 @@
-import os.path
 import json
 import io
 import cherrypy
@@ -106,8 +105,7 @@ cherrypy.tools.secureheaders = \
     cherrypy.Tool('before_finalize', secureheaders, priority=60)
  
 # changing port and host
-cherrypy.config.update({
-			'server/socket_host': '13.59.248.205',
+cherrypy.config.update({			
                         'server.socket_port': 80,
                        })
 
