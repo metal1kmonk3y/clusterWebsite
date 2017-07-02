@@ -104,9 +104,10 @@ def secureheaders():
 cherrypy.tools.secureheaders = \
     cherrypy.Tool('before_finalize', secureheaders, priority=60)
  
-# changing port ot 9099      
+# changing port and host
 cherrypy.config.update({
-                        'server.socket_port': 9099,
+			'server/socket_host': '13.59.248.205',
+                        'server.socket_port': 80,
                        })
 
 #configurations
