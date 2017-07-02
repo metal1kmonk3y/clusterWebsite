@@ -1,6 +1,6 @@
 /* global app */
 app.factory('serveRunJob', ['$http', function($http) { 
-  return $http.get('http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite/server/api/runJob.json') 
+  return $http.get('http://13.59.248.205/runJob.json') 
             .success(function(data) { 
               return data; 
             })
