@@ -105,7 +105,7 @@ cherrypy.tools.secureheaders = \
     cherrypy.Tool('before_finalize', secureheaders, priority=60)
  
 # changing port and host
-cherrypy.config.update({			
+cherrypy.config.update({'server.socket_host':'0.0.0.0',			
                         'server.socket_port': 80,
                        })
 
