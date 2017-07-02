@@ -1,6 +1,6 @@
 /* global app */
 app.factory('serveSoftware', ['$http', function($http) { 
-  return $http.get('http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite/server/api/software.json') 
+  return $http.get('http://13.59.248.205/software.json') 
             .success(function(data) { 
               return data; 
             })
