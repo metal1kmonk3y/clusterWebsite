@@ -2,7 +2,7 @@
 This project is to develop a website that can be used to share important information about an educational cluster.
  
 ## Introduction
-It was originally designed for the Flux cluster at UW La Crosse but can be used for any educational cluster. Here is a demo: http://flux.cs.uwlax.edu/~shiwakot.prasann/clusterWebsite 
+It was originally designed for the Flux cluster at UW La Crosse but can be used for any educational cluster.
  
 ## Installation
 The skeleton of the website can be easily adapted for use on any cluster. The project uses HTML5, CSS Bootstrap 3.3.7, jQuery 1.12.14, Angularjs 1.5.8, Python 2.7 and [CherryPy](http://www.cherrypy.org/) (a lightweight web framework). The html web page is styled with bootstrap and jQuery. The data is served as json files through a cherrypy server then fed through an Angularjs app to **index.html**. The cluster app uses the ‘ngRoute’ routing library to change views (‘ng-view’) without refreshing. The Angularjs routing library 1.2.28 is already included in the app (**js/app.js**).
